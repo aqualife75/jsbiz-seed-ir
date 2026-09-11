@@ -228,3 +228,11 @@ gh api -X POST repos/aqualife75/jsbiz-seed-ir/pages -f "source[branch]=main" -f 
 
 ## 실행 기록
 (Task 19 Step 6 · Task 20 · Task 21 결과를 여기에 날짜와 함께 적는다.)
+
+### 2026-09-12 실행 기록 (Task 19 Step 6 · 빌드 완료 시점)
+- 구현 커밋 39건, `pytest tests -q` 86 passed / 1 skipped(실파일 env 없을 때).
+- `claude plugin validate .` ✔ · `claude plugin validate plugins/seed-ir` ✔ (프론트매터 description을 YAML 블록 스칼라로 수정 후).
+- 로컬 설치(`scripts/install_local.py --target .claude`) 후 현재 세션의 스킬 목록에 `seed-ir`(설명 전문)이 노출됨 — 트리거 확인. 마켓플레이스 경로(`/plugin marketplace add`) 리허설은 GitHub 배포(Task 21) 후 새 세션에서 수행.
+- 렌더 검수: 셀아이 예시 22장 PNG 육안 확인, 3장 좌표 수정(5c1bf7f) + 한글 단어 중간 줄바꿈 방지(976be23, Pretendard 실측 폭 기반 명시적 줄바꿈 — `eaLnBrk` 속성은 한글에 무효함을 실험으로 확인).
+- 사용법 HTML: 10개 섹션·설치 두 줄·복사 버튼 확인(브라우저 미리보기 텍스트 검사).
+- 미완: Task 20 시냅스 통합 실행, Task 21 GitHub 배포 — 사용자 결정 대기.
