@@ -8,10 +8,12 @@
   python harness.py validate <target> --ws <워크스페이스> [--file 경로]
   python harness.py trace --ws <워크스페이스> [--file 경로]
   python harness.py gate <phase> --ws <워크스페이스> [--accept-risk]
-  (Task 13에서 build / qa / pdf 추가)
+  python harness.py build --ws <워크스페이스> [--spec 경로]
+  python harness.py qa --ws <워크스페이스> [--slides 1 2 3 ...]
+  python harness.py pdf --ws <워크스페이스> [--src pptx경로] [--out pdf경로]
 """
 from __future__ import annotations
-import argparse, json, re, sys
+import argparse, json, re, shutil, sys
 from datetime import datetime
 from pathlib import Path
 
@@ -26,6 +28,7 @@ import extractors  # noqa: E402
 import validate  # noqa: E402
 import trace_numbers  # noqa: E402
 import gate  # noqa: E402
+import build_deck, render_qa  # noqa: E402
 from state import State, PHASES  # noqa: E402
 
 _TEAM_RE = re.compile(r"참가신청서_(.+?)_[^_]+\.[A-Za-z0-9]+$")  # 포스텍 파일명 규칙: …_참가신청서_{팀명}_{팀장}.hwp
@@ -136,7 +139,45 @@ def cmd_gate(args) -> int:
     for r in reasons: print("  -", r)
     return 0 if ok else 1
 
-SUBCOMMANDS = {"init": cmd_init, "extract": cmd_extract, "status": cmd_status, "validate": cmd_validate, "trace": cmd_trace, "gate": cmd_gate}
+def _deck_paths(ws: Path):
+    team = State.load(ws).data["team"]
+    return ws / "08_deck_spec.json", ws / "09_build" / f"{team}_Seed_IR_Deck_v1.pptx"
+
+def cmd_build(args) -> int:
+    ws = _ws_from_args(args); spec_p, out_p = _deck_paths(ws)
+    if args.spec: spec_p = Path(args.spec)
+    errs = validate.validate_phase(ws, "deck_spec", spec_p)
+    if errs:
+        print("VALIDATE deck_spec: FAIL"); [print("  -", e) for e in errs]; return 1
+    rep = build_deck.build(spec_p, out_p)
+    (ws / "09_build" / "build_report.json").write_text(json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")
+    spec = json.loads(spec_p.read_text(encoding="utf-8"))
+    render_qa.write_report(ws, render_qa.auto_checks(spec, rep), engine=None, pngs=[])
+    print(f"BUILD: {rep['out']} ({rep['slides']}장) warnings={len(rep['warnings'])}")
+    for w in rep["warnings"]: print(f"  ! slide {w['slide']} {w['slot']}: {w['text']}")
+    return 0
+
+def cmd_qa(args) -> int:
+    ws = _ws_from_args(args); spec_p, pptx = _deck_paths(ws)
+    if not pptx.exists(): print("BUILD 먼저 실행"); return 1
+    slides = [int(x) for x in args.slides] if args.slides else None
+    r = render_qa.render(pptx, ws / "09_build" / "qa_png", slides=slides, pdf=False)
+    spec = json.loads(spec_p.read_text(encoding="utf-8")); rep = json.loads((ws / "09_build" / "build_report.json").read_text(encoding="utf-8"))
+    p = render_qa.write_report(ws, render_qa.auto_checks(spec, rep), r["engine"], r["pngs"])
+    print(p.read_text(encoding="utf-8")[:400]); return 0
+
+def cmd_pdf(args) -> int:
+    ws = _ws_from_args(args); _, pptx = _deck_paths(ws)
+    src = Path(args.src) if args.src else pptx
+    r = render_qa.render(src, ws / "09_build" / "_pdf_tmp", slides=[1], pdf=True)
+    if not r["pdf"]:
+        print("PDF 엔진 없음 — PowerPoint/Keynote에서 '내보내기 → PDF'로 저장하세요"); return 2
+    if args.out: shutil.move(r["pdf"], args.out); print(f"PDF: {args.out}")
+    else: print(f"PDF: {r['pdf']}")
+    return 0
+
+SUBCOMMANDS = {"init": cmd_init, "extract": cmd_extract, "status": cmd_status, "validate": cmd_validate, "trace": cmd_trace, "gate": cmd_gate,
+               "build": cmd_build, "qa": cmd_qa, "pdf": cmd_pdf}
 
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(prog="harness.py", description="seed-ir 하네스")
@@ -152,6 +193,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--ws", required=True)
     p.add_argument("--file")
     p = sub.add_parser("gate"); p.add_argument("phase", choices=["2","3","4","5","6","final"]); p.add_argument("--ws", required=True); p.add_argument("--accept-risk", action="store_true")
+    p = sub.add_parser("build"); p.add_argument("--ws", required=True); p.add_argument("--spec")
+    p = sub.add_parser("qa"); p.add_argument("--ws", required=True); p.add_argument("--slides", nargs="*")
+    p = sub.add_parser("pdf"); p.add_argument("--ws", required=True); p.add_argument("--src"); p.add_argument("--out")
     return ap
 
 def main(argv=None) -> int:
