@@ -39,13 +39,13 @@ def test_slides_valid():
     assert validate.validate_obj(_slides(), "slides") == []
 
 def test_slides_count_and_weakness():
-    s = _slides(11)
+    s = _slides(15)
     errs = validate.validate_obj(s, "slides")
-    assert any("12" in e for e in errs)
+    assert any("12~14" in e for e in errs)
     s = _slides(); del s["slides"][6]["weakness_row"]
     assert any("weakness_row" in e for e in validate.validate_obj(s, "slides"))
 
-def test_deck_spec_limits(assets_dir):
+def test_deck_spec_limits():
     spec = {"meta": {"team": "T", "accent": "E0492E"}, "slides": [
         {"no": 1, "layout": "statement", "background": "dark", "slots": {"statement": "가" * 80, "sub": "나"}, "source_line": "", "notes": ""}]}
     errs = validate.validate_obj(spec, "deck_spec")

@@ -26,7 +26,7 @@ def load_limits() -> dict:
 
 def _schema_errors(obj, name) -> list[str]:
     v = jsonschema.Draft7Validator(_load_schema(name))
-    return [f"[schema:{name}] {'/'.join(str(p) for p in e.absolute_path) or '<root>'}: {e.message}" for e in sorted(v.iter_errors(obj), key=lambda e: list(e.absolute_path))]
+    return [f"[schema:{name}] {'/'.join(str(p) for p in e.absolute_path) or '<root>'}: {e.message}" for e in sorted(v.iter_errors(obj), key=lambda e: [str(x) for x in e.absolute_path])]
 
 def _rules_fact_pack(fp: dict) -> list[str]:
     errs = []
@@ -105,6 +105,6 @@ def validate_phase(ws: Path, target: str, file: Path | None = None) -> list[str]
         return [f"파일 없음: {path}"]
     try:
         obj = json.loads(path.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
+    except (json.JSONDecodeError, UnicodeDecodeError) as exc:
         return [f"JSON 파싱 실패 {path.name}: {exc}"]
     return validate_obj(obj, _SCHEMA_OF.get(target, target))
