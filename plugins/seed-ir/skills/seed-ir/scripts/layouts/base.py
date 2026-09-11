@@ -93,6 +93,8 @@ class Canvas:
         for i, para in enumerate(content.split("\n")):
             p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
             p.alignment = _ALIGN[align]; p.line_spacing = line_spacing; p.space_after = Pt(0)
+            # keep-all: 한글·라틴 단어 중간 줄바꿈 금지 (샘플 덱 규칙, PowerPoint '단어 잘림 허용' 해제)
+            pPr = p._p.get_or_add_pPr(); pPr.set("eaLnBrk", "0"); pPr.set("latinLnBrk", "0")
             for piece in _MARK.split(para):
                 if not piece: continue
                 r = p.add_run()
