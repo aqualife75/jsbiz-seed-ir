@@ -75,13 +75,13 @@ def vision_close(cv, s, slide):
     cv.rect(ds.MX + 0.4, 6.75, 9.6, 0.01, fill="FFFFFF", alpha=20)
     cv.label(ds.MX + 0.4, 6.95, 6, "THE ONE-LINER", color=ds.C["amber"])
     cv.text(ds.MX + 0.4, 7.35, 9.6, 1.4, s.get("one_liner", ""), 27, ds.C["white"], bold=True, line_spacing=1.25, max_lines=2, slot="one_liner")
-    cards = s.get("cards") or []; cx = 12.6; cw = 6.4; ch = 1.95
+    cards = s.get("cards") or []; cx = 12.6; cw = 6.4; ch = 2.15
     for i, c in enumerate(cards[:3]):
         cy = 2.0 + i * (ch + 0.25); acc = c.get("tone") == "accent"
         cv.rect(cx, cy, cw, ch, fill=ds.C["accent"] if acc else ds.BG["dark"], alpha=None if acc else 65, line=None if acc else "FFFFFF", line_alpha=None if acc else 12, radius=True)
         cv.label(cx + 0.4, cy + 0.25, cw - 0.8, c.get("label", ""), color="FFFFFF" if acc else ds.C["muted_dark"])
-        cv.text(cx + 0.4, cy + 0.6, cw - 0.8, 0.85, c.get("big", ""), 26, ds.C["teal"] if c.get("tone") == "teal" else ds.C["white"], bold=True, line_spacing=1.15, max_lines=2, slot="cards.big")
-        cv.text(cx + 0.4, cy + ch - 0.55, cw - 0.8, 0.45, c.get("sub", ""), ds.SZ["small"], ds.C["white"] if acc else ds.C["sub_dark"], max_lines=1, slot="cards.sub")
+        cv.text(cx + 0.4, cy + 0.6, cw - 0.8, 1.05, c.get("big", ""), 26, ds.C["teal"] if c.get("tone") == "teal" else ds.C["white"], bold=True, line_spacing=1.1, max_lines=2, slot="cards.big")
+        cv.text(cx + 0.4, cy + ch - 0.5, cw - 0.8, 0.4, c.get("sub", ""), ds.SZ["small"], ds.C["white"] if acc else ds.C["sub_dark"], max_lines=1, slot="cards.sub")
     if s.get("brand"):
         cv.rect(ds.MX + 0.4, 9.7, 3.0, 0.7, fill="FFFFFF", radius=True); cv.text(ds.MX + 0.6, 9.7, 2.6, 0.7, s["brand"], 20, ds.C["ink"], bold=True, anchor="middle", max_lines=1, slot="brand")
     cv.text(ds.MX + 3.8, 9.7, 6.5, 0.7, s.get("tagline", ""), ds.SZ["body"], ds.C["sub_dark"], bold=True, anchor="middle", max_lines=1, slot="tagline")

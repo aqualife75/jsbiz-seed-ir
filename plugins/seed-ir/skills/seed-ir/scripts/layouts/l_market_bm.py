@@ -44,14 +44,15 @@ def traction_plan(cv, s, slide):
         for i, r in enumerate(rows, 1):
             cell(i, 0, r.get("metric", ""), cv.ink, True); cell(i, 1, r.get("target", ""), cv.accent, True); cell(i, 2, r.get("method", ""), cv.sub)
     side = s.get("side") or {}; sx = ds.MX + lw + 0.35; sw = ds.CW - lw - 0.35
+    sy = y + 0.4; sh = 1.5
     if side:
-        cv.card(sx, y + 0.4, sw, 1.9); cv.label(sx + 0.35, y + 0.65, sw - 0.7, side.get("title", ""), color=cv.accent)
-        cv.text(sx + 0.35, y + 1.05, sw - 0.7, 1.1, side.get("body", ""), ds.SZ["body_sm"], cv.sub, line_spacing=1.4, max_lines=3, slot="side.body")
+        cv.card(sx, sy, sw, sh); cv.label(sx + 0.35, sy + 0.25, sw - 0.7, side.get("title", ""), color=cv.accent)
+        cv.text(sx + 0.35, sy + 0.65, sw - 0.7, sh - 0.85, side.get("body", ""), ds.SZ["body_sm"], cv.sub, line_spacing=1.4, max_lines=3, slot="side.body")
     if s.get("insight"):
-        iy = y + 2.5; ih = ds.BODY_B - iy
-        if ih > 0.8:
-            cv.card(sx, iy, sw, ih, style="accent"); cv.label(sx + 0.35, iy + 0.25, sw - 0.7, "이미 확인된 것", color="FFFFFF")
-            cv.text(sx + 0.35, iy + 0.6, sw - 0.7, ih - 0.75, s["insight"], ds.SZ["body"], ds.C["white"], bold=True, line_spacing=1.35, max_lines=3, slot="insight")
+        iy = sy + sh + 0.2; ih = ds.BODY_B - iy
+        if ih > 0.6:
+            cv.card(sx, iy, sw, ih, style="accent"); cv.label(sx + 0.35, iy + 0.22, sw - 0.7, "이미 확인된 것", color="FFFFFF")
+            cv.text(sx + 0.35, iy + 0.5, sw - 0.7, ih - 0.6, s["insight"], ds.SZ["body_sm"], ds.C["white"], bold=True, line_spacing=1.3, max_lines=2, slot="insight")
 
 @register("kpi_chart")
 def kpi_chart(cv, s, slide):

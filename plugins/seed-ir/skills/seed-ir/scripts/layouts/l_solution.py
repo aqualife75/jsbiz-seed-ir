@@ -64,17 +64,17 @@ def tech_moat(cv, s, slide):
         cv.text(ds.MX + 4.0, cy + 0.8, lw - 4.4, ch - 1.0, c.get("desc", ""), ds.SZ["body_sm"], cv.sub, line_spacing=1.4, max_lines=2, slot="data_cards.desc")
     pipe = s.get("pipeline") or []
     cv.label(rx, y, rw, "파이프라인", color=ds.C["amber"])
-    ph = 0.95
+    ph = 0.82
     for i, p in enumerate(pipe[:3]):
-        py = y + 0.45 + i * (ph + 0.12); cv.rect(rx, py, 0.05, ph, fill=list(_TONE.values())[i % 3])
+        py = y + 0.45 + i * (ph + 0.10); cv.rect(rx, py, 0.05, ph, fill=list(_TONE.values())[i % 3])
         cv.text(rx + 0.3, py, rw - 0.3, 0.4, p.get("title", ""), ds.SZ["body"], cv.ink, bold=True, max_lines=1, slot="pipeline.title")
         cv.text(rx + 0.3, py + 0.4, rw - 0.3, ph - 0.4, p.get("desc", ""), ds.SZ["body_sm"], cv.sub, line_spacing=1.35, max_lines=2, slot="pipeline.desc")
-    moat = s.get("moat") or {}; my = y + 0.45 + 3 * (ph + 0.12) + 0.15; mh = ds.BODY_B - my - 1.15
-    cv.card(rx, my, rw, mh, style="accent"); cv.label(rx + 0.4, my + 0.3, rw - 0.8, "DATA MOAT", color="FFFFFF")
-    cv.text(rx + 0.4, my + 0.7, rw - 0.8, mh - 1.3, moat.get("title", ""), ds.SZ["card_title"], ds.C["white"], bold=True, line_spacing=1.3, max_lines=3, slot="moat.title")
-    cv.text(rx + 0.4, my + mh - 0.55, rw - 0.8, 0.45, moat.get("desc", ""), ds.SZ["body_sm"], ds.C["white"], max_lines=1, slot="moat.desc")
+    moat = s.get("moat") or {}; my = y + 0.45 + 3 * (ph + 0.10) + 0.15; mh = ds.BODY_B - my - 0.95
+    cv.card(rx, my, rw, mh, style="accent"); cv.label(rx + 0.4, my + 0.28, rw - 0.8, "DATA MOAT", color="FFFFFF")
+    cv.text(rx + 0.4, my + 0.58, rw - 0.8, 1.05, moat.get("title", ""), ds.SZ["card_title"], ds.C["white"], bold=True, line_spacing=1.15, max_lines=2, slot="moat.title")
+    cv.text(rx + 0.4, my + mh - 0.40, rw - 0.8, 0.35, moat.get("desc", ""), ds.SZ["body_sm"], ds.C["white"], max_lines=1, slot="moat.desc")
     if s.get("safety"):
-        sy = ds.BODY_B - 1.0; cv.card(rx, sy, rw, 0.9); cv.text(rx + 0.35, sy + 0.1, rw - 0.7, 0.7, "SAFETY · " + s["safety"], ds.SZ["small"], cv.sub, anchor="middle", line_spacing=1.3, max_lines=3, slot="safety")
+        sy = ds.BODY_B - 0.85; cv.card(rx, sy, rw, 0.75); cv.text(rx + 0.35, sy + 0.08, rw - 0.7, 0.6, "SAFETY · " + s["safety"], ds.SZ["small"], cv.sub, anchor="middle", line_spacing=1.25, max_lines=3, slot="safety")
 
 @register("mvp_scope")
 def mvp_scope(cv, s, slide):
