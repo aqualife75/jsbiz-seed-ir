@@ -1,0 +1,6 @@
+{"skill": "seed-ir", "cases": [
+  {"id": "full_run", "input": "evals/fixtures/셀아이", "command": "/seed-ir \"evals/fixtures/셀아이\" --yes --out tests/_out/evals",
+   "expect": ["10_final/*_Seed_IR_Deck.pptx", "10_final/피칭가이드.md", "05_review/trace_report.json:untraced==[]", "09_build/qa_report.md:BLOCKING: 0", "slides 12~14 + appendix"]},
+  {"id": "resume_from_5", "input": "tests/_out/evals/*_셀아이_SeedIR", "command": "/seed-ir \"evals/fixtures/셀아이\" --resume --from 5 --yes",
+   "expect": ["09_build rebuilt", "07_slides_v2.json unchanged (sha256 same)", "trace OK"]}
+]}
