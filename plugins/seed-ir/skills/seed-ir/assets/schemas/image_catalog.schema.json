@@ -1,0 +1,7 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "title": "image_catalog", "type": "object", "required": ["images"],
+ "properties": {"images": {"type": "array", "items": {"type": "object",
+   "required": ["file", "origin", "description", "kind", "suggested_topics", "quality"],
+   "properties": {"file": {"type": "string"}, "origin": {"type": "string"}, "w": {"type": "integer"}, "h": {"type": "integer"},
+     "description": {"type": "string", "minLength": 5}, "kind": {"enum": ["product", "screen", "chart", "photo", "logo", "cert", "table", "diagram", "other"]},
+     "suggested_topics": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 12}},
+     "has_korean_text": {"type": "boolean"}, "quality": {"enum": ["ok", "low"]}}}}}}

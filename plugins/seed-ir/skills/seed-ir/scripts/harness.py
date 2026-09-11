@@ -5,7 +5,8 @@
   python harness.py init <입력폴더> [--team 팀명] [--out 폴더]
   python harness.py extract --ws <워크스페이스>
   python harness.py status  --ws <워크스페이스>
-  (Task 5~7, 13에서 validate / trace / gate / build / qa / pdf 추가)
+  python harness.py validate <target> --ws <워크스페이스> [--file 경로]
+  (Task 6~7, 13에서 trace / gate / build / qa / pdf 추가)
 """
 from __future__ import annotations
 import argparse, json, re, sys
@@ -20,6 +21,7 @@ except Exception:  # noqa: BLE001
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import extractors  # noqa: E402
+import validate  # noqa: E402
 from state import State, PHASES  # noqa: E402
 
 _TEAM_RE = re.compile(r"참가신청서_(.+?)_[^_]+\.[A-Za-z0-9]+$")  # 포스텍 파일명 규칙: …_참가신청서_{팀명}_{팀장}.hwp
@@ -100,7 +102,16 @@ def cmd_status(args) -> int:
         print(f"  gate→{g}: {'OK' if v['ok'] else 'BLOCK'} {'; '.join(v['reasons'])}")
     return 0
 
-SUBCOMMANDS = {"init": cmd_init, "extract": cmd_extract, "status": cmd_status}
+def cmd_validate(args) -> int:
+    ws = _ws_from_args(args)
+    errs = validate.validate_phase(ws, args.target, Path(args.file) if args.file else None)
+    if errs:
+        print(f"VALIDATE {args.target}: FAIL ({len(errs)})")
+        for e in errs: print("  -", e)
+        return 1
+    print(f"VALIDATE {args.target}: OK"); return 0
+
+SUBCOMMANDS = {"init": cmd_init, "extract": cmd_extract, "status": cmd_status, "validate": cmd_validate}
 
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(prog="harness.py", description="seed-ir 하네스")
@@ -108,6 +119,10 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("init"); p.add_argument("input_dir"); p.add_argument("--team"); p.add_argument("--out")
     for name in ("extract", "status"):
         p = sub.add_parser(name); p.add_argument("--ws", required=True)
+    p = sub.add_parser("validate")
+    p.add_argument("target", choices=list(validate._TARGET_FILES))
+    p.add_argument("--ws", required=True)
+    p.add_argument("--file")
     return ap
 
 def main(argv=None) -> int:

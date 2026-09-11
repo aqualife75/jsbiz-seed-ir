@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "fact_pack", "type": "object",
+  "required": ["company", "items", "topic_slots", "gaps", "contact"],
+  "properties": {
+    "company": {"type": "object", "required": ["name", "one_liner"], "properties": {
+      "name": {"type": "string", "minLength": 1}, "one_liner": {"type": "string", "minLength": 1},
+      "founded": {"type": "string"}, "ceo": {"type": "string"}, "headcount": {"type": "string"}}},
+    "items": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object",
+      "required": ["key", "value", "asof", "source", "status"],
+      "properties": {"key": {"type": "string"}, "value": {"type": "string"}, "asof": {"type": "string"}, "source": {"type": "string"},
+                     "status": {"enum": ["given", "missing", "partial"]}}}},
+    "topic_slots": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object",
+      "required": ["topic_id", "facts", "images", "status"],
+      "properties": {"topic_id": {"type": "integer", "minimum": 1, "maximum": 12}, "facts": {"type": "array", "items": {"type": "string"}},
+                     "images": {"type": "array", "items": {"type": "string"}}, "status": {"enum": ["sufficient", "partial", "missing"]}}}},
+    "gaps": {"type": "array", "items": {"type": "object", "required": ["item", "why_needed", "topic_ids"],
+      "properties": {"item": {"type": "string"}, "why_needed": {"type": "string"}, "topic_ids": {"type": "array", "items": {"type": "integer"}}}}},
+    "contact": {"type": "object", "properties": {"name": {"type": "string"}, "email": {"type": "string"}, "phone": {"type": "string"}}}
+  }
+}

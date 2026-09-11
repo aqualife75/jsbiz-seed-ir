@@ -1,0 +1,6 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "title": "image_ledger", "type": "object", "required": ["images"],
+ "properties": {"images": {"type": "array", "items": {"type": "object",
+   "required": ["file", "license", "retrieved", "used_in_slides", "needs_human_review"],
+   "properties": {"file": {"type": "string"}, "url": {"type": "string"}, "page_url": {"type": "string"}, "title": {"type": "string"},
+     "author": {"type": "string"}, "license": {"enum": ["team", "quote", "cc", "public", "official", "unknown"]}, "license_note": {"type": "string"},
+     "retrieved": {"type": "string"}, "used_in_slides": {"type": "array", "items": {"type": "integer"}}, "needs_human_review": {"type": "boolean"}}}}}}

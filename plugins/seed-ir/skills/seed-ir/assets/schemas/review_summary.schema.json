@@ -1,0 +1,12 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "title": "review_summary", "type": "object",
+ "required": ["scores", "question_check", "issues", "attack_questions", "to_reach_85"],
+ "properties": {
+   "scores": {"type": "object", "required": ["vc", "ac", "domain", "finance", "layman", "avg"],
+     "additionalProperties": {"type": "number", "minimum": 0, "maximum": 100}},
+   "question_check": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object", "required": ["topic_id", "verdict", "reason"],
+     "properties": {"topic_id": {"type": "integer", "minimum": 1, "maximum": 12}, "verdict": {"enum": ["O", "△", "X"]}, "reason": {"type": "string"}}}},
+   "issues": {"type": "array", "items": {"type": "object", "required": ["id", "severity", "slide_no", "text", "fix_hint", "status"],
+     "properties": {"id": {"type": "string"}, "severity": {"enum": ["critical", "major", "minor"]}, "slide_no": {"type": "integer"},
+       "text": {"type": "string"}, "fix_hint": {"type": "string"}, "status": {"enum": ["open", "resolved", "accepted"]}, "resolution": {"type": "string"}}}},
+   "attack_questions": {"type": "array", "minItems": 10, "maxItems": 20, "items": {"type": "string"}},
+   "to_reach_85": {"type": "array", "items": {"type": "string"}}}}

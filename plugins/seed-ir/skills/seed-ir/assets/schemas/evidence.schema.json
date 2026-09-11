@@ -1,0 +1,7 @@
+{"$schema": "http://json-schema.org/draft-07/schema#", "title": "evidence", "type": "object", "required": ["records"],
+ "properties": {"records": {"type": "array", "items": {"type": "object",
+   "required": ["id", "topic_id", "claim", "value", "source_title", "publisher", "url", "retrieved", "tier", "confidence"],
+   "properties": {"id": {"type": "string"}, "topic_id": {"type": "integer"}, "slide_no": {"type": "integer"}, "claim": {"type": "string"},
+     "value": {"type": "string"}, "unit": {"type": "string"}, "asof": {"type": "string"}, "source_title": {"type": "string"}, "publisher": {"type": "string"},
+     "url": {"type": "string"}, "retrieved": {"type": "string"}, "tier": {"enum": ["A", "B", "C"]}, "capture_file": {"type": "string"},
+     "quote": {"type": "string"}, "confidence": {"enum": ["high", "mid", "low"]}}}}}}
