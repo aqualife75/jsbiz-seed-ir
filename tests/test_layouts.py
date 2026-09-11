@@ -7,6 +7,7 @@ from layouts import LAYOUTS
 
 GROUP1 = ["problem_cascade", "problem_grid", "alt_table", "quadrant", "solution_steps", "product_screens", "tech_moat", "mvp_scope"]
 GROUP2 = ["traction_plan", "kpi_chart", "bm_pricing", "market_tam", "gtm_funnel", "growth_phases"]
+GROUP3 = ["milestone_gates", "team_cards", "vision_close", "appendix_qa", "evidence_capture"]
 
 def sample_slots(layout: str) -> dict:
     S = {
@@ -79,6 +80,26 @@ def sample_slots(layout: str) -> dict:
           "phases": [{"label": "PHASE 1 · 0~12개월", "title": "습관을 증명한다", "desc": "유료 1,000명, 월 이탈 6% 이하.", "kpi": "7일 기록 70% · 연결률 60%"}, {"label": "PHASE 2 · 13~24개월", "title": "채널로 확장한다", "desc": "보험사·검진기관 B2B2C 계약.", "kpi": "계약 3건 · 유료 3만 명"}, {"label": "PHASE 3 · 25개월~", "title": "근거를 자산화한다", "desc": "HbA1c 개선 임상 검증.", "kpi": "논문 1편 · 유료 10만 명"}],
           "flywheel": ["사진을 찍는다", "인식률이 오른다", "반응 곡선이 정교해진다", "이탈이 줄고 LTV가 는다"],
           "expansion": "당뇨 전단계 1,409만 명, 임신성 당뇨, 만성신장질환 — 엔진은 그대로, 가이드 규칙만 교체."},
+      "milestone_gates": {"kicker": "11 · MILESTONE", "title": "24개월, **4개의 관문**", "lead": "각 구간은 다음 단계로 넘어갈 자격을 증명하는 지표 하나로 판정합니다.",
+          "gates": [{"label": "M1 · 0~3개월", "title": "문제 검증", "bullets": ["인터뷰 20명 이상", "7일 기록 실험", "시제품 사용성 테스트", "안전 문구 전문가 검토"], "gate": "예약금 결제 기반 사용 의향 50%"},
+                    {"label": "M2 · 4~9개월", "title": "MVP 출시", "bullets": ["인식 모델 v1 학습", "iOS·Android 출시", "유료 결제 오픈", "교육센터 파일럿 3곳"], "gate": "유료 1,000명 · 월 이탈 6% 이하"},
+                    {"label": "M3 · 10~18개월", "title": "채널 확장", "bullets": ["CGM 다기종 연동", "의료진용 리포트", "보험사·검진기관 계약", "반응 곡선 고도화"], "gate": "B2B2C 계약 3건 · 유료 3만 명"},
+                    {"label": "M4 · 19~24개월", "title": "근거 확보", "bullets": ["HbA1c 개선 연구 착수", "학회 발표·논문 투고", "의료기기 트랙 검토", "시리즈 A 라운드"], "gate": "임상 근거 1편 · 유료 10만 명", "tone": "teal"}],
+          "ask_band": {"amount": "5,000만 원", "runway": "12개월 런웨이", "use_of_funds": "AI 인식 모델 개발·데이터 라이선스 45% · 앱 개발 및 인프라 30% · 고객 검증·파일럿 15% · 법무·규제 자문 10%"}},
+      "team_cards": {"kicker": "12 · TEAM", "title": "기술·임상·현장을 **한 팀 안에**", "lead": "세 역량이 모두 필요하고, 하나라도 비면 제품이 성립하지 않습니다.",
+          "members": [{"role": "FOUNDER · CEO", "title": "제품 · 고객 검증", "desc": "고객 인터뷰 20건과 4주 행동 검증을 직접 설계·실행합니다.", "kpi": "문제 공감률 · 유료 전환률 · 이탈률", "tone": "dark"},
+                      {"role": "AI LEAD · 채용 진행", "title": "음식 인식 모델", "desc": "AI Hub 공공 데이터(53.7만 장)로 인식 모델을 학습합니다.", "kpi": "Top-3 인식 정확도"},
+                      {"role": "PRODUCT ENGINEER · 채용 진행", "title": "앱 · 데이터 파이프라인", "desc": "3초 촬영과 2탭 보정을 실제로 구현합니다.", "kpi": "첫 기록 완료율 70%"}],
+          "advisors": [{"title": "내분비내과 전문의", "desc": "분석 결과 표현의 의학적 타당성 검토"}, {"title": "당뇨병 교육 간호사 · 임상영양사", "desc": "행동 가이드 문구의 현장 적합성 검증"}, {"title": "의료기기 규제 자문", "desc": "비의료기기 범위 유지 조건 설계"}],
+          "principle": {"title": "인원을 늘리기 전에\n지표를 먼저\n통과합니다", "desc": "시드 12개월은 3인 코어 팀으로 운영합니다.", "list": ["임상 검증 담당", "B2B2C 사업개발", "데이터 엔지니어"]},
+          "footnote": "※ AI Lead·Product Engineer는 시드 자금 집행과 함께 채용 예정."},
+      "vision_close": {"kicker": "13 · VISION", "headline": "식사 관리가\n**참는 일**이 아니라\n**아는 일**이 되도록", "body": "당뇨 관리는 오랫동안 '금지 목록'이었습니다.\n글루코픽은 그 자리를 데이터로 대체합니다.",
+          "one_liner": "파스타는 CGM 착용자, 닥터다이어리는 커뮤니티,\n**우리는 외식하는 당뇨인 전용**입니다.",
+          "cards": [{"label": "3년 후", "big": "유료 10만 명", "sub": "연 환산 매출 약 180억 원"}, {"label": "증명하려는 것", "big": "HbA1c 개선", "sub": "주 5일 기록 시 1.2%p 추가 감소", "tone": "teal"}, {"label": "궁극적으로", "big": "1,939만 명의\n혈당 관리 인프라로", "sub": "전단계·임신성·만성신장질환까지", "tone": "accent"}],
+          "brand": "GlucoPic", "tagline": "사진 한 장이 오늘의 혈당을 바꿉니다", "ask_line": "Seed 5,000만 원 · 12개월 런웨이", "panel_image": None},
+      "appendix_qa": {"kicker": "APPENDIX · Q&A", "title": "예상 질문과 답", "qa": [{"q": "경쟁사 대비 기술적 해자는?", "a": "한식 사진 × 실제 식후 혈당 쌍 데이터. 사용자 1만 명 기준 연 730만 건 축적."}, {"q": "의료기기 규제는?", "a": "예측·진단을 하지 않는 생활 관리 참고 정보로 출시. 임상 근거 확보 후 트랙 검토."},
+                     {"q": "CAC는 얼마인가?", "a": "[확보 필요] 1차 검증 후 실측. 상한 7.5만 원 가정."}, {"q": "왜 지금인가?", "a": "CGM 급여 확대(2024.12)·만성질환관리 본사업 전환(2024.09)."}]},
+      "evidence_capture": {"kicker": "APPENDIX · EVIDENCE", "title": "대한당뇨병학회 Diabetes Fact Sheet 2024 — 조절률 32.4%", "image": None, "caption": "원문 캡처 — 인지율·치료율·조절률 표", "source": "대한당뇨병학회 「Diabetes Fact Sheet 2024」 p.12 · 수집 2026-09-11 · URL은 증거 원장 참조"},
     }
     return S[layout]
 
@@ -119,3 +140,11 @@ def test_kpi_chart_has_native_chart(out_dir):
     p, _ = _spec_for(["kpi_chart"], out_dir); build_deck.build(p, out_dir / "k.pptx")
     prs = Presentation(str(out_dir / "k.pptx"))
     assert any(sh.has_chart for sh in prs.slides[0].shapes)
+
+@pytest.mark.parametrize("layout", GROUP3)
+def test_group3_builds_without_warnings(layout, out_dir):
+    p, spec = _spec_for([layout], out_dir)
+    assert validate.validate_obj(spec, "deck_spec") == []
+    rep = build_deck.build(p, out_dir / f"{layout}.pptx")
+    # evidence_capture는 이미지 None → '이미지 확보 필요' 경고 1건 허용
+    assert [w for w in rep["warnings"] if w["slot"] != "image"] == [], rep["warnings"]

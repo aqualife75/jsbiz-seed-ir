@@ -12,4 +12,4 @@ def register(name: str):
 from . import l_cover_intro  # noqa: E402,F401
 from . import l_problem, l_solution  # noqa: E402,F401
 from . import l_market_bm  # noqa: E402,F401
-# Task 12에서 추가: from . import l_plan_team
+from . import l_plan_team  # noqa: E402,F401
