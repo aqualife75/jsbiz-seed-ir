@@ -10,4 +10,5 @@ def register(name: str):
     return deco
 
 from . import l_cover_intro  # noqa: E402,F401
-# Task 10~12에서 추가: from . import l_problem, l_solution, l_market_bm, l_plan_team
+from . import l_problem, l_solution  # noqa: E402,F401
+# Task 11~12에서 추가: from . import l_market_bm, l_plan_team
