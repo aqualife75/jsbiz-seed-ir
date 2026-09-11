@@ -7,7 +7,8 @@
   python harness.py status  --ws <워크스페이스>
   python harness.py validate <target> --ws <워크스페이스> [--file 경로]
   python harness.py trace --ws <워크스페이스> [--file 경로]
-  (Task 7, 13에서 gate / build / qa / pdf 추가)
+  python harness.py gate <phase> --ws <워크스페이스> [--accept-risk]
+  (Task 13에서 build / qa / pdf 추가)
 """
 from __future__ import annotations
 import argparse, json, re, sys
@@ -24,6 +25,7 @@ sys.path.insert(0, str(HERE))
 import extractors  # noqa: E402
 import validate  # noqa: E402
 import trace_numbers  # noqa: E402
+import gate  # noqa: E402
 from state import State, PHASES  # noqa: E402
 
 _TEAM_RE = re.compile(r"참가신청서_(.+?)_[^_]+\.[A-Za-z0-9]+$")  # 포스텍 파일명 규칙: …_참가신청서_{팀명}_{팀장}.hwp
@@ -127,7 +129,14 @@ def cmd_trace(args) -> int:
         return 1
     print(f"TRACE: OK ({rep['checked']}장, 허용 토큰 {rep['allowed_tokens']}개)"); return 0
 
-SUBCOMMANDS = {"init": cmd_init, "extract": cmd_extract, "status": cmd_status, "validate": cmd_validate, "trace": cmd_trace}
+def cmd_gate(args) -> int:
+    ws = _ws_from_args(args)
+    ok, reasons = gate.check(ws, args.phase, accept_risk=args.accept_risk)
+    print(f"GATE → phase {args.phase}: {'OK' if ok else 'BLOCK'}")
+    for r in reasons: print("  -", r)
+    return 0 if ok else 1
+
+SUBCOMMANDS = {"init": cmd_init, "extract": cmd_extract, "status": cmd_status, "validate": cmd_validate, "trace": cmd_trace, "gate": cmd_gate}
 
 def build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(prog="harness.py", description="seed-ir 하네스")
@@ -142,6 +151,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("trace")
     p.add_argument("--ws", required=True)
     p.add_argument("--file")
+    p = sub.add_parser("gate"); p.add_argument("phase", choices=["2","3","4","5","6","final"]); p.add_argument("--ws", required=True); p.add_argument("--accept-risk", action="store_true")
     return ap
 
 def main(argv=None) -> int:
