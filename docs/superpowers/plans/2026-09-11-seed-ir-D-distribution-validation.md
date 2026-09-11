@@ -76,7 +76,7 @@ img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
 <body>
 <header><div class="wrap"><span class="badge">정석Biz · Claude Code 플러그인</span>
 <h1>seed-ir — 자료 폴더 하나로 Seed IR Deck 만들기</h1>
-<p class="lead">참가신청서·사업계획서·사진을 폴더에 넣고 한 문장만 말하면, 6개 AI 에이전트가 KDB 창업교육 「IR Deck 작성」 12주제 기준으로 <b>거버닝 메시지 → 5인 모의심사 → 근거 조사 → 디자인 → 5분 피칭 대본</b>까지 만들어 줍니다. 자료에 없는 숫자는 만들지 않고 <b>[확보 필요]</b>로 남깁니다.</p>
+<p class="lead">참가신청서·사업계획서·사진을 폴더에 넣고 한 문장만 말하면, 6개 AI 에이전트가 정석Biz 노하우 「IR Deck 작성」 12주제 기준으로 <b>거버닝 메시지 → 5인 모의심사 → 근거 조사 → 디자인 → 5분 피칭 대본</b>까지 만들어 줍니다. 자료에 없는 숫자는 만들지 않고 <b>[확보 필요]</b>로 남깁니다.</p>
 <nav>…10개 섹션 앵커…</nav></div></header>
 <main class="wrap">
 <section id="outputs"><h2>1. 무엇이 나오나요?</h2> … 결과물 4종 카드(PPTX·PDF·피칭가이드.md·검수 PNG) + 예시 슬라이드 이미지 3장(`docs/img/example_01.png` 등 — Task 19에서 셀아이 예시 덱 PNG 3장 복사) </section>
@@ -90,7 +90,7 @@ img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
 진행 중 두 번 물어봅니다: ① 스토리라인 표(12~14장) 확인 ② 조사로도 못 채운 critical이 남으면 "계속/중단". 소요 40~60분, 6단계 진행 표 </section>
 <section id="check"><h2>6. 결과 확인 — 이 3가지만</h2> ① `10_final/qa_png/` 슬라이드 그림 ② `피칭가이드.md`의 "제출 전 확보 필요 목록" ③ 같은 파일의 "라이선스 확인 필요 이미지" 표 — 사람이 최종 판단 </section>
 <section id="revise"><h2>7. 수정 요청은 대화로</h2> 문장 예시 8(80주차 STEP 7 표 재사용: 숫자가 안 보인다/강조색이 많다/표가 출처와 겹친다/제목이 길다/카드가 넘친다/여백/줄바꿈/숫자 대조표) + "확보 목록 채운 뒤 `/seed-ir <폴더> --from 4`" </section>
-<section id="principle"><h2>8. 원리 — KDB 12 주제와 투자자의 질문</h2> 12행 표(주제 | 투자자의 질문) + 슬라이드 해부학 4요소 + "없는 숫자는 만들지 않는다 → trace" 설명 </section>
+<section id="principle"><h2>8. 원리 — 정석Biz 노하우 12 주제와 투자자의 질문</h2> 12행 표(주제 | 투자자의 질문) + 슬라이드 해부학 4요소 + "없는 숫자는 만들지 않는다 → trace" 설명 </section>
 <section id="faq"><h2>9. 자주 묻는 질문</h2> hwp가 안 읽힘(한글에서 PDF 저장) / Office 없음(PPTX만, PDF는 PowerPoint·Keynote) / 폰트 깨짐(Pretendard 설치) / 비용·시간 / 개인정보(로컬 저장만, 외부 전송 없음) / 영문 덱은(jsbiz-global-ir) </section>
 <section id="disclaimer"><h2>10. 꼭 알아두세요</h2> 최종 책임은 발표자 · 모든 숫자·출처 직접 검증 · 라이선스 미확인 이미지는 제출 전 정리 · 교육용 예시(셀아이)는 가상 </section>
 </main>
@@ -161,7 +161,7 @@ def main():
 if __name__ == "__main__": main()
 ```
 - [ ] **Step 5: 로컬 설치 + CLAUDE.md 1줄** — `python scripts/install_local.py --target "DB/.claude"` 실행. `DB/CLAUDE.md` '자동화 스크립트' 절 끝에 추가:
-  `- **Seed IR Deck 하네스(`seed-ir`)** — 창업팀 자료 폴더 → KDB 12주제 기준 Seed IR Deck(PPTX+PDF+피칭가이드) 6 에이전트 자동 작성. 개발 원본 `00. A_B_정석Biz/99. 프로젝트/2026.09.11_seed-ir-deck_하네스/jsbiz-seed-ir/`(git, GitHub aqualife75/jsbiz-seed-ir), 설치본 `.claude/skills/seed-ir` + `.claude/agents/ir-*.md`(저장소 수정 시 `python scripts/install_local.py --target .claude`로 재복사). 사용: `/seed-ir "<자료폴더>"`.`
+  `- **Seed IR Deck 하네스(`seed-ir`)** — 창업팀 자료 폴더 → 정석Biz 노하우 12주제 기준 Seed IR Deck(PPTX+PDF+피칭가이드) 6 에이전트 자동 작성. 개발 원본 `00. A_B_정석Biz/99. 프로젝트/2026.09.11_seed-ir-deck_하네스/jsbiz-seed-ir/`(git, GitHub aqualife75/jsbiz-seed-ir), 설치본 `.claude/skills/seed-ir` + `.claude/agents/ir-*.md`(저장소 수정 시 `python scripts/install_local.py --target .claude`로 재복사). 사용: `/seed-ir "<자료폴더>"`.`
 - [ ] **Step 6: 플러그인 트리거 확인** — 저장소 루트에서 새 세션: `/plugin marketplace add <저장소 절대경로>` → `/plugin install seed-ir@jsbiz-seed-ir` → `/seed-ir` 자동완성과 에이전트 목록에 `seed-ir:ir-intake` 등 6개가 보이는지 확인. 확인 결과를 `docs/superpowers/plans/…D….md` 하단 '실행 기록'에 적는다.
 - [ ] **Step 7: 커밋**
 

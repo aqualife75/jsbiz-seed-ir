@@ -63,7 +63,7 @@ Expected: FAIL (FileNotFoundError 또는 collection error — conftest 없음)
     {
       "name": "seed-ir",
       "source": "./plugins/seed-ir",
-      "description": "창업팀 자료 폴더 → KDB 12주제·투자자 질문 기준 Seed IR Deck(PPTX+PDF+피칭가이드) 자동 작성. 6 에이전트(자료 판독·본문·5인 심사·근거 조사·디자인·5분 피칭 검수) + 숫자 추적 하네스",
+      "description": "창업팀 자료 폴더 → 정석Biz 노하우 12주제·투자자 질문 기준 Seed IR Deck(PPTX+PDF+피칭가이드) 자동 작성. 6 에이전트(자료 판독·본문·5인 심사·근거 조사·디자인·5분 피칭 검수) + 숫자 추적 하네스",
       "author": { "name": "정석Biz (이동건)" }
     }
   ]

@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 설계서 `docs/superpowers/specs/2026-09-11-seed-ir-harness-design.md`대로, 창업팀 자료 폴더 → KDB 12주제 기준 Seed IR Deck(PPTX+PDF+피칭가이드)을 6개 에이전트가 만들고 스크립트가 숫자 추적·게이트를 강제하는 Claude Code 플러그인 `seed-ir`를 완성한다.
+**Goal:** 설계서 `docs/superpowers/specs/2026-09-11-seed-ir-harness-design.md`대로, 창업팀 자료 폴더 → 정석Biz 노하우 12주제 기준 Seed IR Deck(PPTX+PDF+피칭가이드)을 6개 에이전트가 만들고 스크립트가 숫자 추적·게이트를 강제하는 Claude Code 플러그인 `seed-ir`를 완성한다.
 
 **Architecture:** 결정적 작업(추출·검증·숫자 추적·게이트·빌드·렌더)은 `plugins/seed-ir/skills/seed-ir/scripts/`의 Python CLI `harness.py`가, 판단 작업은 `plugins/seed-ir/agents/`의 6개 서브에이전트가, 순서·게이트·재개는 `skills/seed-ir/SKILL.md` 오케스트레이터가 맡는다. 워크스페이스 `{날짜}_{팀명}_SeedIR/`에 번호순 JSON 산출물과 `state.json`이 쌓인다.
 
@@ -39,7 +39,7 @@ jsbiz-seed-ir/
 │   ├── agents/{ir-intake,ir-writer,ir-panel,ir-researcher,ir-designer,ir-finalizer}.md
 │   └── skills/seed-ir/
 │       ├── SKILL.md
-│       ├── references/{kdb_12_topics,investor_lenses,writing_rules,review_rubric,evidence_policy,design_system,pitch_5min,qa_checklist}.md
+│       ├── references/{jsbiz_12_topics,investor_lenses,writing_rules,review_rubric,evidence_policy,design_system,pitch_5min,qa_checklist}.md
 │       ├── scripts/
 │       │   ├── harness.py  state.py  validate.py  trace_numbers.py  gate.py
 │       │   ├── design_system.py  prep_image.py  build_deck.py  layouts/{__init__,base,l_cover_intro,l_problem,l_solution,l_market_bm,l_plan_team}.py

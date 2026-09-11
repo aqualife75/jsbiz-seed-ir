@@ -4,7 +4,7 @@
 
 **Goal:** 에이전트가 읽는 기준 문서 8종(`references/`), 근거 캡처 스크립트, 서브에이전트 6개 정의, 오케스트레이터 `SKILL.md`를 완성해 `/seed-ir <폴더>` 한 문장으로 6단계가 돌아가게 한다.
 
-**Architecture:** 기준 문서는 KDB 교안 Ver4.0 원문(슬라이드 12~30) + 정석Biz 프롬프트팩 STEP 0~5 + 샘플 디자인 토큰을 그대로 옮긴 것. 에이전트 정의는 "시작 시 읽을 references → 입력 파일 → 절차 → 절대 규칙 → 출력 계약(JSON 파일 경로 + 10줄 요약)" 5부 구조. 오케스트레이터는 내용 판단 없이 `harness.py` 호출·Agent 호출·게이트·체크포인트만 한다.
+**Architecture:** 기준 문서는 정석Biz 노하우 강의안 Ver4.0 원문(슬라이드 12~30) + 정석Biz 프롬프트팩 STEP 0~5 + 샘플 디자인 토큰을 그대로 옮긴 것. 에이전트 정의는 "시작 시 읽을 references → 입력 파일 → 절차 → 절대 규칙 → 출력 계약(JSON 파일 경로 + 10줄 요약)" 5부 구조. 오케스트레이터는 내용 판단 없이 `harness.py` 호출·Agent 호출·게이트·체크포인트만 한다.
 
 경로 약어: `S` = `plugins/seed-ir/skills/seed-ir`, `SC` = `S/scripts`, `R` = `S/references`, `AG` = `plugins/seed-ir/agents`, `T` = `tests`.
 
@@ -13,11 +13,11 @@
 ### Task 14: 기준 문서 8종 (`references/`)
 
 **Files:**
-- Create: `R/kdb_12_topics.md`, `R/investor_lenses.md`, `R/writing_rules.md`, `R/review_rubric.md`, `R/evidence_policy.md`, `R/design_system.md`, `R/pitch_5min.md`, `R/qa_checklist.md`, `T/test_references.py`
+- Create: `R/jsbiz_12_topics.md`, `R/investor_lenses.md`, `R/writing_rules.md`, `R/review_rubric.md`, `R/evidence_policy.md`, `R/design_system.md`, `R/pitch_5min.md`, `R/qa_checklist.md`, `T/test_references.py`
 
 **Interfaces:**
 - Produces: 에이전트가 `Read`로 읽는 마크다운. 각 파일 첫 줄은 `# <제목>`이고, 표의 열 이름은 아래 그대로(에이전트 프롬프트가 열 이름을 참조).
-- 원문 출처: KDB 교안 텍스트는 다음 명령으로 다시 뽑아 대조한다(작성 중 한 번 실행):
+- 원문 출처: 정석Biz 노하우 강의안 텍스트는 다음 명령으로 다시 뽑아 대조한다(작성 중 한 번 실행):
   ```bash
   PYTHONUTF8=1 python -c "from pptx import Presentation; p=Presentation(r'D:/BRIAN Dropbox/Lee Dong-Geon/00. A_창업 교육/00. 2026년도_창업/2026.09.15_포스텍_IR Deck 강의/3교시_AI로 만드는 Seed IR Deck 초안/[KDB_강의교안] IR Deck작성_Ver4.0.pptx'); [print(i, '|', ' / '.join(pp.text.strip() for sh in s.shapes if sh.has_text_frame for pp in sh.text_frame.paragraphs if pp.text.strip())[:400]) for i, s in enumerate(p.slides, 1) if 11 <= i <= 30]"
   ```
@@ -30,15 +30,15 @@ from pathlib import Path
 import re
 
 R = Path(__file__).resolve().parents[1] / "plugins/seed-ir/skills/seed-ir/references"
-FILES = ["kdb_12_topics", "investor_lenses", "writing_rules", "review_rubric", "evidence_policy", "design_system", "pitch_5min", "qa_checklist"]
+FILES = ["jsbiz_12_topics", "investor_lenses", "writing_rules", "review_rubric", "evidence_policy", "design_system", "pitch_5min", "qa_checklist"]
 
 def test_all_reference_files_exist_with_title():
     for f in FILES:
         p = R / f"{f}.md"; assert p.exists(), f
         assert p.read_text(encoding="utf-8").startswith("# "), f
 
-def test_kdb_topics_has_12_rows_and_questions():
-    t = (R / "kdb_12_topics.md").read_text(encoding="utf-8")
+def test_jsbiz_topics_has_12_rows_and_questions():
+    t = (R / "jsbiz_12_topics.md").read_text(encoding="utf-8")
     for k in ["| 1 | 표지", "| 6 | 시장 규모", "| 12 | 자금 조달 계획", "투자자의 질문", "작성 가이드", "증거 우선순위", "Navigator", "Governing Message"]:
         assert k in t, k
 
@@ -65,16 +65,16 @@ def test_pitch_timing_sums_to_300():
 
 - [ ] **Step 2: 실행해 실패 확인** — Run: `PYTHONUTF8=1 python -m pytest tests/test_references.py -q` → FAIL
 
-- [ ] **Step 3: 문서 작성** — 아래 내용을 각 파일에 그대로 넣는다(표 문구는 KDB 원문 유지).
+- [ ] **Step 3: 문서 작성** — 아래 내용을 각 파일에 그대로 넣는다(표 문구는 정석Biz 강의안 원문 유지).
 
-`R/kdb_12_topics.md`
+`R/jsbiz_12_topics.md`
 ```markdown
-# KDB IR Deck 12 주제 × 투자자의 질문 × 작성 가이드 (KDB 창업교육 「IR Deck 작성」 Ver4.0 기준)
+# 정석Biz 노하우 IR Deck 12 주제 × 투자자의 질문 × 작성 가이드 (정석Biz 노하우 「IR Deck 작성」 강의안 Ver4.0 기준)
 
 > 표지부터 비전까지 12개 주제를 중심으로 슬라이드를 만들고, 스토리텔링 흐름에 따라 순서를 앞뒤로 바꾸거나 추가 주제를 반영한다.
-> 각 장의 제목(Governing Message)은 그 주제의 **투자자의 질문에 대한 답 한 문장**이어야 한다. 11 비전·12 The Ask의 질문은 KDB 표에 없어 정석Biz가 보완했다.
+> 각 장의 제목(Governing Message)은 그 주제의 **투자자의 질문에 대한 답 한 문장**이어야 한다. 11 비전·12 The Ask의 질문은 원 강의안 표에 없어 강사가 보완했다.
 
-## 슬라이드 해부학 (KDB 「슬라이드 구성」)
+## 슬라이드 해부학 (정석Biz 노하우 「슬라이드 구성」)
 | 요소 | 역할 | deck_spec 슬롯 |
 |---|---|---|
 | Navigator | 이 장표의 주제(문제정의·해결방안 등)를 표시 | `kicker` |
@@ -83,7 +83,7 @@ def test_pitch_timing_sums_to_300():
 | 페이지 번호 | Q&A에서 어느 장표로 갈지 빠르게 확인 | 자동 |
 
 ## 12 주제
-| # | 주제 | 투자자의 질문 (KDB 「투자자 관점에서 바라보는 시각」) | 작성 가이드 (KDB 「슬라이드 구성」 요약) | 증거 우선순위 |
+| # | 주제 | 투자자의 질문 (정석Biz 노하우 「투자자 관점에서 바라보는 시각」) | 작성 가이드 (정석Biz 노하우 「슬라이드 구성」 요약) | 증거 우선순위 |
 |---|---|---|---|---|
 | 1 | 표지 | 창업팀이 발견한 문제와 해결책이 이거였어? 정말 좋은 아이템인지 궁금하네 | 서비스 소개(필수) 한 줄: 누구(핵심 타겟 고객)의 무슨 문제를 어떻게 해결하는 솔루션 / __명·__억원 규모의 무슨 문제를 기존 대비 __% 빠르게 해결하는 AI 솔루션. 서비스 소개를 가장 강조. 핵심 기능을 보여주는 제품 이미지. 팀 정보(대표 이름·연락처) | 제품 이미지 1 (팀 자료) |
 | 2 | 문제 배경 & 문제 정의 | 창업팀이 제시한 트렌드가 최근 주목받고 있구나! 여기에 무슨 기회가 있는 거지? / 창업팀과 고객이 직접 경험한 문제가 해결할 필요성이 있는 중요한 문제인가? / 그 문제가 정말 중요하다면 고객이 기존에 해결하기 위한 대체재·경쟁사가 있을 텐데 그게 무엇이지? / 대체재·경쟁사가 아직 해결해주지 못한 문제가 무엇인가? | 문제 배경: 최근 시장 트렌드 변화와 기회를 다양한 증거(통계·기사·고객조사)로. 목표 고객: 문제를 겪는 고객을 명확히 정의, 프로파일. 고객이 겪는 문제: 구체적으로, 크기가 심각함을 강조, 증거(기사·인터뷰). 대체재/경쟁사: 고객이 기존에 문제를 해결하는 방식, 쏟는 노력(시간·비용·횟수)을 정량으로, 대체재가 해결 못 하는 문제 | 통계 2 · 기사 1 · 인터뷰 인용 1 · 대체재 캡처 2 |
@@ -95,23 +95,23 @@ def test_pitch_timing_sums_to_300():
 | 8 | 시장 진입 & 성장 전략 | 지금의 창업팀은 듣보잡인데 시장에 어떻게 진입하지? | 잠재 고객을 구매 고객으로 확보하는 마케팅·홍보 전략을 구체적으로. 핵심 목표 고객·이해관계자 이해 기반의 빠른 고객 확보. 매년 2~3배 성장 논리 | 채널 실재 근거 1 |
 | 9 | 마일스톤 | 최소 5년 동안 어떻게 성장할 거야? | 1~2년 또는 5년 이내 매출·자금 확보 계획을 현실적·구체적으로. 단계별 매출 성장 계획과 자금 확보 계획. X·Y 그래프로. Seed 극초기는 런웨이·사용 계획 중심, 목표엔 [목표] | 팀 계획 + 벤치마크 1 |
 | 10 | 팀 역량 | 지금까지 제시한 사업계획을 정말 잘 실현할 수 있는 팀인가? | 비즈니스 모델과 유사한 경험·경력. 확장에 도움 줄 핵심 파트너. 풀타임·지분 관계(정석Biz) | 팀 자료 (외부는 공식 프로필 확인만) |
-| 11 | 비전 | 이 팀은 결국 어디까지 가려는 거지? (정석Biz 보완) | 추구하는 사업 목표를 간결·명확하게. 제품·서비스가 보여주려는 이미지. 예) 전 세계의 환경 문제를 어떻게 해결하는 기업이 되겠습니다 | — |
-| 12 | 자금 조달 계획 & 사용 방안 (The Ask) | 얼마를 어디에 쓰고, 그 돈으로 다음엔 무엇을 보여줄 건데? (정석Biz 보완) | 성장에 필요한 1년 정도의 자금 규모와 조달 계획(투자·정부지원·대출)과 사용처(마케팅·인력 채용). 마일스톤에 추가 반영 가능. Seed에서는 필수 12번째 주제 | 팀 자금 계획 + Seed 규모 벤치마크(옵션) |
+| 11 | 비전 | 이 팀은 결국 어디까지 가려는 거지? (강사 보완) | 추구하는 사업 목표를 간결·명확하게. 제품·서비스가 보여주려는 이미지. 예) 전 세계의 환경 문제를 어떻게 해결하는 기업이 되겠습니다 | — |
+| 12 | 자금 조달 계획 & 사용 방안 (The Ask) | 얼마를 어디에 쓰고, 그 돈으로 다음엔 무엇을 보여줄 건데? (강사 보완) | 성장에 필요한 1년 정도의 자금 규모와 조달 계획(투자·정부지원·대출)과 사용처(마케팅·인력 채용). 마일스톤에 추가 반영 가능. Seed에서는 필수 12번째 주제 | 팀 자금 계획 + Seed 규모 벤치마크(옵션) |
 
-## 추가 반영 가능 주제 (KDB)
+## 추가 반영 가능 주제 (정석Biz 노하우)
 - 제품/기술 강점: 경쟁사가 쉽게 따라잡기 어려운 진입 장벽(특허·수상) → 3·7에 반영
 - 시장 분석: 시장의 성장 추이와 변화 → 2·6에 반영
 - Exit 전략: M&A·IPO(Seed·Series 단계부터) → 9에 반영
 
-## IR 흐름 설계 원칙 (KDB 「IR Deck 구성의 방향성」)
+## IR 흐름 설계 원칙 (정석Biz 노하우 「IR Deck 구성의 방향성」)
 - 궁금증 유발 전략은 쓰지 않는다. 투자자는 IR에 100% 집중하지 않는다.
 - **표지에서 먼저 정답(목표 고객·문제·가치제안)을 알려주고, 이것이 왜 정답인지 증거를 보여주며 설득**한다.
 - 팀 역량이 강점이면 앞으로 배치하는 등 스토리텔링에 따라 순서 변경 가능(닥터테일 사례: 표지→배경→문제→솔루션→경쟁우위→시장→고객확보→수익→GTM→퍼널→고객반응→계획→성장→특허→수상→팀→목표→투자 요약).
 
-## 슬라이드 작성 고려 사항 9 (KDB)
+## 슬라이드 작성 고려 사항 9 (정석Biz 노하우)
 1. 똑같은 단어·문장 반복 제거 2. 정성 표현보다 정량 표현 3. 앞 장과 자연스럽게 연결되는지 4. 숫자·단위 표기 오류 점검 5. 흐름상 순서 변경 필요하면 변경 6. 투자자가 이해하기 어려운 전문 용어는 쉬운 용어로 7. 텍스트 과다 금지 8. 제목·캡션 없는 사진 금지 9. 과도한 애니메이션·전환 금지
 
-## 이미지 사용 원칙 (KDB)
+## 이미지 사용 원칙 (정석Biz 노하우)
 - 장표 내용과 직접 연결된 이미지만. 증거가 담긴 이미지가 좋다. 몰입을 방해하는 이미지(솔루션 오인 유발) 금지. 글자 색은 2가지 이상 넘지 않게.
 ```
 
@@ -271,7 +271,7 @@ def test_pitch_timing_sums_to_300():
 kicker(Navigator) → title(Governing Message, `**핵심 구절**`만 강조) → lead → 본문 슬롯 → source_line → 페이지(자동) → notes(대본)
 
 ## 레이아웃 22종 — 주제 매핑과 배경
-| layout | KDB 주제 | 배경 | 언제 |
+| layout | 정석Biz 노하우 주제 | 배경 | 언제 |
 |---|---|---|---|
 | `cover` | 1 | dark | 항상 1장. 우측 패널 = 제품 이미지(Tier A) 또는 현장 이미지 |
 | `statement` | 전환점 | dark | 문제→해결 전환, 투자 모멘텀. 최대 2장 |
@@ -301,7 +301,7 @@ kicker(Navigator) → title(Governing Message, `**핵심 구절**`만 강조) �
 ## 슬롯 글자수 상한
 `assets/limits.json`이 원본. 상한을 넘기면 `harness.py validate deck_spec`이 막는다. **글자를 줄이지 말고 문장을 줄인다. 숫자는 바꾸지 않는다.**
 
-## 디자이너 규칙 (정석Biz IR 전용 규칙 + KDB 이미지 원칙)
+## 디자이너 규칙 (정석Biz IR 전용 규칙 + 정석Biz 노하우 이미지 원칙)
 1. 한 장 한 메시지. 제목 = slides_v2의 title 그대로(핵심 숫자 하나만 강조색)
 2. 그 장에서 가장 큰 글자는 핵심 수치(카드 `big`), 단위는 작게
 3. 킥커에 주제 번호·서브넘버링(`02 · PROBLEM 1`)
@@ -380,7 +380,7 @@ kicker(Navigator) → title(Governing Message, `**핵심 구절**`만 강조) �
 - [ ] **Step 5: 커밋**
 
 ```bash
-git add -A && git -c user.name="Lee Dong-Geon" -c user.email="leedg.brian@gmail.com" commit -m "docs(references): KDB 12주제·렌즈·작성규칙·루브릭·증거정책·디자인시스템·피칭·QA
+git add -A && git -c user.name="Lee Dong-Geon" -c user.email="leedg.brian@gmail.com" commit -m "docs(references): 정석Biz 노하우 12주제·렌즈·작성규칙·루브릭·증거정책·디자인시스템·피칭·QA
 
 Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 ```
@@ -539,7 +539,7 @@ def test_rules_present():
 ```markdown
 ---
 name: ir-intake
-description: Seed IR Deck 하네스 1단계. 워크스페이스 01_extract/의 추출 텍스트·이미지를 전량 판독해 02_fact_pack.json(10항목 사실 팩 + KDB 12주제 데이터 슬롯 + 부족 목록)과 01_extract/image_catalog.json(이미지별 비전 판독 설명·종류·추천 주제)을 만든다. seed-ir 오케스트레이터가 호출한다. 프롬프트에 WS=와 SKILL_DIR= 줄이 있어야 한다.
+description: Seed IR Deck 하네스 1단계. 워크스페이스 01_extract/의 추출 텍스트·이미지를 전량 판독해 02_fact_pack.json(10항목 사실 팩 + 정석Biz 노하우 12주제 데이터 슬롯 + 부족 목록)과 01_extract/image_catalog.json(이미지별 비전 판독 설명·종류·추천 주제)을 만든다. seed-ir 오케스트레이터가 호출한다. 프롬프트에 WS=와 SKILL_DIR= 줄이 있어야 한다.
 tools: Read, Write, Bash, Glob, Grep
 ---
 
@@ -547,7 +547,7 @@ tools: Read, Write, Bash, Glob, Grep
 
 ## 입력
 프롬프트의 `WS=` (워크스페이스), `SKILL_DIR=` (스킬 폴더). 먼저 읽을 것:
-1. `SKILL_DIR/references/kdb_12_topics.md` — 12 주제·투자자 질문·증거 우선순위
+1. `SKILL_DIR/references/jsbiz_12_topics.md` — 12 주제·투자자 질문·증거 우선순위
 2. `SKILL_DIR/references/writing_rules.md` — 라벨 규칙
 3. `WS/01_extract/manifest.json` → 나열된 모든 `*.txt`를 **전량** Read(길면 offset/limit으로 나눠 끝까지). 이미지는 `WS/01_extract/images/*`를 **한 장씩 Read(비전)** 한다.
 4. `SKILL_DIR/assets/schemas/fact_pack.schema.json`, `image_catalog.schema.json` — 출력 형식
@@ -576,15 +576,15 @@ tools: Read, Write, Bash, Glob, Grep
 ```markdown
 ---
 name: ir-writer
-description: Seed IR Deck 하네스 2단계. 02_fact_pack.json을 바탕으로 KDB 12주제 × 투자자 질문으로 스토리라인(03_storyline.json, 12~14장)을 짜고, 장마다 거버닝 메시지(질문의 답 한 문장)·리드·근거 3·핵심 수치·출처·남는 의문의 7필드 본문(04_slides_v1.json)을 쓴다. seed-ir 오케스트레이터가 호출. MODE=storyline 또는 MODE=slides.
+description: Seed IR Deck 하네스 2단계. 02_fact_pack.json을 바탕으로 정석Biz 노하우 12주제 × 투자자 질문으로 스토리라인(03_storyline.json, 12~14장)을 짜고, 장마다 거버닝 메시지(질문의 답 한 문장)·리드·근거 3·핵심 수치·출처·남는 의문의 7필드 본문(04_slides_v1.json)을 쓴다. seed-ir 오케스트레이터가 호출. MODE=storyline 또는 MODE=slides.
 tools: Read, Write, Bash
 ---
 
-너는 정석Biz Seed IR Deck 하네스의 **작성자(ir-writer)** 다. KDB 「IR Deck 작성」의 12 주제와 투자자의 질문을 뼈대로, 사실 팩에 있는 것만으로 거버닝 메시지와 본문을 쓴다.
+너는 정석Biz Seed IR Deck 하네스의 **작성자(ir-writer)** 다. 정석Biz 노하우 「IR Deck 작성」의 12 주제와 투자자의 질문을 뼈대로, 사실 팩에 있는 것만으로 거버닝 메시지와 본문을 쓴다.
 
 ## 입력
 `WS=`, `SKILL_DIR=`, `MODE=storyline|slides`. 먼저 읽을 것:
-1. `SKILL_DIR/references/kdb_12_topics.md`, `investor_lenses.md`, `writing_rules.md`
+1. `SKILL_DIR/references/jsbiz_12_topics.md`, `investor_lenses.md`, `writing_rules.md`
 2. `WS/02_fact_pack.json`, `WS/01_extract/image_catalog.json`
 3. (MODE=slides) `WS/03_storyline.json`
 4. 스키마: `SKILL_DIR/assets/schemas/storyline.schema.json`, `slides.schema.json`
@@ -592,13 +592,13 @@ tools: Read, Write, Bash
 ## MODE=storyline (STEP 1)
 - 라운드: Seed 극초기(법인 전후·매출 0). 문제·팀·시장 두껍게, 재무 얇게.
 - 12 주제를 12~14장에 배분(합치기 허용, `topic_ids`에 모두 표기). 논리 전환점에 `statement` 1~2장(예: 문제→해결 사이). 표지 1장은 topic 1.
-- 장마다 `investor_question`(kdb_12_topics 표의 질문 그대로) · `key_message`(그 질문의 **답 한 문장**, 사실 팩 숫자 포함) · `type` · `data_status`(사실 팩 슬롯 상태 기준. 전부 sufficient면 의심하라).
+- 장마다 `investor_question`(jsbiz_12_topics 표의 질문 그대로) · `key_message`(그 질문의 **답 한 문장**, 사실 팩 숫자 포함) · `type` · `data_status`(사실 팩 슬롯 상태 기준. 전부 sufficient면 의심하라).
 - 저장 `WS/03_storyline.json` → `python "SKILL_DIR/scripts/harness.py" validate storyline --ws "WS"` 통과.
 - 반환에 표(장번호 | 주제 | 질문 | 답 한 문장 | 상태)를 그대로 넣는다(오케스트레이터가 사용자에게 보여준다).
 
 ## MODE=slides (STEP 2)
 - 스토리라인 순서대로 장마다 7필드(writing_rules.md). 제목은 결론 문장, 근거 불릿 ≤3 각 숫자 포함, 핵심 수치 ≤3(kind·source·필요시 calc), 출처줄, 남는 의문 1.
-- 주제별 가이드는 kdb_12_topics.md의 '작성 가이드' 열을 따른다. 경쟁(7) 장은 `weakness_row` 필수. The Ask(12)는 금액·밸류(없으면 "[기입 필요: 기업가치]")·사용처·이번 라운드 마일스톤.
+- 주제별 가이드는 jsbiz_12_topics.md의 '작성 가이드' 열을 따른다. 경쟁(7) 장은 `weakness_row` 필수. The Ask(12)는 금액·밸류(없으면 "[기입 필요: 기업가치]")·사용처·이번 라운드 마일스톤.
 - 자료에 없는 것은 `[기입 필요: 항목]`으로 남긴다(창작 금지). 추정은 `[추정]`+`calc`, 목표는 `[목표]`.
 - 이미지가 필요한 장은 `labels`에 `image:<파일명>`(카탈로그의 파일)을 적는다.
 - 저장 `WS/04_slides_v1.json` → `validate slides` 통과 → `python "SKILL_DIR/scripts/harness.py" trace --ws "WS" --file "WS/04_slides_v1.json"` 실행. 미추적 숫자가 나오면 **그 숫자를 사실 팩의 값으로 고치거나 `[기입 필요]`로 바꾼다**(새 숫자 금지). trace OK까지 반복.
@@ -623,7 +623,7 @@ tools: Read, Write, Bash
 
 ## 입력
 `WS=`, `SKILL_DIR=`, `PERSONA=`. 먼저 읽을 것:
-1. `SKILL_DIR/references/review_rubric.md`(내 persona 행), `kdb_12_topics.md`(12 질문), `investor_lenses.md`
+1. `SKILL_DIR/references/review_rubric.md`(내 persona 행), `jsbiz_12_topics.md`(12 질문), `investor_lenses.md`
 2. `WS/04_slides_v1.json`, `WS/02_fact_pack.json`
 3. (chair) `WS/05_review/numbers_check.json`, `panel_vc.json`, `panel_ac.json`, `panel_domain.json`, `panel_finance.json`, `panel_layman.json`, 스키마 `SKILL_DIR/assets/schemas/review_summary.schema.json`
 
@@ -663,7 +663,7 @@ tools: Read, Write, Bash, Glob, WebSearch, WebFetch
 
 ## 입력
 `WS=`, `SKILL_DIR=`, `MODE=gap|merge`, (gap) `TOPIC_ID=`. 먼저 읽을 것:
-1. `SKILL_DIR/references/evidence_policy.md`(Tier·채널·evidence_targets·원장 필드), `kdb_12_topics.md`, `writing_rules.md`
+1. `SKILL_DIR/references/evidence_policy.md`(Tier·채널·evidence_targets·원장 필드), `jsbiz_12_topics.md`, `writing_rules.md`
 2. `WS/02_fact_pack.json`, `WS/04_slides_v1.json`, `WS/05_review/summary.json`, `WS/01_extract/image_catalog.json`
 3. 스키마 `SKILL_DIR/assets/schemas/evidence.schema.json`, `image_ledger.schema.json`, `slides.schema.json`
 
@@ -805,7 +805,7 @@ def test_skill_frontmatter_and_phases():
 ```markdown
 ---
 name: seed-ir
-description: 창업팀 자료 폴더(hwp/hwpx·pdf·docx·pptx·xlsx·이미지)를 넣으면 KDB 창업교육 「IR Deck 작성」 12주제 × 투자자 질문 기준으로 Seed IR Deck(PPTX+PDF+5분 피칭가이드)을 자동 작성하는 멀티 에이전트 하네스 오케스트레이터. 6단계 — ①자료 판독(사실 팩·이미지 카탈로그) ②스토리라인·거버닝 메시지·본문 ③검산+5인 모의심사 ④인터넷·논문 근거 조사·개정 ⑤글루코픽 샘플 수준 디자인 PPTX ⑥5분 피칭 검수·대본·Q&A 부록. 모든 숫자는 사실 팩/증거 원장으로 추적되며(trace) 없는 숫자는 [확보 필요]로 남긴다. 트리거: "/seed-ir <폴더>", "이 폴더 자료로 Seed IR덱 만들어줘", "참가신청서로 IR Deck 초안", "투자 발표자료 5분용으로", "IR덱 자동 생성", "포스텍 창업경진대회 IR". 비트리거: 영문 데모데이 덱(→jsbiz-global-ir), 정부지원사업 사업계획서 첨삭(→biz-mentor), 기존 덱 검토만.
+description: 창업팀 자료 폴더(hwp/hwpx·pdf·docx·pptx·xlsx·이미지)를 넣으면 정석Biz 노하우 「IR Deck 작성」 12주제 × 투자자 질문 기준으로 Seed IR Deck(PPTX+PDF+5분 피칭가이드)을 자동 작성하는 멀티 에이전트 하네스 오케스트레이터. 6단계 — ①자료 판독(사실 팩·이미지 카탈로그) ②스토리라인·거버닝 메시지·본문 ③검산+5인 모의심사 ④인터넷·논문 근거 조사·개정 ⑤글루코픽 샘플 수준 디자인 PPTX ⑥5분 피칭 검수·대본·Q&A 부록. 모든 숫자는 사실 팩/증거 원장으로 추적되며(trace) 없는 숫자는 [확보 필요]로 남긴다. 트리거: "/seed-ir <폴더>", "이 폴더 자료로 Seed IR덱 만들어줘", "참가신청서로 IR Deck 초안", "투자 발표자료 5분용으로", "IR덱 자동 생성", "포스텍 창업경진대회 IR". 비트리거: 영문 데모데이 덱(→jsbiz-global-ir), 정부지원사업 사업계획서 첨삭(→biz-mentor), 기존 덱 검토만.
 ---
 
 # /seed-ir — Seed IR Deck 멀티 에이전트 하네스 (오케스트레이터)
