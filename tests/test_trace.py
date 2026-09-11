@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
+import pytest
 import trace_numbers as tn
 
 def test_tokens_normalize():
@@ -33,3 +34,20 @@ def test_run_writes_report(out_dir):
     (out_dir / "04_slides_v1.json").write_text(json.dumps({"slides": [{"no": 1, "title": "31명", "lead": "", "evidence": [], "key_numbers": []}]}), encoding="utf-8")
     rep = tn.run(out_dir, None)
     assert rep["untraced"] == [] and (out_dir / "05_review" / "trace_report.json").exists()
+
+def test_calc_on_evidence_unlocks_same_slide_title():
+    allowed = {"233", "20", "1", "4900", "12"}
+    slide5 = {"no": 5, "title": "연 29억 원 시장", "lead": "",
+              "evidence": [{"text": "SOM 29억 원", "source": "s", "calc": "233만 × 20% × 1% × 4,900원 × 12"}],
+              "key_numbers": []}
+    assert tn.check_slides({"slides": [slide5]}, allowed) == []
+
+    # 부정 대조군: slide 5의 verified 토큰이 slide 6으로 새어나가면 안 됨
+    slide6 = {"no": 6, "title": "29억", "lead": "", "evidence": [], "key_numbers": []}
+    un = tn.check_slides({"slides": [slide5, slide6]}, allowed)
+    assert not any(u["slide_no"] == 5 for u in un)
+    assert any(u["slide_no"] == 6 and u["token"] == "29" for u in un)
+
+def test_run_missing_fact_pack_raises(out_dir):
+    with pytest.raises(FileNotFoundError):
+        tn.run(out_dir, None)

@@ -115,7 +115,11 @@ def cmd_validate(args) -> int:
 
 def cmd_trace(args) -> int:
     ws = _ws_from_args(args)
-    rep = trace_numbers.run(ws, Path(args.file) if args.file else None)
+    try:
+        rep = trace_numbers.run(ws, Path(args.file) if args.file else None)
+    except (FileNotFoundError, ValueError) as exc:
+        print(f"[오류] {exc}")
+        return 1
     if rep["untraced"]:
         print(f"TRACE: FAIL — 미추적 숫자 {len(rep['untraced'])}건 (자료·증거에 없는 숫자는 만들지 마세요)")
         for u in rep["untraced"][:40]:

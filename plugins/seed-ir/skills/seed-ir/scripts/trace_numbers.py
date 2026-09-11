@@ -39,13 +39,16 @@ def collect_allowed(fact_pack: dict, evidence: dict | None) -> set[str]:
         for s in _all_strings(evidence): allowed |= tokens(s)
     return allowed
 
+def _calc_verified(calc: str | None, allowed: set[str]) -> bool:
+    """calc 수식이 비어있지 않고, 그 안의 모든 숫자가 allowed(사실 팩/증거)에 있으면 True."""
+    if not calc: return False
+    calc_toks = tokens(calc)
+    return bool(calc_toks) and calc_toks <= allowed
+
 def _check_text(no, field, text, allowed, out, calc=None):
     for tok in sorted(tokens(text)):
         if tok in allowed: continue
-        if calc:
-            calc_toks = tokens(calc)
-            if calc_toks and calc_toks <= allowed:
-                continue
+        if _calc_verified(calc, allowed): continue
         out.append({"slide_no": no, "field": field, "token": tok, "context": (text or "")[:60]})
 
 def check_slides(doc: dict, allowed: set[str]) -> list[dict]:
@@ -57,17 +60,11 @@ def check_slides(doc: dict, allowed: set[str]) -> list[dict]:
         # (이미 검증된 동일 숫자를 제목 등에서 재진술하는 경우를 오탐하지 않기 위함).
         verified = set()
         for e in s.get("evidence", []):
-            calc = e.get("calc")
-            if calc:
-                calc_toks = tokens(calc)
-                if calc_toks and calc_toks <= allowed:
-                    verified |= tokens(e.get("text", ""))
+            if _calc_verified(e.get("calc"), allowed):
+                verified |= tokens(e.get("text", ""))
         for k in s.get("key_numbers", []):
-            calc = k.get("calc")
-            if calc:
-                calc_toks = tokens(calc)
-                if calc_toks and calc_toks <= allowed:
-                    verified |= tokens(f"{k.get('value','')}{k.get('unit','')}")
+            if _calc_verified(k.get("calc"), allowed):
+                verified |= tokens(f"{k.get('value','')}{k.get('unit','')}")
         field_allowed = allowed | verified
         for f in _FIELDS:
             if s.get(f): _check_text(no, f, s[f], field_allowed, out)
@@ -77,13 +74,29 @@ def check_slides(doc: dict, allowed: set[str]) -> list[dict]:
             _check_text(no, f"key_numbers[{i}].value", f"{k.get('value','')}{k.get('unit','')}", allowed, out, k.get("calc"))
     return out
 
+def _load_json(path: Path) -> dict:
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+        raise ValueError(f"JSON 파싱 실패 {Path(path).name}: {exc}") from exc
+
 def run(ws: Path, slides_file: Path | None) -> dict:
     ws = Path(ws)
-    fp = json.loads((ws / "02_fact_pack.json").read_text(encoding="utf-8"))
+    fp_path = ws / "02_fact_pack.json"
+    if not fp_path.exists():
+        raise FileNotFoundError(f"사실 팩 없음: {fp_path} — ir-intake 단계를 먼저 완료하세요")
+    fp = _load_json(fp_path)
     ev_path = ws / "06_evidence" / "evidence.json"
-    ev = json.loads(ev_path.read_text(encoding="utf-8")) if ev_path.exists() else None
-    sf = Path(slides_file) if slides_file else (ws / "07_slides_v2.json" if (ws / "07_slides_v2.json").exists() else ws / "04_slides_v1.json")
-    doc = json.loads(sf.read_text(encoding="utf-8"))
+    ev = _load_json(ev_path) if ev_path.exists() else None
+    if slides_file:
+        sf = Path(slides_file)
+    elif (ws / "07_slides_v2.json").exists():
+        sf = ws / "07_slides_v2.json"
+    elif (ws / "04_slides_v1.json").exists():
+        sf = ws / "04_slides_v1.json"
+    else:
+        raise FileNotFoundError("슬라이드 파일 없음 (04_slides_v1.json / 07_slides_v2.json)")
+    doc = _load_json(sf)
     allowed = collect_allowed(fp, ev)
     untraced = check_slides(doc, allowed)
     rep = {"slides_file": str(sf), "checked": len(doc.get("slides", [])), "allowed_tokens": len(allowed), "untraced": untraced}
