@@ -29,7 +29,17 @@ def decode_para_text(payload: bytes) -> str:
         elif c < 32:
             j += 16 if c in _EXTENDED_CTRL else 2
             chars.append(" ")
-        elif 0xD800 <= c <= 0xDFFF:
+        elif 0xD800 <= c <= 0xDBFF:
+            if j + 4 <= len(payload):
+                c2 = struct.unpack("<H", payload[j + 2:j + 4])[0]
+                if 0xDC00 <= c2 <= 0xDFFF:
+                    chars.append(chr(0x10000 + ((c - 0xD800) << 10) + (c2 - 0xDC00)))
+                    j += 4
+                else:
+                    j += 2
+            else:
+                j += 2
+        elif 0xDC00 <= c <= 0xDFFF:
             j += 2
         else:
             chars.append(chr(c)); j += 2
