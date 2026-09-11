@@ -35,6 +35,24 @@ def test_extract_writes_dumps_and_manifest(out_dir):
     txts = list((ws / "01_extract").glob("*.txt"))
     assert len(txts) == 1 and "1,234명" in txts[0].read_text(encoding="utf-8")
 
+def test_extract_non_workspace_returns_1(out_dir):
+    assert harness.main(["extract", "--ws", str(out_dir / "nope")]) == 1
+
+def test_extract_warns_unsupported_and_dedupes_stems(out_dir):
+    d = out_dir / "in2"; d.mkdir(parents=True, exist_ok=True)
+    (d / "보고서.txt").write_text("A 본문", encoding="utf-8")
+    (d / "보고서.md").write_text("B 본문", encoding="utf-8")
+    (d / "기타.zzz").write_text("무시됨", encoding="utf-8")
+    harness.main(["init", str(d), "--out", str(out_dir / "ws3"), "--team", "덮어팀"])
+    ws = next((out_dir / "ws3").glob("*_덮어팀_SeedIR"))
+    assert harness.main(["extract", "--ws", str(ws)]) == 0
+    man = json.loads((ws / "01_extract" / "manifest.json").read_text(encoding="utf-8"))
+    assert any("기타.zzz" in w for w in man["warnings"])
+    assert len(man["files"]) == 2
+    t1 = (ws / "01_extract" / "보고서.txt").read_text(encoding="utf-8")
+    t2 = (ws / "01_extract" / "보고서_2.txt").read_text(encoding="utf-8")
+    assert t1 != t2
+
 def test_state_roundtrip(out_dir):
     ws = out_dir / "ws2"; ws.mkdir(exist_ok=True)
     st = state.State.new(ws, team="T", input_dir=str(ws))

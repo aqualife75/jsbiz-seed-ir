@@ -24,6 +24,9 @@ from state import State, PHASES  # noqa: E402
 
 _TEAM_RE = re.compile(r"참가신청서_(.+?)_[^_]+\.[A-Za-z0-9]+$")  # 포스텍 파일명 규칙: …_참가신청서_{팀명}_{팀장}.hwp
 
+class WorkspaceError(Exception):
+    """워크스페이스 경로가 유효하지 않을 때 발생 (main()이 처리해 항상 int를 반환하도록 함)."""
+
 def infer_team(input_dir: Path) -> str:
     for f in sorted(Path(input_dir).iterdir()):
         m = _TEAM_RE.search(f.name)
@@ -34,7 +37,7 @@ def infer_team(input_dir: Path) -> str:
 def _ws_from_args(args) -> Path:
     ws = Path(args.ws).resolve()
     if not (ws / "state.json").exists():
-        sys.exit(f"[오류] 워크스페이스가 아닙니다: {ws}")
+        raise WorkspaceError(f"워크스페이스가 아닙니다: {ws}")
     return ws
 
 def cmd_init(args) -> int:
@@ -62,11 +65,18 @@ def cmd_extract(args) -> int:
     inputs = json.loads((ws / "inputs.json").read_text(encoding="utf-8"))
     ex = ws / "01_extract"; img_dir = ex / "images"; ex.mkdir(exist_ok=True); img_dir.mkdir(exist_ok=True)
     manifest = {"files": [], "total_chars": 0, "total_images": 0, "warnings": []}
+    used: set[str] = set()
     for f in inputs["files"]:
         if not f["supported"]:
             manifest["warnings"].append(f"미지원 건너뜀: {f['name']}"); continue
         res = extractors.extract_file(f["path"], img_dir)
         stem = Path(f["name"]).stem[:60]
+        if stem in used:
+            n = 2
+            while f"{stem}_{n}" in used:
+                n += 1
+            stem = f"{stem}_{n}"
+        used.add(stem)
         txt = ex / f"{stem}.txt"
         if res["text"].strip():
             txt.write_text(res["text"], encoding="utf-8")
@@ -103,7 +113,11 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv=None) -> int:
     ap = build_parser()
     args = ap.parse_args(argv)
-    return SUBCOMMANDS[args.cmd](args)
+    try:
+        return SUBCOMMANDS[args.cmd](args)
+    except WorkspaceError as exc:
+        print(f"[오류] {exc}")
+        return 1
 
 if __name__ == "__main__":
     raise SystemExit(main())
