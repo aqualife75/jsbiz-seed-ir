@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 """Canvas 프리미티브 — 모든 레이아웃이 이것만으로 그린다."""
 from __future__ import annotations
-import math, os, re, tempfile
+import glob, math, os, re, sys, tempfile
 from dataclasses import dataclass, field
+from functools import lru_cache
 from pathlib import Path
+from PIL import ImageFont
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
@@ -28,14 +30,91 @@ class DeckCtx:
 
 def rgb(h: str) -> RGBColor: return RGBColor.from_string(h.lstrip("#").upper())
 
+# ── 실측 텍스트 폭(Pretendard) — 단어 경계 줄바꿈(wrap_words)의 기반 ──
+def _font_search_dirs() -> list[str]:
+    if sys.platform.startswith("win"):
+        dirs = ["C:/Windows/Fonts"]
+        local = os.environ.get("LOCALAPPDATA")
+        if local: dirs.append(os.path.join(local, "Microsoft", "Windows", "Fonts"))
+        return dirs
+    if sys.platform == "darwin":
+        return [os.path.expanduser("~/Library/Fonts"), "/Library/Fonts"]
+    return [os.path.expanduser("~/.fonts"), "/usr/share/fonts"]
+
+def _glob_font(d: str, pattern: str) -> str | None:
+    if not os.path.isdir(d): return None
+    matches = sorted(glob.glob(os.path.join(d, pattern))) or sorted(glob.glob(os.path.join(d, "**", pattern), recursive=True))
+    return matches[0] if matches else None
+
+@lru_cache(maxsize=2)
+def _find_pretendard(bold: bool) -> str | None:
+    """Pretendard Bold/Regular(otf/ttf) 탐색, 없으면 Variable 폰트로 대체. 못 찾으면 None(휴리스틱 폴백)."""
+    weight_pattern = "Pretendard-Bold.*" if bold else "Pretendard-Regular.*"
+    for d in _font_search_dirs():
+        found = _glob_font(d, weight_pattern)
+        if found: return found
+    for d in _font_search_dirs():
+        found = _glob_font(d, "PretendardVariable*")
+        if found: return found
+    return None
+
+@lru_cache(maxsize=256)
+def _load_truetype(path: str, size_px: int):
+    return ImageFont.truetype(path, size=size_px)
+
+def measure_width(text: str, size_pt: float, bold: bool = False) -> float:
+    """텍스트의 렌더 폭(인치). Pretendard 실측(4배 크기로 측정 후 축소) 우선, 없으면 휴리스틱."""
+    if not text: return 0.0
+    path = _find_pretendard(bold)
+    if path:
+        try:
+            font = _load_truetype(path, max(1, int(round(size_pt * 4))))
+            return font.getlength(text) / 4 / 72.0
+        except Exception:
+            pass
+    return sum(0.55 if ord(ch) < 0x2E80 else 0.92 for ch in text) * size_pt / 72.0
+
+def wrap_words(text: str, size_pt: float, width_in: float, bold: bool = False) -> list[str]:
+    """공백에서만 줄바꿈(단어 중간 절대 금지). `\\n`은 강제 줄바꿈으로 취급."""
+    text = text or ""
+    safety_width = max(width_in * 0.97 - 0.04, 0.01)
+    lines: list[str] = []
+    for para in text.split("\n"):
+        words = [w for w in para.split(" ") if w]
+        if not words:
+            lines.append(""); continue
+        cur = words[0]
+        for word in words[1:]:
+            candidate = f"{cur} {word}"
+            if measure_width(candidate, size_pt, bold) <= safety_width:
+                cur = candidate
+            else:
+                lines.append(cur); cur = word
+        lines.append(cur)
+    return lines
+
 def est_lines(text: str, size_pt: float, width_in: float) -> int:
-    """문단별 예상 줄 수 합. 한글 0.92em·ASCII 0.55em 평균 폭."""
-    total = 0
-    for para in (text or "").split("\n"):
-        if not para: total += 1; continue
-        w = sum(0.55 if ord(ch) < 0x2E80 else 0.92 for ch in para) * size_pt / 72.0
-        total += max(1, math.ceil(w / max(width_in - 0.1, 0.1)))
-    return total
+    """문단별 예상 줄 수 합 — wrap_words 위임(마크업은 호출측에서 제거)."""
+    return len(wrap_words(text, size_pt, width_in))
+
+def _styled_words(para: str) -> list[list[tuple[str, str]]]:
+    """`**…**`/`__…__` 마크업이 섞인 문단을 '단어' 단위로 쪼갠다.
+    각 단어는 [(text, kind), ...] — kind는 accent/ubold/plain. 마크업 경계가 공백 없이
+    단어 중간에 걸쳐도(예: `**판독**은`) 한 단어로 유지된다. 빈 토큰(연속 공백)은 버린다."""
+    words: list[list[tuple[str, str]]] = []
+    cur: list[tuple[str, str]] = []
+    for piece in _MARK.split(para):
+        if not piece: continue
+        if piece.startswith("**"): txt, kind = piece[2:-2], "accent"
+        elif piece.startswith("__"): txt, kind = piece[2:-2], "ubold"
+        else: txt, kind = piece, "plain"
+        parts = txt.split(" ")
+        for i, part in enumerate(parts):
+            if i > 0 and cur:
+                words.append(cur); cur = []
+            if part: cur.append((part, kind))
+    if cur: words.append(cur)
+    return words
 
 def _set_font(run, name, size, bold, color, spacing=0.0):
     run.font.name = name; run.font.size = Pt(size); run.font.bold = bold; run.font.color.rgb = rgb(color)
@@ -81,10 +160,11 @@ class Canvas:
     # ── 텍스트 ──
     def text(self, x, y, w, h, content, size, color, bold=False, align="left", anchor="top", spacing=0.0, line_spacing=1.2, max_lines=None, slot=""):
         content = content or ""
+        plain = re.sub(r"\*\*|__", "", content)
         if max_lines:
-            est = est_lines(re.sub(r"\*\*|__", "", content), size, w)
+            est = len(wrap_words(plain, size, w, bold))
             if est > max_lines:
-                size -= 1.5; est = est_lines(re.sub(r"\*\*|__", "", content), size, w)
+                size -= 1.5; est = len(wrap_words(plain, size, w, bold))
                 if est > max_lines:
                     self.ctx.warnings.append({"slide": self.ctx.current_no, "slot": slot, "text": content[:30], "lines": est, "max": max_lines})
         tb = self.s.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
@@ -93,14 +173,21 @@ class Canvas:
         for i, para in enumerate(content.split("\n")):
             p = tf.paragraphs[0] if i == 0 else tf.add_paragraph()
             p.alignment = _ALIGN[align]; p.line_spacing = line_spacing; p.space_after = Pt(0)
-            # keep-all: 한글·라틴 단어 중간 줄바꿈 금지 (샘플 덱 규칙, PowerPoint '단어 잘림 허용' 해제)
-            pPr = p._p.get_or_add_pPr(); pPr.set("eaLnBrk", "0"); pPr.set("latinLnBrk", "0")
-            for piece in _MARK.split(para):
-                if not piece: continue
-                r = p.add_run()
-                if piece.startswith("**"): r.text = piece[2:-2]; _set_font(r, ds.FONT, size, True, self.accent, spacing)
-                elif piece.startswith("__"): r.text = piece[2:-2]; _set_font(r, ds.FONT, size, True, color, spacing)
-                else: r.text = piece; _set_font(r, ds.FONT, size, bold, color, spacing)
+            wrapped = wrap_words(para, size, w, bold)
+            words = _styled_words(para)
+            wi = 0
+            for li, line_str in enumerate(wrapped):
+                if li > 0: p.add_line_break()
+                n = len(line_str.split(" ")) if line_str else 0
+                line_words = words[wi:wi + n]; wi += n
+                for widx, word in enumerate(line_words):
+                    if widx > 0:
+                        r = p.add_run(); r.text = " "; _set_font(r, ds.FONT, size, bold, color, spacing)
+                    for txt, kind in word:
+                        r = p.add_run()
+                        if kind == "accent": r.text = txt; _set_font(r, ds.FONT, size, True, self.accent, spacing)
+                        elif kind == "ubold": r.text = txt; _set_font(r, ds.FONT, size, True, color, spacing)
+                        else: r.text = txt; _set_font(r, ds.FONT, size, bold, color, spacing)
         return tb
 
     def kicker(self, text):

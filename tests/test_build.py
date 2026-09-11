@@ -56,3 +56,30 @@ def test_overflow_warning(out_dir):
 
 def test_registry_has_first_three():
     assert {"cover", "statement", "trend_cards"} <= set(LAYOUTS)
+
+def test_wrap_words_never_splits_words():
+    text = "라인은 아는데, 판독은 3명 중 1명만 합니다"
+    lines = base.wrap_words(text, 49.5, 9.0, True)
+    assert " ".join(lines) == text
+    for line in lines:
+        assert base.measure_width(line, 49.5, True) <= 9.0
+    long_word = "가" * 40
+    assert base.wrap_words(long_word, 49.5, 9.0, True) == [long_word]
+
+def test_text_emits_line_breaks_not_pptx_wrapping(out_dir):
+    spec = _spec(out_dir); spec["slides"] = spec["slides"][1:2]
+    statement = "검사는 자동인데, 판독은 아직도 사람이 눈으로 확인합니다"
+    spec["slides"][0]["slots"]["statement"] = statement
+    sp = out_dir / "w.json"; sp.write_text(json.dumps(spec, ensure_ascii=False), encoding="utf-8")
+    build_deck.build(sp, out_dir / "w.pptx")
+    prs = Presentation(str(out_dir / "w.pptx"))
+    paras = [p for sh in prs.slides[0].shapes if sh.has_text_frame for p in sh.text_frame.paragraphs]
+    target = [p for p in paras if "".join(r.text for r in p.runs).replace(" ", "") == statement.replace(" ", "")]
+    assert target
+    p = target[0]
+    assert "<a:br" in p._p.xml
+    words = set(statement.split(" "))
+    for r in p.runs:
+        for tok in r.text.split(" "):
+            if tok:
+                assert tok in words or any(tok in w for w in words)
