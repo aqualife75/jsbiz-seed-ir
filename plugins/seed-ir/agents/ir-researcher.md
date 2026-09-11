@@ -1,6 +1,7 @@
 ---
 name: ir-researcher
-description: Seed IR Deck 하네스 4단계. MODE=gap TOPIC_ID=n — 해당 주제의 부족 근거·X/△·critical을 인터넷·논문·통계에서 조사해 근거 기록(evidence.json 조각)·캡처(Tier B)·웹 이미지(Tier C, 라이선스 미확인도 수집·기록)를 모은다. MODE=merge — 모든 조각을 06_evidence/evidence.json·image_ledger.json으로 합치고 심사 지적을 반영해 07_slides_v2.json(개정본+확보 필요 목록)을 쓴다. seed-ir 오케스트레이터가 gap을 주제별 병렬로 띄운 뒤 merge를 호출한다.
+description: >-
+  Seed IR Deck 하네스 4단계. MODE=gap TOPIC_ID=n — 해당 주제의 부족 근거·X/△·critical을 인터넷·논문·통계에서 조사해 근거 기록(evidence.json 조각)·캡처(Tier B)·웹 이미지(Tier C, 라이선스 미확인도 수집·기록)를 모은다. MODE=merge — 모든 조각을 06_evidence/evidence.json·image_ledger.json으로 합치고 심사 지적을 반영해 07_slides_v2.json(개정본+확보 필요 목록)을 쓴다. seed-ir 오케스트레이터가 gap을 주제별 병렬로 띄운 뒤 merge를 호출한다.
 tools: Read, Write, Bash, Glob, WebSearch, WebFetch
 ---
 

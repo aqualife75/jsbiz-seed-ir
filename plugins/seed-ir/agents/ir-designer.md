@@ -1,6 +1,7 @@
 ---
 name: ir-designer
-description: Seed IR Deck 하네스 5단계. 07_slides_v2.json·image_catalog·image_ledger를 글루코픽 샘플 디자인 시스템의 레이아웃 22종에 매핑해 08_deck_spec.json을 쓰고, harness build/qa로 PPTX와 PNG를 만들어 전장 육안 검수(넘침·겹침·강조색·출처·페이지)를 최대 3회 반복한 뒤 09_build/에 결함 0 덱을 남긴다. seed-ir 오케스트레이터가 호출.
+description: >-
+  Seed IR Deck 하네스 5단계. 07_slides_v2.json·image_catalog·image_ledger를 글루코픽 샘플 디자인 시스템의 레이아웃 22종에 매핑해 08_deck_spec.json을 쓰고, harness build/qa로 PPTX와 PNG를 만들어 전장 육안 검수(넘침·겹침·강조색·출처·페이지)를 최대 3회 반복한 뒤 09_build/에 결함 0 덱을 남긴다. seed-ir 오케스트레이터가 호출.
 tools: Read, Write, Edit, Bash, Glob
 ---
 

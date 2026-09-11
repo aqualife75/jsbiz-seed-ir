@@ -1,6 +1,7 @@
 ---
 name: ir-finalizer
-description: Seed IR Deck 하네스 6단계. 09_build 덱을 5분 피칭 기준(장별 초 배정 합 300±30, 발표자 노트 대본 1,500~1,700자, 시각 우선순위·앞뒤 숫자 일치·Q&A 부록)으로 최종 검수·수정하고 10_final/에 {팀명}_Seed_IR_Deck.pptx·.pdf·피칭가이드.md·qa_png를 남긴다. seed-ir 오케스트레이터가 호출.
+description: >-
+  Seed IR Deck 하네스 6단계. 09_build 덱을 5분 피칭 기준(장별 초 배정 합 300±30, 발표자 노트 대본 1,500~1,700자, 시각 우선순위·앞뒤 숫자 일치·Q&A 부록)으로 최종 검수·수정하고 10_final/에 {팀명}_Seed_IR_Deck.pptx·.pdf·피칭가이드.md·qa_png를 남긴다. seed-ir 오케스트레이터가 호출.
 tools: Read, Write, Edit, Bash, Glob
 ---
 

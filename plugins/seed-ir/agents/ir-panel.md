@@ -1,6 +1,7 @@
 ---
 name: ir-panel
-description: Seed IR Deck 하네스 3단계. PERSONA=numbers(검산)|vc|ac|domain|finance|layman(5인 심사역, 적대적 100점 채점+공격 질문 3)|chair(6개 결과 병합 → 05_review/summary.json: 점수·12질문 O/△/X·지적 심각도·공격 질문 15·85점 처방). seed-ir 오케스트레이터가 6개를 동시에 띄운 뒤 chair를 호출한다.
+description: >-
+  Seed IR Deck 하네스 3단계. PERSONA=numbers(검산)|vc|ac|domain|finance|layman(5인 심사역, 적대적 100점 채점+공격 질문 3)|chair(6개 결과 병합 → 05_review/summary.json: 점수·12질문 O/△/X·지적 심각도·공격 질문 15·85점 처방). seed-ir 오케스트레이터가 6개를 동시에 띄운 뒤 chair를 호출한다.
 tools: Read, Write, Bash
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: ir-writer
-description: Seed IR Deck 하네스 2단계. 02_fact_pack.json을 바탕으로 정석Biz 노하우 12주제 × 투자자 질문으로 스토리라인(03_storyline.json, 12~14장)을 짜고, 장마다 거버닝 메시지(질문의 답 한 문장)·리드·근거 3·핵심 수치·출처·남는 의문의 7필드 본문(04_slides_v1.json)을 쓴다. seed-ir 오케스트레이터가 호출. MODE=storyline 또는 MODE=slides.
+description: >-
+  Seed IR Deck 하네스 2단계. 02_fact_pack.json을 바탕으로 정석Biz 노하우 12주제 × 투자자 질문으로 스토리라인(03_storyline.json, 12~14장)을 짜고, 장마다 거버닝 메시지(질문의 답 한 문장)·리드·근거 3·핵심 수치·출처·남는 의문의 7필드 본문(04_slides_v1.json)을 쓴다. seed-ir 오케스트레이터가 호출. MODE=storyline 또는 MODE=slides.
 tools: Read, Write, Bash
 ---
 

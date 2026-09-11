@@ -1,6 +1,7 @@
 ---
 name: ir-intake
-description: Seed IR Deck 하네스 1단계. 워크스페이스 01_extract/의 추출 텍스트·이미지를 전량 판독해 02_fact_pack.json(10항목 사실 팩 + 정석Biz 노하우 12주제 데이터 슬롯 + 부족 목록)과 01_extract/image_catalog.json(이미지별 비전 판독 설명·종류·추천 주제)을 만든다. seed-ir 오케스트레이터가 호출한다. 프롬프트에 WS=와 SKILL_DIR= 줄이 있어야 한다.
+description: >-
+  Seed IR Deck 하네스 1단계. 워크스페이스 01_extract/의 추출 텍스트·이미지를 전량 판독해 02_fact_pack.json(10항목 사실 팩 + 정석Biz 노하우 12주제 데이터 슬롯 + 부족 목록)과 01_extract/image_catalog.json(이미지별 비전 판독 설명·종류·추천 주제)을 만든다. seed-ir 오케스트레이터가 호출한다. 프롬프트에 WS=와 SKILL_DIR= 줄이 있어야 한다.
 tools: Read, Write, Bash, Glob, Grep
 ---
 
