@@ -16,7 +16,11 @@ SUPPORTED = set(_MAP) | {".md", ".txt", ".csv"}
 def extract_file(path, out_dir) -> dict:
     path = Path(path); ext = path.suffix.lower()
     if ext in (".md", ".txt", ".csv"):
-        return {"kind": "text", "text": path.read_text(encoding="utf-8", errors="replace"), "images": [], "warnings": []}
+        try:
+            text = path.read_text(encoding="utf-8", errors="replace")
+        except Exception as exc:  # noqa: BLE001
+            return {"kind": "text", "text": "", "images": [], "warnings": [f"read failed {path.name}: {exc}"]}
+        return {"kind": "text", "text": text, "images": [], "warnings": []}
     if ext not in _MAP:
         return {"kind": "unsupported", "text": "", "images": [], "warnings": [f"unsupported extension {ext}: {path.name}"]}
     kind, fn = _MAP[ext]

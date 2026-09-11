@@ -17,7 +17,7 @@ def extract(path, out_dir) -> dict:
     images, warnings, k = [], [], 0
     with zipfile.ZipFile(path) as z:
         for n in z.namelist():
-            if n.startswith("word/media/"):
+            if n.startswith("word/media/") and not n.endswith("/"):
                 try:
                     im = Image.open(io.BytesIO(z.read(n))); im.load()
                 except Exception:  # noqa: BLE001

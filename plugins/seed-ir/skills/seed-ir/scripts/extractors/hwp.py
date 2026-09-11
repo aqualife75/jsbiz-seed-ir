@@ -12,9 +12,10 @@ from pathlib import Path
 import olefile
 from PIL import Image
 
+from .images import save_image
+
 HWPTAG_PARA_TEXT = 67
 _EXTENDED_CTRL = {1, 2, 3, 11, 12, 14, 15, 16, 17, 18, 21, 22, 23}
-MIN_IMG_PX = 40
 
 
 def decode_para_text(payload: bytes) -> str:
@@ -123,17 +124,12 @@ def hwp_images(path, out_dir: Path, stem: str) -> tuple[list[dict], list[str]]:
             except Exception as exc:  # noqa: BLE001
                 warnings.append(f"unreadable image {'/'.join(e)}: {exc}")
                 continue
-            if im.width < MIN_IMG_PX or im.height < MIN_IMG_PX:
+            rec = save_image(im, out_dir, stem, n + 1, origin=f"{Path(path).name}:{'/'.join(e)}", prefer_jpg=(ext == "jpg"))
+            if rec is None:
                 warnings.append(f"skip tiny image {'/'.join(e)} {im.size}")
                 continue
             n += 1
-            if ext == "jpg":
-                dst = out_dir / f"{stem}_{n:02d}.jpg"
-                dst.write_bytes(data)
-            else:
-                dst = out_dir / f"{stem}_{n:02d}.png"
-                (im.convert("RGBA") if im.mode in ("P", "LA") else im).save(dst, "PNG")
-            images.append({"file": str(dst), "origin": f"{Path(path).name}:{'/'.join(e)}", "w": im.width, "h": im.height})
+            images.append(rec)
     finally:
         ole.close()
     return images, warnings
