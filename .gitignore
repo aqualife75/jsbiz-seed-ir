@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+tests/_out/
+_seed_ir_test/
+*_SeedIR/
+.pytest_cache/
+*.tmp
+.superpowers/

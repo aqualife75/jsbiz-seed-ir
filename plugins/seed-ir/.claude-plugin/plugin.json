@@ -1,0 +1,6 @@
+{
+  "name": "seed-ir",
+  "description": "Seed IR Deck 멀티 에이전트 하네스 — seed-ir 스킬(오케스트레이터) + 6 서브에이전트 + Python 하네스 스크립트",
+  "version": "0.1.0",
+  "author": { "name": "정석Biz (이동건)" }
+}
