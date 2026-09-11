@@ -19,7 +19,7 @@
 - Produces: 에이전트가 `Read`로 읽는 마크다운. 각 파일 첫 줄은 `# <제목>`이고, 표의 열 이름은 아래 그대로(에이전트 프롬프트가 열 이름을 참조).
 - 원문 출처: 정석Biz 노하우 강의안 텍스트는 다음 명령으로 다시 뽑아 대조한다(작성 중 한 번 실행):
   ```bash
-  PYTHONUTF8=1 python -c "from pptx import Presentation; p=Presentation(r'D:/BRIAN Dropbox/Lee Dong-Geon/00. A_창업 교육/00. 2026년도_창업/2026.09.15_포스텍_IR Deck 강의/3교시_AI로 만드는 Seed IR Deck 초안/[KDB_강의교안] IR Deck작성_Ver4.0.pptx'); [print(i, '|', ' / '.join(pp.text.strip() for sh in s.shapes if sh.has_text_frame for pp in sh.text_frame.paragraphs if pp.text.strip())[:400]) for i, s in enumerate(p.slides, 1) if 11 <= i <= 30]"
+  PYTHONUTF8=1 python -c "from pptx import Presentation; p=Presentation(r'D:/BRIAN Dropbox/Lee Dong-Geon/00. A_창업 교육/00. 2026년도_창업/2026.09.15_포스텍_IR Deck 강의/3교시_AI로 만드는 Seed IR Deck 초안/IR Deck작성_Ver4.0.pptx'); [print(i, '|', ' / '.join(pp.text.strip() for sh in s.shapes if sh.has_text_frame for pp in sh.text_frame.paragraphs if pp.text.strip())[:400]) for i, s in enumerate(p.slides, 1) if 11 <= i <= 30]"
   ```
 
 - [ ] **Step 1: 실패하는 테스트 작성** — `T/test_references.py`
