@@ -4,8 +4,12 @@ import design_system as ds
 
 @register("cover")
 def cover(cv, s, slide):
-    cv.panel_image(s.get("panel_image"), strength=0.55)
-    left_w = ds.PANEL_X - ds.MX - 0.6
+    # 쓸 만한 팀 이미지가 없는 팀이 많다. 그럴 땐 우측 패널을 비워 두지 말고
+    # 본문이 전폭을 쓰게 한다(빈 패널은 "준비가 덜 된 덱"으로 읽힌다).
+    has_panel = cv._resolve(s.get("panel_image")) is not None
+    if has_panel:
+        cv.panel_image(s.get("panel_image"), strength=0.55)
+    left_w = (ds.PANEL_X - ds.MX - 0.6) if has_panel else (ds.CW - 0.4)
     cv.rect(ds.MX, 0.95, 0.04, 4.6, fill=cv.accent)
     cv.text(ds.MX + 0.4, 0.95, left_w, 0.35, s.get("kicker", ""), ds.SZ["kicker"], ds.C["amber"], bold=True, spacing=0.25, max_lines=1, slot="kicker")
     if s.get("brand"):
@@ -18,8 +22,8 @@ def cover(cv, s, slide):
         cv.text(ds.MX + 0.4, 7.3, left_w, 0.4, "   ·   ".join(tags), ds.SZ["body"], ds.C["amber"], bold=True, max_lines=1, slot="tags")
     stats = s.get("footer_stats") or []
     if stats:
-        cv.rect(ds.MX + 0.4, 9.35, 18.0, 0.01, fill="FFFFFF", alpha=15)
-        w = 4.4
+        cv.rect(ds.MX + 0.4, 9.35, left_w, 0.01, fill="FFFFFF", alpha=15)
+        w = left_w / 4
         for i, st in enumerate(stats[:4]):
             x = ds.MX + 0.4 + i * w
             cv.text(x, 9.65, w - 0.2, 0.3, st.get("label", ""), ds.SZ["label"], ds.C["muted_dark"], bold=True, spacing=0.2, max_lines=1, slot="footer_stats.label")

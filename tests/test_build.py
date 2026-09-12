@@ -83,3 +83,20 @@ def test_text_emits_line_breaks_not_pptx_wrapping(out_dir):
         for tok in r.text.split(" "):
             if tok:
                 assert tok in words or any(tok in w for w in words)
+
+
+def test_cover_without_panel_image_uses_full_width(out_dir):
+    """팀 이미지가 없으면 우측 패널을 비워 두지 않고 본문이 전폭을 쓴다."""
+    import design_system as ds
+    spec = {"meta": {"team": "T", "assets_dir": str(out_dir)}, "slides": [
+        {"no": 1, "layout": "cover", "background": "dark", "slots": {
+            "kicker": "TEAM T", "brand": "T", "headline": "한 줄 정의", "subtitle": "부제",
+            "panel_image": None, "footer_stats": [{"label": "TEAM", "value": "2명"}]}, "notes": "n"}]}
+    p = out_dir / "cover.json"; p.write_text(json.dumps(spec, ensure_ascii=False), encoding="utf-8")
+    rep = build_deck.build(p, out_dir / "cover.pptx")
+    assert rep["warnings"] == [], rep["warnings"]          # 자리표시 경고가 남지 않는다
+    prs = Presentation(str(out_dir / "cover.pptx"))
+    shapes = list(prs.slides[0].shapes)
+    assert not [sh for sh in shapes if sh.shape_type == 13]  # 사진 없음
+    texts = [sh for sh in shapes if sh.has_text_frame and "한 줄 정의" in sh.text_frame.text]
+    assert texts and texts[0].width > Inches(ds.PANEL_X - ds.MX)  # 패널 경계를 넘어 전폭 사용
