@@ -47,3 +47,18 @@ def test_gate6_requires_qa_report(out_dir):
     assert not ok
     (out_dir / "09_build").mkdir(); (out_dir / "09_build" / "qa_report.md").write_text("# QA\nBLOCKING: 0\n", encoding="utf-8")
     assert gate.check(out_dir, "6")[0]
+
+
+def test_count_placeholders_ignores_change_log(out_dir):
+    """changes[].before는 '고치기 전 문장'을 인용하므로 [기입 필요]를 세지 않는다."""
+    doc = {
+        "slides": [{"no": 1, "title": "정상", "lead": ""}],
+        "changes": [{"slide_no": 1, "before": "조달 금액 [기입 필요]", "after": "조달 금액 [확보 필요]"}],
+    }
+    p = out_dir / "07_slides_v2.json"
+    p.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+    assert gate.count_placeholders(p) == 0
+
+    doc["slides"][0]["lead"] = "매출 [기입 필요: 연도별]"
+    p.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+    assert gate.count_placeholders(p) == 1

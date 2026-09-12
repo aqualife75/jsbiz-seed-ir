@@ -8,6 +8,19 @@ from state import State
 
 _FINAL_REQUIRED = ["*_Seed_IR_Deck.pptx", "*_Seed_IR_Deck.pdf", "피칭가이드.md", "qa_png"]
 
+def count_placeholders(slides_file: Path, marker: str = "[기입 필요") -> int:
+    """슬라이드 본문(slides[])에 남은 미기입 표시 개수.
+
+    개정본의 `changes[].before`는 수정 전 문장을 그대로 인용하므로 세지 않는다.
+    """
+    try:
+        doc = json.loads(Path(slides_file).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return 0
+    body = json.dumps(doc.get("slides", []), ensure_ascii=False)
+    return len(re.findall(re.escape(marker), body))
+
+
 def _slides_path(ws: Path) -> Path | None:
     for n in ("07_slides_v2.json", "04_slides_v1.json"):
         if (ws / n).exists(): return ws / n
@@ -36,8 +49,9 @@ def check(ws: Path, phase: str, accept_risk: bool = False) -> tuple[bool, list[s
                 if rep["untraced"]: reasons.append(f"trace: 미추적 숫자 {len(rep['untraced'])}건 (05_review/trace_report.json)")
             except (FileNotFoundError, ValueError) as exc:
                 reasons.append(f"trace: {exc}")
-            txt = sp.read_text(encoding="utf-8")
-            n_fill = len(re.findall(r"\[기입 필요", txt))
+            # 슬라이드 본문만 검사한다. changes[].before는 "고치기 전 문장"을 인용하므로
+            # 거기 남은 [기입 필요]는 정상이며 게이트를 막으면 안 된다.
+            n_fill = count_placeholders(sp)
             if n_fill: reasons.append(f"[기입 필요] {n_fill}건 잔존 — [확보 필요]로 옮기거나 근거를 채우세요")
         summ = ws / "05_review" / "summary.json"
         if not summ.exists(): reasons.append("05_review/summary.json 없음")
