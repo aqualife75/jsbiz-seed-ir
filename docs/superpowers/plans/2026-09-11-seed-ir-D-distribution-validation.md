@@ -266,3 +266,10 @@ gh api -X POST repos/aqualife75/jsbiz-seed-ir/pages -f "source[branch]=main" -f 
 | 5 | 표지에 팀 이미지 없으면 우측 7.5in 죽은 공간 | fecb68f |
 
 **남은 한계** 팀 내부 사실(재무·지분·실험 효과 크기)은 조사로 대체 불가 — 설계대로 `[확보 필요]`로 남기고 피칭가이드 4)에 액션 아이템 15건으로 정리. 이것이 팀에 전달할 산출물.
+
+### Task 21 — GitHub 배포 기록 (2026-09-12)
+- 배포 전 정리(d71b0cb): 테스트 픽스처의 실제 참가팀명·실명 → 가상(셀아이·홍길동), 디자인 참고용 샘플 회사명 → 중립 표현. 시크릿·전화번호·개인 절대경로 스캔 0건.
+- `gh repo create aqualife75/jsbiz-seed-ir --public --push` · 기본 브랜치 `main` · 커밋 42건 · 추적 파일 92개
+- Pages 활성화(main:/docs) → https://aqualife75.github.io/jsbiz-seed-ir/ **HTTP 200**, 10개 섹션·예시 이미지 3장·설치 두 줄 렌더 확인
+- `claude plugin validate .` ✔ / `claude plugin validate plugins/seed-ir` ✔
+- 남은 확인: 새 세션에서 `/plugin marketplace add aqualife75/jsbiz-seed-ir` → `/plugin install seed-ir@jsbiz-seed-ir` 리허설(사용자 수행)
