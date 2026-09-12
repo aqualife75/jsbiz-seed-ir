@@ -1,4 +1,4 @@
-# 디자인 시스템 — 글루코픽 샘플 기준 (ir-designer)
+# 디자인 시스템 — 정석Biz 표준 (ir-designer)
 
 ## 토큰 (scripts/design_system.py와 동일)
 - 캔버스 20×11.25in(1920×1080) · 폰트 **Pretendard** 단일 · 배경 다크 `#10141B` / 크림 `#F5F2EB`

@@ -6,21 +6,21 @@ import harness, state
 
 def _inputs(out_dir: Path) -> Path:
     d = out_dir / "in"; d.mkdir(parents=True, exist_ok=True)
-    (d / "2026년 제16회 포스텍 창업경진대회_참가신청서_시냅스_김준형.txt").write_text("사업계획서 본문 1,234명", encoding="utf-8")
+    (d / "2026년 제16회 포스텍 창업경진대회_참가신청서_셀아이_홍길동.txt").write_text("사업계획서 본문 1,234명", encoding="utf-8")
     Image.new("RGB", (200, 100), (9, 9, 9)).save(d / "제품.png")
     return d
 
 def test_infer_team(out_dir):
     d = _inputs(out_dir)
-    assert harness.infer_team(d) == "시냅스"
+    assert harness.infer_team(d) == "셀아이"
 
 def test_init_creates_workspace(out_dir):
     d = _inputs(out_dir)
     rc = harness.main(["init", str(d), "--out", str(out_dir / "ws")])
     assert rc == 0
-    ws = next((out_dir / "ws").glob("*_시냅스_SeedIR"))
+    ws = next((out_dir / "ws").glob("*_셀아이_SeedIR"))
     st = json.loads((ws / "state.json").read_text(encoding="utf-8"))
-    assert st["team"] == "시냅스" and st["phases"]["1_facts"]["status"] == "pending"
+    assert st["team"] == "셀아이" and st["phases"]["1_facts"]["status"] == "pending"
     inputs = json.loads((ws / "inputs.json").read_text(encoding="utf-8"))
     assert len(inputs["files"]) == 2
 
