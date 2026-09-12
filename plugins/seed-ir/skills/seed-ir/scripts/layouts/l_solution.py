@@ -11,10 +11,12 @@ def solution_steps(cv, s, slide):
         n = len(steps); w = ds.CW / n
         for i, st in enumerate(steps):
             x = ds.MX + i * w; last = (i == n - 1)
-            cv.rect(x, y, w, h, fill=ds.C["card_dark"] if not last else ds.C["muted"], alpha=None if not last else 35, radius=(i == 0 or last))
-            cv.label(x + 0.45, y + 0.35, w - 0.9, st.get("label", ""), color=ds.C["amber"] if not last else ds.C["accent"])
+            # 밴드는 전부 흰 글자를 쓰므로 배경도 전부 어두워야 한다. 마지막 단계는
+            # 흐린 회색이 아니라 강조색으로 채워 이 장의 결론 구간임을 드러낸다.
+            cv.rect(x, y, w, h, fill=ds.C["card_dark"] if not last else ds.C["accent"], radius=(i == 0 or last))
+            cv.label(x + 0.45, y + 0.35, w - 0.9, st.get("label", ""), color=ds.C["amber"] if not last else ds.C["white"])
             cv.text(x + 0.45, y + 0.75, w - 0.9, 0.5, st.get("title", ""), ds.SZ["card_title"], ds.C["white"], bold=True, max_lines=1, slot="steps.title")
-            cv.text(x + 0.45, y + 1.3, w - 0.9, 0.8, st.get("desc", ""), ds.SZ["body_sm"], ds.C["sub_dark"], line_spacing=1.4, max_lines=2, slot="steps.desc")
+            cv.text(x + 0.45, y + 1.3, w - 0.9, 0.8, st.get("desc", ""), ds.SZ["body_sm"], ds.C["sub_dark"] if not last else ds.C["white"], line_spacing=1.4, max_lines=2, slot="steps.desc")
             if i < n - 1: cv.rect(x + w - 0.35, y + h / 2, 0.3, 0.02, fill=ds.C["amber"])
         y += h + 0.4
     cards = s.get("cards") or []

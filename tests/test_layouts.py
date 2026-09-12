@@ -148,3 +148,35 @@ def test_group3_builds_without_warnings(layout, out_dir):
     rep = build_deck.build(p, out_dir / f"{layout}.pptx")
     # evidence_capture는 이미지 None → '이미지 확보 필요' 경고 1건 허용
     assert [w for w in rep["warnings"] if w["slot"] != "image"] == [], rep["warnings"]
+
+
+def _luminance(hex6: str) -> float:
+    """WCAG 상대 휘도 (0=검정, 1=흰색)."""
+    def ch(v):
+        v /= 255.0
+        return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+    r, g, b = (int(hex6[i:i + 2], 16) for i in (0, 2, 4))
+    return 0.2126 * ch(r) + 0.7152 * ch(g) + 0.0722 * ch(b)
+
+
+def test_solution_steps_bands_are_dark_enough_for_white_text(out_dir):
+    """STEP 밴드는 전부 흰 글자를 쓰므로 배경 휘도가 충분히 낮아야 한다.
+
+    회귀: 마지막 밴드가 흐린 회색(muted@35%)이라 흰 글자가 안 읽히던 결함.
+    """
+    EMU = 914400
+    p, _ = _spec_for(["solution_steps"], out_dir)
+    build_deck.build(p, out_dir / "steps.pptx")
+    prs = Presentation(str(out_dir / "steps.pptx"))
+    bands = []
+    for sh in prs.slides[0].shapes:
+        try:
+            solid = sh.fill.type == 1
+        except (TypeError, ValueError, AttributeError):
+            continue
+        if solid and 2.0 * EMU < sh.height < 2.5 * EMU and sh.width > 3.0 * EMU:
+            bands.append(sh)
+    assert len(bands) >= 4, f"밴드 4개를 찾지 못함 (찾은 수 {len(bands)})"
+    for b in bands[:4]:
+        lum = _luminance(str(b.fill.fore_color.rgb))
+        assert lum < 0.45, f"밴드 배경이 너무 밝아 흰 글자가 안 읽힘: #{b.fill.fore_color.rgb} (휘도 {lum:.2f})"
