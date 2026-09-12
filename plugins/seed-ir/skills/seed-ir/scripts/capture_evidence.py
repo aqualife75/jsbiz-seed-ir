@@ -21,23 +21,32 @@ def find_chrome() -> str | None:
         if w: cands.append(w)
     return next((c for c in cands if c and os.path.exists(c)), None)
 
-def _run(args: list[str], timeout=90):
-    profile = Path(tempfile.gettempdir()) / "seed_ir_chrome_profile"
+def _run(args: list[str], timeout=90) -> str:
+    """Chrome 헤드리스 1회 실행. 프로필 폴더는 **호출마다 새로** 만든다.
+
+    같은 --user-data-dir를 여러 프로세스가 동시에 쓰면 Chrome이 프로필 잠금으로
+    조용히 종료해 스크린샷이 생기지 않는다(조사 에이전트 병렬 실행 시 재현).
+    """
+    prof = tempfile.mkdtemp(prefix="seed_ir_chrome_")
     base = [find_chrome(), "--headless=new", "--disable-gpu", "--hide-scrollbars", "--no-first-run", "--no-default-browser-check",
-            "--run-all-compositor-stages-before-draw", f"--user-data-dir={profile}", "--lang=ko-KR"]
-    subprocess.run(base + args, capture_output=True, text=True, timeout=timeout)
+            "--run-all-compositor-stages-before-draw", f"--user-data-dir={prof}", "--lang=ko-KR"]
+    try:
+        r = subprocess.run(base + args, capture_output=True, text=True, timeout=timeout)
+        return ((r.stderr or "") + (r.stdout or ""))[-400:]
+    finally:
+        shutil.rmtree(prof, ignore_errors=True)
 
 def capture(url: str, out_png, width=1440, height=2400, wait_ms=6000) -> Path:
     if not find_chrome(): raise RuntimeError("Chrome/Edge를 찾지 못했습니다 — 설치 후 다시 시도")
     out_png = Path(out_png); out_png.parent.mkdir(parents=True, exist_ok=True)
-    _run([f"--window-size={width},{height}", f"--virtual-time-budget={wait_ms}", f"--screenshot={out_png}", url])
-    if not out_png.exists(): raise RuntimeError(f"캡처 실패: {url}")
+    log = _run([f"--window-size={width},{height}", f"--virtual-time-budget={wait_ms}", f"--screenshot={out_png}", url])
+    if not out_png.exists(): raise RuntimeError(f"캡처 실패: {url}\n{log}")
     return out_png
 
 def capture_pdf(url: str, out_pdf) -> Path:
     out_pdf = Path(out_pdf); out_pdf.parent.mkdir(parents=True, exist_ok=True)
-    _run(["--no-pdf-header-footer", f"--print-to-pdf={out_pdf}", url], timeout=120)
-    if not out_pdf.exists(): raise RuntimeError(f"PDF 캡처 실패: {url}")
+    log = _run(["--no-pdf-header-footer", f"--print-to-pdf={out_pdf}", url], timeout=120)
+    if not out_pdf.exists(): raise RuntimeError(f"PDF 캡처 실패: {url}\n{log}")
     return out_pdf
 
 def main(argv=None) -> int:
