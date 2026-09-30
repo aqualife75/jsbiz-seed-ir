@@ -1,0 +1,6 @@
+# Tested on Python 3.12. These dependencies are downloaded from PyPI, not bundled.
+python-pptx==1.0.2
+Pillow==12.1.1
+PyMuPDF==1.27.2.3
+olefile==0.47
+pypdf==6.10.0

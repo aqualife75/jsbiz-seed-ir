@@ -1,0 +1,1640 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Seed IR Deck v1.2 contract with v1.4 visual briefs and legacy compatibility",
+  "type": "object",
+  "required": [
+    "team_name",
+    "slides"
+  ],
+  "properties": {
+    "team_name": {
+      "type": "string"
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "section",
+          "governing_message",
+          "governing_kind",
+          "governing_evidence_ids",
+          "seconds",
+          "speaker_notes",
+          "layout"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "section": {
+            "enum": [
+              "cover",
+              "background",
+              "problem",
+              "alternatives",
+              "solution",
+              "product",
+              "traction",
+              "business_model",
+              "market",
+              "go_to_market",
+              "growth",
+              "milestones",
+              "team",
+              "vision",
+              "competition"
+            ]
+          },
+          "appendix": {
+            "type": "boolean"
+          },
+          "governing_message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "governing_kind": {
+            "enum": [
+              "fact",
+              "plan",
+              "assumption"
+            ]
+          },
+          "governing_scope": {
+            "enum": [
+              "company",
+              "market",
+              "general"
+            ]
+          },
+          "governing_evidence_ids": {
+            "$ref": "#/$defs/ids"
+          },
+          "evidence_ids": {
+            "$ref": "#/$defs/ids"
+          },
+          "body": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "$ref": "#/$defs/claim"
+            }
+          },
+          "seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "speaker_notes": {
+            "type": "string",
+            "minLength": 1
+          },
+          "layout": {
+            "enum": [
+              "cover",
+              "evidence",
+              "comparison",
+              "process",
+              "timeline",
+              "closing",
+              "evidence_board",
+              "problem_solution",
+              "product_journey",
+              "market_model",
+              "competition_matrix",
+              "roadmap_funding",
+              "team_evidence",
+              "milestone_roadmap"
+            ]
+          },
+          "assets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "path",
+                "caption",
+                "source",
+                "rights",
+                "alt"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "source": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                },
+                "rights": {
+                  "enum": [
+                    "owned",
+                    "licensed",
+                    "permission",
+                    "public-domain",
+                    "unknown"
+                  ]
+                }
+              }
+            }
+          },
+          "visual": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "none",
+                  "bar",
+                  "metrics"
+                ]
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "values": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              },
+              "unit": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "evidence_ids": {
+                "$ref": "#/$defs/ids"
+              }
+            }
+          },
+          "section_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "cover",
+                "background",
+                "problem",
+                "alternatives",
+                "solution",
+                "product",
+                "traction",
+                "business_model",
+                "market",
+                "go_to_market",
+                "growth",
+                "milestones",
+                "team",
+                "vision",
+                "competition"
+              ]
+            }
+          },
+          "source_slide_ids": {
+            "$ref": "#/$defs/ids"
+          },
+          "visual_brief": {
+            "$ref": "#/$defs/visualBrief"
+          },
+          "blocks": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/block"
+            }
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "body"
+            ]
+          },
+          {
+            "required": [
+              "blocks"
+            ]
+          }
+        ]
+      }
+    },
+    "schema_version": {
+      "enum": [
+        "1.0",
+        "1.1",
+        "1.2"
+      ]
+    },
+    "views": {
+      "type": "object",
+      "required": [
+        "master",
+        "pitch"
+      ],
+      "properties": {
+        "master": {
+          "type": "object",
+          "required": [
+            "slide_ids"
+          ],
+          "properties": {
+            "slide_ids": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "target_seconds": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        },
+        "pitch": {
+          "type": "object",
+          "required": [
+            "slide_ids"
+          ],
+          "properties": {
+            "slide_ids": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "target_seconds": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "text",
+        "kind",
+        "evidence_ids"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "fact",
+            "plan",
+            "assumption"
+          ]
+        },
+        "scope": {
+          "enum": [
+            "company",
+            "market",
+            "general"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/ids"
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "required": [
+        "path",
+        "caption",
+        "source",
+        "rights",
+        "alt"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "caption": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "rights": {
+          "enum": [
+            "owned",
+            "licensed",
+            "permission",
+            "public-domain"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "fact",
+            "plan",
+            "assumption"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "scope": {
+          "enum": [
+            "company",
+            "market",
+            "general"
+          ]
+        },
+        "disclosure": {
+          "type": "string"
+        }
+      }
+    },
+    "block": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title",
+        "kind",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "enum": [
+            "text",
+            "metric",
+            "image",
+            "table",
+            "chart",
+            "steps",
+            "mapping",
+            "formula",
+            "roadmap",
+            "team"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "fact",
+            "plan",
+            "assumption"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "scope": {
+          "enum": [
+            "company",
+            "market",
+            "general"
+          ]
+        },
+        "disclosure": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "text"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "text"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "metric"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "value",
+              "detail"
+            ],
+            "properties": {
+              "value": {
+                "type": "string",
+                "minLength": 1
+              },
+              "detail": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "image"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "path",
+              "caption",
+              "source",
+              "alt",
+              "rights"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "caption": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "rights": {
+                "enum": [
+                  "owned",
+                  "licensed",
+                  "permission",
+                  "public-domain"
+                ]
+              },
+              "kind": {
+                "enum": [
+                  "fact",
+                  "plan",
+                  "assumption"
+                ]
+              },
+              "evidence_ids": {
+                "$ref": "#/$defs/ids"
+              },
+              "scope": {
+                "enum": [
+                  "company",
+                  "market",
+                  "general"
+                ]
+              },
+              "disclosure": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "table"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "columns",
+              "rows"
+            ],
+            "properties": {
+              "columns": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 2
+              },
+              "rows": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "chart"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "chart_type",
+              "categories",
+              "series",
+              "unit",
+              "source"
+            ],
+            "properties": {
+              "chart_type": {
+                "enum": [
+                  "bar",
+                  "line"
+                ]
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "series": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "values"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "values": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "kind": {
+                      "enum": [
+                        "fact",
+                        "plan",
+                        "assumption"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "$ref": "#/$defs/ids"
+                    },
+                    "scope": {
+                      "enum": [
+                        "company",
+                        "market",
+                        "general"
+                      ]
+                    },
+                    "disclosure": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "unit": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "steps"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "title",
+                    "text"
+                  ],
+                  "properties": {
+                    "title": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "kind": {
+                      "enum": [
+                        "fact",
+                        "plan",
+                        "assumption"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "$ref": "#/$defs/ids"
+                    },
+                    "scope": {
+                      "enum": [
+                        "company",
+                        "market",
+                        "general"
+                      ]
+                    },
+                    "disclosure": {
+                      "type": "string"
+                    },
+                    "asset": {
+                      "type": "object",
+                      "required": [
+                        "path",
+                        "caption",
+                        "source",
+                        "rights",
+                        "alt"
+                      ],
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "caption": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "source": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "rights": {
+                          "enum": [
+                            "owned",
+                            "licensed",
+                            "permission",
+                            "public-domain"
+                          ]
+                        },
+                        "kind": {
+                          "enum": [
+                            "fact",
+                            "plan",
+                            "assumption"
+                          ]
+                        },
+                        "evidence_ids": {
+                          "$ref": "#/$defs/ids"
+                        },
+                        "scope": {
+                          "enum": [
+                            "company",
+                            "market",
+                            "general"
+                          ]
+                        },
+                        "disclosure": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "detail": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "maxItems": 4
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mapping"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "problem",
+                    "solution",
+                    "proof"
+                  ],
+                  "properties": {
+                    "problem": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "solution": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "proof": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "kind": {
+                      "enum": [
+                        "fact",
+                        "plan",
+                        "assumption"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "$ref": "#/$defs/ids"
+                    },
+                    "scope": {
+                      "enum": [
+                        "company",
+                        "market",
+                        "general"
+                      ]
+                    },
+                    "disclosure": {
+                      "type": "string"
+                    },
+                    "asset": {
+                      "type": "object",
+                      "required": [
+                        "path",
+                        "caption",
+                        "source",
+                        "rights",
+                        "alt"
+                      ],
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "caption": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "source": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "rights": {
+                          "enum": [
+                            "owned",
+                            "licensed",
+                            "permission",
+                            "public-domain"
+                          ]
+                        },
+                        "kind": {
+                          "enum": [
+                            "fact",
+                            "plan",
+                            "assumption"
+                          ]
+                        },
+                        "evidence_ids": {
+                          "$ref": "#/$defs/ids"
+                        },
+                        "scope": {
+                          "enum": [
+                            "company",
+                            "market",
+                            "general"
+                          ]
+                        },
+                        "disclosure": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "maxItems": 4
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "formula"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "formula",
+                    "result",
+                    "basis"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "formula": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "result": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "basis": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "kind": {
+                      "enum": [
+                        "fact",
+                        "plan",
+                        "assumption"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "$ref": "#/$defs/ids"
+                    },
+                    "scope": {
+                      "enum": [
+                        "company",
+                        "market",
+                        "general"
+                      ]
+                    },
+                    "disclosure": {
+                      "type": "string"
+                    },
+                    "asset": {
+                      "type": "object",
+                      "required": [
+                        "path",
+                        "caption",
+                        "source",
+                        "rights",
+                        "alt"
+                      ],
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "caption": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "source": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "rights": {
+                          "enum": [
+                            "owned",
+                            "licensed",
+                            "permission",
+                            "public-domain"
+                          ]
+                        },
+                        "kind": {
+                          "enum": [
+                            "fact",
+                            "plan",
+                            "assumption"
+                          ]
+                        },
+                        "evidence_ids": {
+                          "$ref": "#/$defs/ids"
+                        },
+                        "scope": {
+                          "enum": [
+                            "company",
+                            "market",
+                            "general"
+                          ]
+                        },
+                        "disclosure": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "maxItems": 3
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "roadmap"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "period",
+                    "title",
+                    "deliverables",
+                    "gate"
+                  ],
+                  "properties": {
+                    "period": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "deliverables": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "minItems": 1
+                    },
+                    "gate": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "kind": {
+                      "enum": [
+                        "fact",
+                        "plan",
+                        "assumption"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "$ref": "#/$defs/ids"
+                    },
+                    "scope": {
+                      "enum": [
+                        "company",
+                        "market",
+                        "general"
+                      ]
+                    },
+                    "disclosure": {
+                      "type": "string"
+                    },
+                    "asset": {
+                      "type": "object",
+                      "required": [
+                        "path",
+                        "caption",
+                        "source",
+                        "rights",
+                        "alt"
+                      ],
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "caption": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "source": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "rights": {
+                          "enum": [
+                            "owned",
+                            "licensed",
+                            "permission",
+                            "public-domain"
+                          ]
+                        },
+                        "kind": {
+                          "enum": [
+                            "fact",
+                            "plan",
+                            "assumption"
+                          ]
+                        },
+                        "evidence_ids": {
+                          "$ref": "#/$defs/ids"
+                        },
+                        "scope": {
+                          "enum": [
+                            "company",
+                            "market",
+                            "general"
+                          ]
+                        },
+                        "disclosure": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "maxItems": 4
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "team"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "items"
+            ],
+            "properties": {
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "role",
+                    "proof",
+                    "contribution"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "role": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "proof": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "contribution": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "kind": {
+                      "enum": [
+                        "fact",
+                        "plan",
+                        "assumption"
+                      ]
+                    },
+                    "evidence_ids": {
+                      "$ref": "#/$defs/ids"
+                    },
+                    "scope": {
+                      "enum": [
+                        "company",
+                        "market",
+                        "general"
+                      ]
+                    },
+                    "disclosure": {
+                      "type": "string"
+                    },
+                    "asset": {
+                      "type": "object",
+                      "required": [
+                        "path",
+                        "caption",
+                        "source",
+                        "rights",
+                        "alt"
+                      ],
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "caption": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "source": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "alt": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "rights": {
+                          "enum": [
+                            "owned",
+                            "licensed",
+                            "permission",
+                            "public-domain"
+                          ]
+                        },
+                        "kind": {
+                          "enum": [
+                            "fact",
+                            "plan",
+                            "assumption"
+                          ]
+                        },
+                        "evidence_ids": {
+                          "$ref": "#/$defs/ids"
+                        },
+                        "scope": {
+                          "enum": [
+                            "company",
+                            "market",
+                            "general"
+                          ]
+                        },
+                        "disclosure": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "maxItems": 4
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualBrief": {
+      "type": "object",
+      "required": ["key_message", "primary_block_id", "reading_order", "layout_variant", "visual_reason"],
+      "properties": {
+        "key_message": {"type": "string", "minLength": 1},
+        "primary_block_id": {"type": "string", "minLength": 1},
+        "reading_order": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "layout_variant": {"enum": ["evidence_focus", "comparison_focus", "product_hero", "market_layers", "timeline_focus", "team_focus", "cover_focus"]},
+        "visual_reason": {"type": "string", "minLength": 1}
+      },
+      "description": "Optional for legacy drafts. New v1.4 projects require every slide brief at the design gate. quality.py checks block references, complete reading order and content compatibility."
+    },
+    "briefQuestion": {
+      "type": "object",
+      "required": [
+        "question_id",
+        "status",
+        "answer",
+        "argument",
+        "coverage",
+        "evidence_ids",
+        "visual_refs",
+        "missing"
+      ],
+      "properties": {
+        "question_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "answered",
+            "partial",
+            "missing"
+          ]
+        },
+        "answer": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/claim"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "argument": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/claim"
+          }
+        },
+        "coverage": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "requirement",
+              "claim"
+            ],
+            "properties": {
+              "requirement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "claim": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/claim"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/ids"
+        },
+        "visual_refs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "slide_id",
+              "block_id"
+            ],
+            "properties": {
+              "slide_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "block_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "missing": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "sectionBriefs": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "sections"
+      ],
+      "properties": {
+        "schema_version": {
+          "enum": [
+            "1.1",
+            "1.2"
+          ]
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "section",
+              "questions"
+            ],
+            "properties": {
+              "section": {
+                "enum": [
+                  "cover",
+                  "background",
+                  "problem",
+                  "alternatives",
+                  "solution",
+                  "product",
+                  "traction",
+                  "business_model",
+                  "market",
+                  "go_to_market",
+                  "growth",
+                  "milestones",
+                  "team",
+                  "vision",
+                  "competition"
+                ]
+              },
+              "questions": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/briefQuestion"
+                }
+              }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "schema_version": {
+                "const": "1.1"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sections": {
+                "minItems": 12,
+                "maxItems": 12,
+                "items": {
+                  "properties": {
+                    "section": {
+                      "enum": [
+                        "cover",
+                        "problem",
+                        "solution",
+                        "product",
+                        "traction",
+                        "business_model",
+                        "market",
+                        "competition",
+                        "go_to_market",
+                        "milestones",
+                        "team",
+                        "vision"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "schema_version": {
+                "const": "1.2"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sections": {
+                "minItems": 14,
+                "maxItems": 14,
+                "items": {
+                  "properties": {
+                    "section": {
+                      "enum": [
+                        "cover",
+                        "background",
+                        "problem",
+                        "alternatives",
+                        "solution",
+                        "product",
+                        "traction",
+                        "business_model",
+                        "market",
+                        "go_to_market",
+                        "growth",
+                        "milestones",
+                        "team",
+                        "vision"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "schema_version"
+        ],
+        "properties": {
+          "schema_version": {
+            "enum": [
+              "1.1",
+              "1.2"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "views"
+        ]
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "schema_version"
+        ],
+        "properties": {
+          "schema_version": {
+            "const": "1.2"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "slides": {
+            "minItems": 18,
+            "items": {
+              "properties": {
+                "section": {
+                  "enum": [
+                    "cover",
+                    "background",
+                    "problem",
+                    "alternatives",
+                    "solution",
+                    "product",
+                    "traction",
+                    "business_model",
+                    "market",
+                    "go_to_market",
+                    "growth",
+                    "milestones",
+                    "team",
+                    "vision"
+                  ]
+                },
+                "section_ids": {
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "enum": [
+                      "cover",
+                      "background",
+                      "problem",
+                      "alternatives",
+                      "solution",
+                      "product",
+                      "traction",
+                      "business_model",
+                      "market",
+                      "go_to_market",
+                      "growth",
+                      "milestones",
+                      "team",
+                      "vision"
+                    ]
+                  }
+                },
+                "layout": {
+                  "not": {
+                    "const": "roadmap_funding"
+                  }
+                }
+              }
+            }
+          },
+          "views": {
+            "properties": {
+              "master": {
+                "properties": {
+                  "slide_ids": {
+                    "minItems": 18
+                  }
+                }
+              },
+              "pitch": {
+                "properties": {
+                  "slide_ids": {
+                    "minItems": 18
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "description": "Structure only. harness.py additionally validates per-section independent slide counts, fixed order, evidence references, and excluded funding content in each v1.2 view."
+}

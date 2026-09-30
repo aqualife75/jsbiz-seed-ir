@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Seed IR visual production plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "slides"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "slide_id",
+          "claim_boundary",
+          "search_note",
+          "evidence_ids",
+          "block_ids",
+          "visual_type",
+          "source_strategy",
+          "disclosure",
+          "status"
+        ],
+        "properties": {
+          "slide_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim_boundary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "search_note": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "block_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "visual_type": {
+            "enum": [
+              "photo",
+              "product_ui",
+              "chart",
+              "table",
+              "diagram",
+              "quote",
+              "mixed"
+            ]
+          },
+          "source_strategy": {
+            "enum": [
+              "original",
+              "official",
+              "generated",
+              "native"
+            ]
+          },
+          "asset_refs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "path",
+                "sha256",
+                "source",
+                "rights",
+                "origin",
+                "caption",
+                "claim_boundary"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "caption": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "claim_boundary": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "rights": {
+                  "enum": [
+                    "owned",
+                    "licensed",
+                    "permission",
+                    "public-domain"
+                  ]
+                },
+                "origin": {
+                  "enum": [
+                    "original",
+                    "official",
+                    "generated"
+                  ]
+                }
+              }
+            }
+          },
+          "disclosure": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "planned",
+              "ready",
+              "missing"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "description": "visual_plan.py additionally checks referenced slides, evidence, block kinds, asset paths, rights, hashes and generated-image disclosures."
+}

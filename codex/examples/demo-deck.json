@@ -1,0 +1,1639 @@
+{
+  "schema_version": "1.2",
+  "release_version": "1.4.0",
+  "team_name": "GlucoPic · 교육용 가상",
+  "status": "fictional-teaching-draft",
+  "disclosure": "교육용 가상 사례. 고객·인터뷰·성과·가격·팀·전망은 가정 또는 계획이며 실제 검증 결과가 아닙니다.",
+  "source_fictional": true,
+  "slides": [
+    {
+      "id": "D01",
+      "section": "cover",
+      "governing_message": "예시: 외식 사진으로 시작하는\n식사·혈당 기록",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G01",
+        "G07",
+        "G00"
+      ],
+      "evidence_ids": [
+        "G01",
+        "G07",
+        "G00"
+      ],
+      "layout": "cover",
+      "blocks": [
+        {
+          "id": "service",
+          "type": "text",
+          "title": "GlucoPic",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G01"
+          ],
+          "text": "외식이 잦은 2형 당뇨 성인이\n식사와 본인 혈당 기록을 함께 봅니다."
+        },
+        {
+          "id": "meal",
+          "type": "image",
+          "title": "식사 촬영의 출발점",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G01",
+            "G07"
+          ],
+          "path": "input/assets/glucopic-meal-photo.jpeg",
+          "caption": "원안의 식사 사진 · 제품 분석 결과가 아님",
+          "source": "GlucoPic 가상 사업계획서 1쪽 · 사용자 제공",
+          "rights": "permission",
+          "alt": "원안의 식사 사진 · 제품 분석 결과가 아님",
+          "source_fictional": true
+        },
+        {
+          "id": "fiction",
+          "type": "text",
+          "title": "공개 교육용 사업 시나리오",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G00"
+          ],
+          "text": "가상 MVP 설계안입니다.\n고객·성과·팀은 실제 자료가 아닙니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 10,
+      "speaker_notes": "글루코픽은 교육용 가상 사례입니다. 성과와 팀은 가정입니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "외식 사진으로 시작하는\n식사·혈당 기록",
+        "primary_block_id": "service",
+        "reading_order": [
+          "service",
+          "meal",
+          "fiction"
+        ],
+        "layout_variant": "cover_focus",
+        "visual_reason": "서비스 설명과 식사 이미지를 먼저 읽고 가상 사례 표시를 확인합니다."
+      }
+    },
+    {
+      "id": "D02",
+      "section": "background",
+      "governing_message": "예시: 측정 데이터와 식사 기록 사이에\n확인할 공백이 있습니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G02"
+      ],
+      "evidence_ids": [
+        "G02"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "context",
+          "type": "table",
+          "title": "원안의 배경 가설",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G02"
+          ],
+          "columns": [
+            "출발점",
+            "식사 기록의 과제"
+          ],
+          "rows": [
+            [
+              "인구 규모",
+              "원안 인용 530만 명의 당뇨 인구"
+            ],
+            [
+              "외식·배달",
+              "메뉴와 실제 섭취량 파악"
+            ],
+            [
+              "디지털 측정",
+              "측정값과 식사 기록 연결"
+            ]
+          ]
+        },
+        {
+          "id": "scope",
+          "type": "text",
+          "title": "외부 통계는 재검증 전",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G02"
+          ],
+          "text": "대한당뇨병학회 2024 자료를 인용한 원안의 예시입니다.\n대상·연도·정의는 실제 사업 덱에서 확인해야 합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 15,
+      "speaker_notes": "원안은 당뇨 인구, 외식, 측정 자동화를 배경으로 봅니다. 식사 기록 연결의 기회를 가정합니다. 통계는 재검증 전입니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "측정 데이터와 식사 기록 사이에\n확인할 공백이 있습니다",
+        "primary_block_id": "context",
+        "reading_order": [
+          "context",
+          "scope"
+        ],
+        "layout_variant": "evidence_focus",
+        "visual_reason": "가설을 뒷받침하는 표나 수치를 먼저 보고 해석과 한계를 읽습니다."
+      }
+    },
+    {
+      "id": "D03",
+      "section": "problem",
+      "governing_message": "예시: 외식 후 기록을 마치는 일이\n첫 번째 고객 문제입니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G03",
+        "G04"
+      ],
+      "evidence_ids": [
+        "G03",
+        "G04"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "situation",
+          "type": "table",
+          "title": "교두보 고객 가정",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G03"
+          ],
+          "columns": [
+            "고객 조건",
+            "반복되는 상황"
+          ],
+          "rows": [
+            [
+              "35~55세 직장인",
+              "성남·강남 근무"
+            ],
+            [
+              "주 3회 이상 외식·배달",
+              "음식과 남긴 양을 뒤늦게 기억"
+            ],
+            [
+              "자가 혈당 기록",
+              "식사와 측정값을 따로 관리"
+            ]
+          ]
+        },
+        {
+          "id": "scene",
+          "type": "image",
+          "title": "문제 상황의 이미지",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G03"
+          ],
+          "path": "input/assets/glucopic-external-meal.jpeg",
+          "caption": "원안의 외식 사진 · 고객 관찰 자료가 아님",
+          "source": "GlucoPic 가상 사업계획서 3쪽 · 사용자 제공",
+          "rights": "permission",
+          "alt": "원안의 외식 사진 · 고객 관찰 자료가 아님",
+          "source_fictional": true
+        },
+        {
+          "id": "gap",
+          "type": "text",
+          "title": "확인해야 할 크기",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G03",
+            "G04"
+          ],
+          "text": "기록에 걸리는 시간과 포기 빈도는 미측정입니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "첫 고객은 성남·강남에서 주 세 번 이상 외식하는 당뇨 직장인으로 가정합니다. 음식과 남긴 양을 기억하고 혈당 기록까지 맞추는 부담을 조사할 계획입니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "외식 후 기록을 마치는 일이\n첫 번째 고객 문제입니다",
+        "primary_block_id": "situation",
+        "reading_order": [
+          "situation",
+          "scene",
+          "gap"
+        ],
+        "layout_variant": "evidence_focus",
+        "visual_reason": "가설을 뒷받침하는 표나 수치를 먼저 보고 해석과 한계를 읽습니다."
+      }
+    },
+    {
+      "id": "D04",
+      "section": "problem",
+      "governing_message": "예시: 음식 선택과 섭취량 추정에서\n기록이 끊긴다고 가정합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G03",
+        "G04"
+      ],
+      "evidence_ids": [
+        "G03",
+        "G04"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "friction",
+          "type": "table",
+          "title": "한 끼 기록에서 관찰할 마찰",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G03",
+            "G04"
+          ],
+          "columns": [
+            "작업",
+            "고객이 해야 하는 판단"
+          ],
+          "rows": [
+            [
+              "음식명 검색",
+              "비슷한 메뉴 중 하나 선택"
+            ],
+            [
+              "중량·남긴 양 추정",
+              "먹은 양을 숫자로 환산"
+            ],
+            [
+              "혈당 기록 확인",
+              "어느 식사와 연결할지 기억"
+            ]
+          ]
+        },
+        {
+          "id": "interview",
+          "type": "text",
+          "title": "인터뷰의 확인 질문",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G04"
+          ],
+          "text": "최근 기록을 포기한 순간은 언제였나요?\n그때 화면·식사 사진·기록을 함께 확인합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "핵심 문제는 음식 선택과 섭취량 추정에서 기록이 끊긴다는 가설입니다. 최근 포기한 한 끼를 확인하고 소요 시간과 누락 횟수를 관찰하겠습니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "음식 선택과 섭취량 추정에서\n기록이 끊긴다고 가정합니다",
+        "primary_block_id": "friction",
+        "reading_order": [
+          "friction",
+          "interview"
+        ],
+        "layout_variant": "evidence_focus",
+        "visual_reason": "가설을 뒷받침하는 표나 수치를 먼저 보고 해석과 한계를 읽습니다."
+      }
+    },
+    {
+      "id": "D05",
+      "section": "alternatives",
+      "governing_message": "예시: 기존 대안의 입력 부담을\n같은 작업에서 비교합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G05"
+      ],
+      "evidence_ids": [
+        "G05"
+      ],
+      "layout": "competition_matrix",
+      "blocks": [
+        {
+          "id": "matrix",
+          "type": "table",
+          "title": "기능 유형별 조사 틀",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G05"
+          ],
+          "columns": [
+            "대안 유형",
+            "식사 입력",
+            "섭취량 보정",
+            "혈당 연결"
+          ],
+          "rows": [
+            [
+              "수기 식사일지",
+              "직접 적기",
+              "직접 추정",
+              "기록 대조"
+            ],
+            [
+              "일반 영양 앱",
+              "검색·선택",
+              "양 수정",
+              "지원 여부 조사"
+            ],
+            [
+              "센서 연동 앱",
+              "입력 방식 조사",
+              "지원 여부 조사",
+              "연동 조건 조사"
+            ]
+          ]
+        },
+        {
+          "id": "limits",
+          "type": "text",
+          "title": "현재 기능의 우열은 미확인",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G05"
+          ],
+          "text": "원안의 경쟁 구도를 기능 유형으로 재구성했습니다.\n동일 메뉴·동일 기기에서 직접 비교해야 합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "기존 대안은 수기 일지, 일반 영양 앱, 센서 연동 앱입니다. 음식 입력, 섭취량 보정, 혈당 연결을 같은 식사 조건에서 비교할 계획입니다. 현재 우열은 미확인입니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "기존 대안의 입력 부담을\n같은 작업에서 비교합니다",
+        "primary_block_id": "matrix",
+        "reading_order": [
+          "matrix",
+          "limits"
+        ],
+        "layout_variant": "comparison_focus",
+        "visual_reason": "같은 기준의 대안을 넓게 비교하고 전환 조건을 확인합니다."
+      }
+    },
+    {
+      "id": "D06",
+      "section": "alternatives",
+      "governing_message": "예시: 전환할 이유는 입력 부담과\n기록 연결의 차이입니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G05",
+        "G06"
+      ],
+      "evidence_ids": [
+        "G05",
+        "G06"
+      ],
+      "layout": "problem_solution",
+      "blocks": [
+        {
+          "id": "switch",
+          "type": "mapping",
+          "title": "대안 전환 가설",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G05",
+            "G06"
+          ],
+          "items": [
+            {
+              "problem": "메뉴 검색을 반복",
+              "solution": "사진에서 후보 확인",
+              "proof": "같은 식사로 입력 시간 비교 예정"
+            },
+            {
+              "problem": "남긴 양을 숫자로 추정",
+              "solution": "버튼으로 섭취량 보정",
+              "proof": "수정 횟수·오차 비교 예정"
+            },
+            {
+              "problem": "기록이 서로 분리",
+              "solution": "식사와 혈당을 한 흐름에",
+              "proof": "연결 완료율 비교 예정"
+            }
+          ]
+        },
+        {
+          "id": "cost",
+          "type": "text",
+          "title": "전환 비용도 확인합니다",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G05"
+          ],
+          "text": "익숙한 앱의 사용 습관과 과거 기록 이전이 부담일 수 있습니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "전환 이유는 검색과 숫자 입력 부담을 줄이는 것입니다. 사진 후보 확인과 버튼 보정을 시험하겠습니다. 기존 앱의 습관과 기록 이전 비용도 함께 확인합니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "전환할 이유는 입력 부담과\n기록 연결의 차이입니다",
+        "primary_block_id": "switch",
+        "reading_order": [
+          "switch",
+          "cost"
+        ],
+        "layout_variant": "comparison_focus",
+        "visual_reason": "같은 기준의 대안을 넓게 비교하고 전환 조건을 확인합니다."
+      }
+    },
+    {
+      "id": "D07",
+      "section": "solution",
+      "governing_message": "예시: 사진 확인과 섭취량 보정으로\n한 끼 기록을 이어갑니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G06",
+        "G08"
+      ],
+      "evidence_ids": [
+        "G06",
+        "G08"
+      ],
+      "layout": "problem_solution",
+      "blocks": [
+        {
+          "id": "fit",
+          "type": "mapping",
+          "title": "문제와 해결 방식",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G06",
+            "G08"
+          ],
+          "items": [
+            {
+              "problem": "음식명을 찾는 부담",
+              "solution": "사진에서 음식 후보 확인",
+              "proof": "사용자가 잘못된 인식을 수정"
+            },
+            {
+              "problem": "먹은 양의 불확실성",
+              "solution": "남긴 양 보정과 범위 표시",
+              "proof": "하나의 확정값처럼 표시하지 않음"
+            },
+            {
+              "problem": "식사·혈당 기록의 분리",
+              "solution": "직접 입력한 기록 비교",
+              "proof": "본인 기록의 관계를 확인"
+            }
+          ]
+        },
+        {
+          "id": "goal",
+          "type": "text",
+          "title": "한 끼 기록 30초 목표",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G06"
+          ],
+          "text": "입력 시간을 줄이는 설계 목표입니다.\n아직 사용성 실험으로 측정하지 않았습니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "사진에서 음식 후보를 확인하고 남긴 양을 보정한 뒤 본인 혈당 기록과 연결합니다. 한 끼 기록 삼십 초는 설계 목표입니다. 실제 시간 단축은 사용성 실험으로 확인합니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "사진 확인과 섭취량 보정으로\n한 끼 기록을 이어갑니다",
+        "primary_block_id": "fit",
+        "reading_order": [
+          "fit",
+          "goal"
+        ],
+        "layout_variant": "comparison_focus",
+        "visual_reason": "같은 기준의 대안을 넓게 비교하고 전환 조건을 확인합니다."
+      }
+    },
+    {
+      "id": "D08",
+      "section": "product",
+      "governing_message": "예시: 음식 후보를 확인한 뒤\n남긴 양을 보정합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G07",
+        "G06",
+        "G08"
+      ],
+      "evidence_ids": [
+        "G07",
+        "G06",
+        "G08"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "screen",
+          "type": "image",
+          "title": "인식·보정 화면",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G07"
+          ],
+          "path": "input/assets/glucopic-recognize-adjust.png",
+          "caption": "원안 8쪽의 가상 MVP 화면 · 수치는 설명용 예시",
+          "source": "GlucoPic 가상 사업계획서 8쪽 · 사용자 제공",
+          "rights": "permission",
+          "alt": "원안 8쪽의 가상 MVP 화면 · 수치는 설명용 예시",
+          "source_fictional": true
+        },
+        {
+          "id": "flow",
+          "type": "text",
+          "title": "고객이 하는 두 가지 확인",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G06",
+            "G07"
+          ],
+          "text": "음식 구성이 맞는지 확인하고\n실제로 남긴 양을 선택합니다."
+        },
+        {
+          "id": "status",
+          "type": "text",
+          "title": "현재 구현 상태",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G07",
+            "G08"
+          ],
+          "text": "화면 설계안만 있습니다.\n인식 정확도·응답 시간은 미검증입니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "이 이미지는 작동 앱이 아닌 가상 화면 설계입니다. 음식 구성을 확인하고 남긴 양을 선택하는 흐름을 보여줍니다. 화면의 영양값과 인식 시간은 실제 측정값이 아닙니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "음식 후보를 확인한 뒤\n남긴 양을 보정합니다",
+        "primary_block_id": "screen",
+        "reading_order": [
+          "screen",
+          "flow",
+          "status"
+        ],
+        "layout_variant": "product_hero",
+        "visual_reason": "원안 제품 설계 이미지를 크게 보고 고객 행동과 구현 상태를 읽습니다."
+      }
+    },
+    {
+      "id": "D09",
+      "section": "product",
+      "governing_message": "예시: 촬영에서 기록 연결까지를\n첫 MVP 범위로 잡습니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G07",
+        "G08",
+        "G06",
+        "G11"
+      ],
+      "evidence_ids": [
+        "G07",
+        "G08",
+        "G06",
+        "G11"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "capture",
+          "type": "image",
+          "title": "촬영 진입 화면",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G07",
+            "G08"
+          ],
+          "path": "input/assets/glucopic-capture.png",
+          "caption": "원안 8쪽의 가상 촬영 화면 · 3초는 설계 예시",
+          "source": "GlucoPic 가상 사업계획서 8쪽 · 사용자 제공",
+          "rights": "permission",
+          "alt": "원안 8쪽의 가상 촬영 화면 · 3초는 설계 예시",
+          "source_fictional": true
+        },
+        {
+          "id": "scope",
+          "type": "text",
+          "title": "첫 MVP의 사용 흐름",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G06",
+            "G08"
+          ],
+          "text": "사진 촬영 후 후보를 확인합니다.\n섭취량을 보정하고 본인 혈당 기록과 연결합니다."
+        },
+        {
+          "id": "later",
+          "type": "text",
+          "title": "후속 기능",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G08",
+            "G11"
+          ],
+          "text": "기기 자동 연동과 가족 공유는 후속 계획입니다.\n현재 제공 기능이나 효능을 뜻하지 않습니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "첫 제품 범위는 촬영, 후보 확인, 섭취량 보정, 기록 연결입니다. 기기 자동 연동과 가족 공유는 후속 계획입니다. 먼저 한 끼 기록을 끝내는지 확인하겠습니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "촬영에서 기록 연결까지를\n첫 MVP 범위로 잡습니다",
+        "primary_block_id": "capture",
+        "reading_order": [
+          "capture",
+          "scope",
+          "later"
+        ],
+        "layout_variant": "product_hero",
+        "visual_reason": "원안 제품 설계 이미지를 크게 보고 고객 행동과 구현 상태를 읽습니다."
+      }
+    },
+    {
+      "id": "D10",
+      "section": "product",
+      "governing_message": "예시: 인식 오차와 데이터 사용조건을\n개발 전에 확인합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G07",
+        "G09"
+      ],
+      "evidence_ids": [
+        "G07",
+        "G09"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "recognize",
+          "type": "image",
+          "title": "범위로 보여주는 설계",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G07",
+            "G09"
+          ],
+          "path": "input/assets/glucopic-recognize.png",
+          "caption": "원안 8쪽의 가상 인식 화면 · 측정 결과가 아님",
+          "source": "GlucoPic 가상 사업계획서 8쪽 · 사용자 제공",
+          "rights": "permission",
+          "alt": "원안 8쪽의 가상 인식 화면 · 측정 결과가 아님",
+          "source_fictional": true
+        },
+        {
+          "id": "pipeline",
+          "type": "text",
+          "title": "모델 개발 가설",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G09"
+          ],
+          "text": "음식 후보 인식 뒤 섭취량 범위를 계산합니다.\n오류·수정 로그로 개선 대상을 찾습니다."
+        },
+        {
+          "id": "data",
+          "type": "text",
+          "title": "데이터 확보는 미완료",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G09"
+          ],
+          "text": "AI Hub는 후보 자료원입니다.\n사용조건·정답셋·한식별 오차부터 확인합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 25,
+      "speaker_notes": "교육용 가상 사례. 고객·인터뷰·성과·가격·팀·전망은 가정 또는 계획이며 실제 검증 결과가 아닙니다. 마스터 추가 장표입니다. 원안 9쪽의 데이터셋 수량과 독점 우위 주장은 검증되지 않았으므로 삭제했습니다. 데이터 사용권과 인식 오차를 확인할 계획으로 바꿨습니다. 출처: 사용자 제공 샘플_글루코픽_GlucoPic__사업계획서_20260911131034.pdf. 원안 인용·이미지의 정확한 위치와 사용 범위는 근거 원장 및 sample-assets.json 참조.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "인식 오차와 데이터 사용조건을\n개발 전에 확인합니다",
+        "primary_block_id": "recognize",
+        "reading_order": [
+          "recognize",
+          "pipeline",
+          "data"
+        ],
+        "layout_variant": "product_hero",
+        "visual_reason": "원안 제품 설계 이미지를 크게 보고 고객 행동과 구현 상태를 읽습니다."
+      }
+    },
+    {
+      "id": "D11",
+      "section": "traction",
+      "governing_message": "예시: 실제 고객 반응은\n4주 실험으로 확인할 계획입니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G10",
+        "G04"
+      ],
+      "evidence_ids": [
+        "G10",
+        "G04"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "experiment",
+          "type": "table",
+          "title": "가상 고객 검증 설계",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G10"
+          ],
+          "columns": [
+            "기간",
+            "계획",
+            "확인할 기록"
+          ],
+          "rows": [
+            [
+              "1주",
+              "문제 인터뷰 8명",
+              "최근 외식의 기록 누락"
+            ],
+            [
+              "2주",
+              "사용성 테스트 7명",
+              "첫 기록 완료율 목표 70%"
+            ],
+            [
+              "3주",
+              "7일 기록 실험 10명",
+              "5회 기록 완료율 목표 70%"
+            ],
+            [
+              "4주",
+              "고객군별 분석",
+              "연결률 목표 60%·결제 행동"
+            ]
+          ]
+        },
+        {
+          "id": "no-results",
+          "type": "text",
+          "title": "현재 확보한 성과는 없습니다",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G04",
+            "G10"
+          ],
+          "text": "인터뷰·매출·사용 로그가 없는 가상 계획입니다.\n참여자 중복 가능성이 있어 고유 인원으로 합산하지 않습니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "실제 고객 반응은 아직 없습니다. 사 주 동안 문제 인터뷰, 사용성 테스트, 칠 일 기록을 실험하겠습니다. 첫 기록과 반복 기록 칠십 퍼센트는 목표이며 실적이 아닙니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "실제 고객 반응은\n4주 실험으로 확인할 계획입니다",
+        "primary_block_id": "experiment",
+        "reading_order": [
+          "experiment",
+          "no-results"
+        ],
+        "layout_variant": "evidence_focus",
+        "visual_reason": "가설을 뒷받침하는 표나 수치를 먼저 보고 해석과 한계를 읽습니다."
+      }
+    },
+    {
+      "id": "D12",
+      "section": "business_model",
+      "governing_message": "예시: 개인 월 구독부터\n지불 행동을 확인합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G11",
+        "G10"
+      ],
+      "evidence_ids": [
+        "G11",
+        "G10"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "pricing",
+          "type": "table",
+          "title": "초기 수익 구조의 가정",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G11"
+          ],
+          "columns": [
+            "구분",
+            "가격·단위",
+            "제공 범위"
+          ],
+          "rows": [
+            [
+              "무료",
+              "0원",
+              "제한된 식사 기록"
+            ],
+            [
+              "개인 구독",
+              "월 14,900원 / 1인",
+              "기록 확장·개인 기록 비교"
+            ],
+            [
+              "B2B2C 계획",
+              "13개월 이후 협상",
+              "기관용 리포트 검토"
+            ]
+          ]
+        },
+        {
+          "id": "arpu",
+          "type": "metric",
+          "title": "계산용 월 실수취액",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G11"
+          ],
+          "value": "13,400원",
+          "detail": "할인 등을 반영한 가정 · 수수료·원가 미확인"
+        },
+        {
+          "id": "payment",
+          "type": "text",
+          "title": "결제로 확인할 가설",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G10",
+            "G11"
+          ],
+          "text": "9,900원 체험 이후 구독 결제를 제안할 계획입니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "개인이 월 만 사천구백 원을 내는 구독을 가정합니다. 구천구백 원 체험 이후 구독 결제를 제안할 계획입니다. 월 실수취액 만 삼천사백 원도 가정이며 원가는 미확인입니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "개인 월 구독부터\n지불 행동을 확인합니다",
+        "primary_block_id": "pricing",
+        "reading_order": [
+          "pricing",
+          "arpu",
+          "payment"
+        ],
+        "layout_variant": "evidence_focus",
+        "visual_reason": "가설을 뒷받침하는 표나 수치를 먼저 보고 해석과 한계를 읽습니다."
+      }
+    },
+    {
+      "id": "D13",
+      "section": "market",
+      "governing_message": "예시: 대상 인구와 월 구독료로\n시장 범위를 계산합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G02",
+        "G11",
+        "G12"
+      ],
+      "evidence_ids": [
+        "G02",
+        "G11",
+        "G12"
+      ],
+      "layout": "market_model",
+      "blocks": [
+        {
+          "id": "layers",
+          "type": "formula",
+          "title": "같은 과금 기준의 시장 계산",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G02",
+            "G11",
+            "G12"
+          ],
+          "items": [
+            {
+              "label": "TAM · 국내 전체",
+              "formula": "1,939만 명 × 13,400원 × 12",
+              "result": "약 3.12조원 / 년",
+              "basis": "원안 인용 인구 · 전원 유료 가정"
+            },
+            {
+              "label": "SAM · 초기 고객 조건",
+              "formula": "170만 명 × 13,400원 × 12",
+              "result": "약 2,734억원 / 년",
+              "basis": "경제활동·외식 조건의 가상 필터"
+            },
+            {
+              "label": "SOM · 12개월 목표",
+              "formula": "1,000명 × 13,400원 × 12",
+              "result": "약 1.61억원 / 년",
+              "basis": "확보 고객이 아닌 목표 연환산"
+            }
+          ]
+        },
+        {
+          "id": "method",
+          "type": "text",
+          "title": "계산의 한계",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G12"
+          ],
+          "text": "인구는 원안 인용값이며 재검증하지 않았습니다.\n유효 수요와 지불 의향을 입증한 시장 규모가 아닙니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "원안 인구에 같은 월 과금 기준을 적용한 계산입니다. 전체 약 삼조 원, 초기 조건 약 이천칠백억 원, 천 명 목표 약 일억 육천만 원입니다. 실제 수요를 입증한 값은 아닙니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "대상 인구와 월 구독료로\n시장 범위를 계산합니다",
+        "primary_block_id": "layers",
+        "reading_order": [
+          "layers",
+          "method"
+        ],
+        "layout_variant": "market_layers",
+        "visual_reason": "대상 범위와 계산식을 층별로 읽고 가정의 한계를 확인합니다."
+      }
+    },
+    {
+      "id": "D14",
+      "section": "market",
+      "governing_message": "예시: 가격 가정이 바뀌면\n연환산 매출도 달라집니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G11",
+        "G12"
+      ],
+      "evidence_ids": [
+        "G11",
+        "G12"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "sensitivity",
+          "type": "chart",
+          "title": "1,000명 유지 시 연환산 예시",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G11",
+            "G12"
+          ],
+          "chart_type": "bar",
+          "categories": [
+            "월 10,000원",
+            "월 13,400원",
+            "월 14,900원"
+          ],
+          "series": [
+            {
+              "name": "가정 연환산 매출",
+              "values": [
+                1.2,
+                1.608,
+                1.788
+              ],
+              "kind": "assumption",
+              "evidence_ids": [
+                "G11",
+                "G12"
+              ]
+            }
+          ],
+          "unit": "억원 / 년",
+          "source": "유료 1000명 × 월 실수취액 × 12개월 · 교육용 가정",
+          "source_fictional": true
+        },
+        {
+          "id": "caution",
+          "type": "text",
+          "title": "시장 규모와 실제 매출은 다릅니다",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G11",
+            "G12"
+          ],
+          "text": "같은 1,000명 가정의 가격 민감도입니다.\n가입 시점·이탈·비용을 반영한 실적이 아닙니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 25,
+      "speaker_notes": "교육용 가상 사례. 고객·인터뷰·성과·가격·팀·전망은 가정 또는 계획이며 실제 검증 결과가 아닙니다. 마스터 추가 장표입니다. 1000명이 12개월 유지된다는 단순 계산으로 1.2억원, 1.608억원, 1.788억원을 비교합니다. 매출 인식 시점과 비용을 넣은 사업 전망은 별도 과제입니다. 출처: 사용자 제공 샘플_글루코픽_GlucoPic__사업계획서_20260911131034.pdf. 원안 인용·이미지의 정확한 위치와 사용 범위는 근거 원장 및 sample-assets.json 참조.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "가격 가정이 바뀌면\n연환산 매출도 달라집니다",
+        "primary_block_id": "sensitivity",
+        "reading_order": [
+          "sensitivity",
+          "caution"
+        ],
+        "layout_variant": "evidence_focus",
+        "visual_reason": "가설을 뒷받침하는 표나 수치를 먼저 보고 해석과 한계를 읽습니다."
+      }
+    },
+    {
+      "id": "D15",
+      "section": "go_to_market",
+      "governing_message": "예시: 첫 고객은\n성남·강남 직장인에서 찾습니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G03",
+        "G13"
+      ],
+      "evidence_ids": [
+        "G03",
+        "G13"
+      ],
+      "layout": "evidence_board",
+      "blocks": [
+        {
+          "id": "funnel",
+          "type": "chart",
+          "title": "6개월 모집 퍼널 목표",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G03",
+            "G13"
+          ],
+          "chart_type": "bar",
+          "categories": [
+            "도달",
+            "신청",
+            "첫 기록",
+            "7일 기록",
+            "유료"
+          ],
+          "series": [
+            {
+              "name": "가정 목표 인원",
+              "values": [
+                20000,
+                4000,
+                2400,
+                1680,
+                1000
+              ],
+              "kind": "assumption",
+              "evidence_ids": [
+                "G13"
+              ]
+            }
+          ],
+          "unit": "명",
+          "source": "원안 14쪽의 가상 모집 계획 · 측정값 아님",
+          "source_fictional": true
+        },
+        {
+          "id": "channel",
+          "type": "text",
+          "title": "고객 조건과 모집 방식",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G03",
+            "G13"
+          ],
+          "text": "주 3회 이상 외식하는 35~55세 직장인.\n커뮤니티 안내와 교육센터 자발 신청을 검토합니다."
+        },
+        {
+          "id": "gate",
+          "type": "text",
+          "title": "실험 결과로 목표를 조정합니다",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G13"
+          ],
+          "text": "채널 제휴와 단계별 전환율은 아직 확인하지 않았습니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 20,
+      "speaker_notes": "첫 채널은 커뮤니티 안내와 교육센터 자발 신청입니다. 이만 명 도달에서 천 명 결제까지는 가상 퍼널 목표입니다. 실제 기록 유지와 전환율을 확인한 뒤 규모를 조정합니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "첫 고객은\n성남·강남 직장인에서 찾습니다",
+        "primary_block_id": "funnel",
+        "reading_order": [
+          "funnel",
+          "channel",
+          "gate"
+        ],
+        "layout_variant": "evidence_focus",
+        "visual_reason": "가설을 뒷받침하는 표나 수치를 먼저 보고 해석과 한계를 읽습니다."
+      }
+    },
+    {
+      "id": "D16",
+      "section": "go_to_market",
+      "governing_message": "예시: 교육센터 채널은\n작은 검토부터 시작합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G14"
+      ],
+      "evidence_ids": [
+        "G14"
+      ],
+      "layout": "milestone_roadmap",
+      "blocks": [
+        {
+          "id": "channel-plan",
+          "type": "roadmap",
+          "title": "채널 진입 계획",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G14"
+          ],
+          "items": [
+            {
+              "period": "0~6개월",
+              "title": "전문가 화면 검토",
+              "deliverables": [
+                "설계 이미지·표현 피드백"
+              ],
+              "gate": "검토 기록 확보"
+            },
+            {
+              "period": "7~12개월",
+              "title": "자발 신청 파일럿",
+              "deliverables": [
+                "작은 집단의 식사 기록"
+              ],
+              "gate": "기록 완료와 동의 확인"
+            },
+            {
+              "period": "13개월 이후",
+              "title": "상담 보조 리포트",
+              "deliverables": [
+                "기관용 활용 시나리오"
+              ],
+              "gate": "사용성과 계약 조건 검토"
+            }
+          ]
+        },
+        {
+          "id": "relationship",
+          "type": "text",
+          "title": "기관 접점은 후보입니다",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G14"
+          ],
+          "text": "확정된 제휴·추천·계약은 없습니다.\n모집과 기록 사용은 자발 신청·동의 범위를 확인합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 15,
+      "speaker_notes": "교육센터는 전문가 화면 검토, 파일럿, 상담 보조 리포트 순서로 접근할 계획입니다. 확정된 제휴나 추천은 없습니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "교육센터 채널은\n작은 검토부터 시작합니다",
+        "primary_block_id": "channel-plan",
+        "reading_order": [
+          "channel-plan",
+          "relationship"
+        ],
+        "layout_variant": "timeline_focus",
+        "visual_reason": "시간 순서와 다음 단계의 진행 기준을 함께 읽습니다."
+      }
+    },
+    {
+      "id": "D17",
+      "section": "growth",
+      "governing_message": "예시: 기록 유지가 확인되면\n기관 채널을 검토합니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G15"
+      ],
+      "evidence_ids": [
+        "G15"
+      ],
+      "layout": "milestone_roadmap",
+      "blocks": [
+        {
+          "id": "growth",
+          "type": "roadmap",
+          "title": "확장 가설과 진행 기준",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G15"
+          ],
+          "items": [
+            {
+              "period": "0~12개월",
+              "title": "개인 구독 실험",
+              "deliverables": [
+                "유료 1,000명 목표"
+              ],
+              "gate": "월 이탈률 목표 6% 이하"
+            },
+            {
+              "period": "13~24개월",
+              "title": "기관 채널 실험",
+              "deliverables": [
+                "B2B2C 3건 목표"
+              ],
+              "gate": "유지율·서비스 원가 확인"
+            },
+            {
+              "period": "이후",
+              "title": "효과 검증 설계",
+              "deliverables": [
+                "연구 설계 검토"
+              ],
+              "gate": "검토 결과에 따라 범위 결정"
+            }
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "type": "text",
+          "title": "목표는 달성 실적이 아닙니다",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G15"
+          ],
+          "text": "3만 명 확장과 다른 질환 적용은\n고객 유지와 별도 검증 뒤 판단합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 15,
+      "speaker_notes": "기록 유지 뒤 기관 채널을 검토합니다. 천 명 구독과 이탈률 육 퍼센트는 목표입니다. 원가와 계약 조건부터 확인합니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "기록 유지가 확인되면\n기관 채널을 검토합니다",
+        "primary_block_id": "growth",
+        "reading_order": [
+          "growth",
+          "uncertainty"
+        ],
+        "layout_variant": "timeline_focus",
+        "visual_reason": "시간 순서와 다음 단계의 진행 기준을 함께 읽습니다."
+      }
+    },
+    {
+      "id": "D18",
+      "section": "milestones",
+      "governing_message": "예시: 24개월 계획에\n단계별 검증 기준을 둡니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G16"
+      ],
+      "evidence_ids": [
+        "G16"
+      ],
+      "layout": "milestone_roadmap",
+      "blocks": [
+        {
+          "id": "milestones",
+          "type": "roadmap",
+          "title": "2026년 9월 시작 가상 일정",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G16"
+          ],
+          "items": [
+            {
+              "period": "0~3개월",
+              "title": "문제 검증",
+              "deliverables": [
+                "인터뷰·첫 기록 실험"
+              ],
+              "gate": "첫 기록 완료율 70% 목표"
+            },
+            {
+              "period": "4~9개월",
+              "title": "MVP 실험",
+              "deliverables": [
+                "7일 기록·결제 실험"
+              ],
+              "gate": "기록 완료율 70% 목표"
+            },
+            {
+              "period": "10~18개월",
+              "title": "채널 실험",
+              "deliverables": [
+                "유지율·원가 확인"
+              ],
+              "gate": "월 이탈률 6% 이하 목표"
+            },
+            {
+              "period": "19~24개월",
+              "title": "연구 설계",
+              "deliverables": [
+                "검토할 연구계획서"
+              ],
+              "gate": "전문가 검토 기록 확보"
+            }
+          ]
+        },
+        {
+          "id": "decision",
+          "type": "text",
+          "title": "다음 단계 판단",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G16"
+          ],
+          "text": "기준에 못 미치면 원인을 확인하고 제품·고객 범위를 조정합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 10,
+      "speaker_notes": "이십사 개월의 가상 일정입니다. 단계별 기록 완료와 유지를 확인합니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "24개월 계획에\n단계별 검증 기준을 둡니다",
+        "primary_block_id": "milestones",
+        "reading_order": [
+          "milestones",
+          "decision"
+        ],
+        "layout_variant": "timeline_focus",
+        "visual_reason": "시간 순서와 다음 단계의 진행 기준을 함께 읽습니다."
+      }
+    },
+    {
+      "id": "D19",
+      "section": "team",
+      "governing_message": "예시: 실행 책임을\n제품·AI·개발로 나눕니다",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G17"
+      ],
+      "evidence_ids": [
+        "G17"
+      ],
+      "layout": "team_evidence",
+      "blocks": [
+        {
+          "id": "roles",
+          "type": "team",
+          "title": "가상 역할 구성안",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G17"
+          ],
+          "items": [
+            {
+              "name": "제품·고객 검증",
+              "role": "제품 책임자",
+              "proof": "실제 경력·재직 증빙 없음",
+              "contribution": "인터뷰 설계·행동 로그 분석"
+            },
+            {
+              "name": "음식 인식",
+              "role": "AI 담당 계획",
+              "proof": "담당자·성과 미확정",
+              "contribution": "인식 후보·오차 측정"
+            },
+            {
+              "name": "앱·기록 파이프라인",
+              "role": "제품 개발 계획",
+              "proof": "담당자·구현 결과 미확정",
+              "contribution": "기록 흐름·데이터 보호 구현"
+            }
+          ]
+        },
+        {
+          "id": "advisors",
+          "type": "text",
+          "title": "필요한 자문",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G17"
+          ],
+          "text": "임상·영양·규제 검토는 계획입니다.\n참여 확인과 관련 검토 산출물이 필요합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 10,
+      "speaker_notes": "제품, 인식, 개발을 맡을 가상 팀입니다. 경력과 자문은 미확정입니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "실행 책임을\n제품·AI·개발로 나눕니다",
+        "primary_block_id": "roles",
+        "reading_order": [
+          "roles",
+          "advisors"
+        ],
+        "layout_variant": "team_focus",
+        "visual_reason": "역할별 산출물과 책임을 비교한 뒤 충원·자문 과제를 읽습니다."
+      }
+    },
+    {
+      "id": "D20",
+      "section": "vision",
+      "governing_message": "예시: 외식 기록을\n다음 선택에 활용하도록",
+      "governing_kind": "assumption",
+      "governing_evidence_ids": [
+        "G18",
+        "G10",
+        "G00"
+      ],
+      "evidence_ids": [
+        "G18",
+        "G10",
+        "G00"
+      ],
+      "layout": "closing",
+      "blocks": [
+        {
+          "id": "vision",
+          "type": "text",
+          "title": "GlucoPic의 가상 비전",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G18"
+          ],
+          "text": "내가 먹은 식사와 본인 기록의 관계를\n쉽게 확인하도록 돕습니다."
+        },
+        {
+          "id": "next",
+          "type": "text",
+          "title": "다음 확인 과제",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G10",
+            "G18"
+          ],
+          "text": "한 끼 기록을 끝내는가.\n반복해서 쓰고 비용을 지불하는가."
+        },
+        {
+          "id": "fiction",
+          "type": "text",
+          "title": "교육용 가상 사례",
+          "kind": "assumption",
+          "evidence_ids": [
+            "G00",
+            "G18"
+          ],
+          "text": "고객 가치와 사업 지속성은 실제 실험으로 확인해야 합니다."
+        }
+      ],
+      "body": [],
+      "assets": [],
+      "visual": {
+        "type": "none"
+      },
+      "seconds": 5,
+      "speaker_notes": "기록을 다음 선택에 씁니다.",
+      "subtitle": "GlucoPic · 교육용 가상 사례",
+      "source_fictional": true,
+      "visual_brief": {
+        "key_message": "외식 기록을\n다음 선택에 활용하도록",
+        "primary_block_id": "vision",
+        "reading_order": [
+          "vision",
+          "next",
+          "fiction"
+        ],
+        "layout_variant": "cover_focus",
+        "visual_reason": "서비스 설명과 식사 이미지를 먼저 읽고 가상 사례 표시를 확인합니다."
+      }
+    }
+  ],
+  "views": {
+    "master": {
+      "slide_ids": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12",
+        "D13",
+        "D14",
+        "D15",
+        "D16",
+        "D17",
+        "D18",
+        "D19",
+        "D20"
+      ]
+    },
+    "pitch": {
+      "slide_ids": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D11",
+        "D12",
+        "D13",
+        "D15",
+        "D16",
+        "D17",
+        "D18",
+        "D19",
+        "D20"
+      ],
+      "target_seconds": 300
+    }
+  }
+}

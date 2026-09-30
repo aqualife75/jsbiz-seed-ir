@@ -1,0 +1,253 @@
+{
+  "schema_version": "1.2",
+  "name": "seed-evidence-editorial-v1.4",
+  "provenance": {
+    "type": "abstracted_from_user_reference",
+    "reference_slide_numbers": [
+      1,
+      2,
+      3,
+      6,
+      8,
+      12,
+      13,
+      17,
+      19
+    ],
+    "method": "Reference PDF visual inspection and approved five-slide hierarchy pilot; abstracted composition rules only",
+    "original_text_or_media_included": false
+  },
+  "canvas": {
+    "width_inches": 13.3333333333,
+    "height_inches": 7.5,
+    "aspect_ratio": "16:9",
+    "reference_width_inches": 20,
+    "reference_height_inches": 11.25,
+    "reference_scale": 0.6666666667
+  },
+  "colors": {
+    "ink": "10141B",
+    "paper": "F5F2EB",
+    "white": "FFFFFF",
+    "accent": "E0492E",
+    "gold": "D4AF37",
+    "amber": "F2A33C",
+    "teal": "4FD1C5",
+    "teal_dark": "177B72",
+    "muted": "5C6572",
+    "muted_dark": "B3BAC4",
+    "panel": "1A2130",
+    "line": "354050",
+    "accent_bright": "FF654A",
+    "pale": "FAE9E3",
+    "teal_pale": "E0EFEB"
+  },
+  "typography": {
+    "preferred_family": "Pretendard",
+    "fallback_families": [
+      "Noto Sans CJK KR",
+      "Noto Sans KR",
+      "Malgun Gothic",
+      "맑은 고딕",
+      "Apple SD Gothic Neo"
+    ],
+    "font_files_bundled": false,
+    "reference_title_pt": 49.5,
+    "scaled_reference_title_pt": 33,
+    "cover_title_pt": 38,
+    "title_pt": 32,
+    "body_pt": 20,
+    "metric_pt": 42,
+    "caption_pt": 12,
+    "footer_pt": 9,
+    "max_governing_chars": 66,
+    "max_governing_lines": 2,
+    "max_body_items": 3,
+    "max_body_chars_per_item": 80,
+    "note": "Register all discovered faces in Artifact Tool's own skia-canvas registry. Measure the registered face, keep native text editable, and inspect actual final PPTX renders. No silent auto-shrink or omitted text."
+  },
+  "spacing": {
+    "safe_margin_inches": 0.75,
+    "kicker_y_inches": 0.42,
+    "title_y_inches": 0.83,
+    "title_height_inches": 1.2,
+    "body_top_inches": 2.35,
+    "footer_y_inches": 7.0,
+    "gutter_inches": 0.32
+  },
+  "image_rules": {
+    "evidence_image_fit": "contain",
+    "photo_fit": "contain",
+    "no_original_reference_assets_in_distribution": true,
+    "required_fields": [
+      "path",
+      "caption",
+      "source",
+      "rights",
+      "alt"
+    ],
+    "accepted_rights": [
+      "owned",
+      "licensed",
+      "permission",
+      "public-domain"
+    ],
+    "unknown_rights_action": "block_export",
+    "minimum_long_edge_pixels": 1200,
+    "minimum_long_edge_is_warning": true,
+    "generated_visual_disclosure_required": true,
+    "evidence_content_must_not_be_cropped": true
+  },
+  "layouts": [
+    {
+      "id": "cover",
+      "reference_slides": [
+        1,
+        19
+      ],
+      "background": "ink",
+      "composition": "Prominent governing message and value proposition, with a supplied product visual and clearly disclosed stage or next milestone.",
+      "left_fraction": 0.56,
+      "right_fraction": 0.36,
+      "best_for": [
+        "opening",
+        "vision"
+      ],
+      "max_body_items": 2,
+      "max_assets": 1
+    },
+    {
+      "id": "evidence",
+      "reference_slides": [
+        2,
+        3,
+        13
+      ],
+      "background": "paper",
+      "composition": "One dominant evidence object, metric or editorial statement; supporting interpretation has a separate role and smaller area. All sources remain visible or fully cited in notes.",
+      "best_for": [
+        "problem",
+        "market",
+        "traction",
+        "unit-economics"
+      ],
+      "max_body_items": 3,
+      "max_assets": 1
+    },
+    {
+      "id": "comparison",
+      "reference_slides": [
+        5,
+        6,
+        12
+      ],
+      "background": "ink",
+      "composition": "A native comparison table or mapping with preserved dimensions; emphasize the comparison criterion and a separate interpretation, rather than arbitrary equal cards.",
+      "best_for": [
+        "alternatives",
+        "competition",
+        "business-model"
+      ],
+      "max_body_items": 3,
+      "max_assets": 0
+    },
+    {
+      "id": "process",
+      "reference_slides": [
+        7,
+        8
+      ],
+      "background": "paper",
+      "composition": "Source screenshot or photo as the primary product evidence, with native explanation beside it. Use an unequal-width source-bearing sequence when multiple stages are supplied.",
+      "best_for": [
+        "solution",
+        "product",
+        "go-to-market"
+      ],
+      "max_body_items": 3,
+      "max_assets": 3
+    },
+    {
+      "id": "timeline",
+      "reference_slides": [
+        11,
+        16,
+        17
+      ],
+      "background": "ink",
+      "composition": "A horizontal execution sequence with time, deliverables and decision gates; highlight the final supplied stage without implying unsupported conversion rates.",
+      "best_for": [
+        "validation",
+        "roadmap",
+        "milestones"
+      ],
+      "max_body_items": 3,
+      "max_assets": 0
+    },
+    {
+      "id": "closing",
+      "reference_slides": [
+        18,
+        19
+      ],
+      "background": "ink",
+      "composition": "Team contribution or long-term vision left, one owned photo or three compact outcomes right; clear next milestone.",
+      "best_for": [
+        "team",
+        "vision",
+        "closing"
+      ],
+      "max_body_items": 3,
+      "max_assets": 1
+    }
+  ],
+  "rich_layouts": {
+    "engine": "artifact-tool",
+    "width_px": 1280,
+    "height_px": 720,
+    "margin_px": 72,
+    "gutter_px": 28,
+    "title_px": 46,
+    "master_body_px": 21,
+    "pitch_body_px": 22,
+    "body_bottom_px": 650,
+    "visual_brief_variants": {
+      "evidence_focus": "Primary evidence dominates; support areas follow content length and role. Qualitative evidence never becomes an invented numerical chart.",
+      "comparison_focus": "Native table or mapping with aligned criteria and an interpretation column. Wide matrices use a full-width composition.",
+      "product_hero": "Original input screenshot/photo or labeled fictional design asset plus native explanatory text. Decode its actual aspect ratio: portrait images use a narrower panel while retaining physical height, never stretching the screenshot. Preserve captions, source and original media.",
+      "market_layers": "Layered arithmetic with formula, result, scope and basis. Indentation shows scope sequence, never proportional market area.",
+      "timeline_focus": "Time, deliverables and advancement gates on one execution sequence. The last stage is emphasized.",
+      "team_focus": "Role, named experience and execution contribution, with the existing team distinguished visually from supplementary capability.",
+      "cover_focus": "A clear governing statement on the left and a full-height supplied image at right, with remaining context beneath the statement. A spacious dark composition by default."
+    },
+    "reference_composition": {
+      "product_journey": "Four evidence-bearing stages with title, actual product image when available, action, and detailed result. Reference slide 8.",
+      "milestone_roadmap": "Four periods with concrete deliverables and advancement gates, optionally followed by a schedule metric and validation condition. Reference slide 17.",
+      "roadmap_funding": "Legacy layout alias for four periods and advancement gates with a supporting context band.",
+      "market_model": "Three addressable-market calculations with populations, price assumptions, formulas and result; external context in a right column. Reference slide 13.",
+      "competition_matrix": "Native table retaining all comparison dimensions and named alternatives; separate strategic implication.",
+      "problem_solution": "Problem, intervention and proof in aligned rows, with actual evidence or a qualification alongside.",
+      "team_evidence": "Each person's role, verified experience and concrete execution contribution; remaining capability gap below.",
+      "evidence_board": "A dominant native chart/table or source image with complementary evidence and interpretation. Two media types may coexist."
+    }
+  },
+  "quality_gates": {
+    "one_claim_per_slide": true,
+    "fact_claims_need_evidence_ids": true,
+    "cite_in_speaker_notes": true,
+    "source_footer_required": true,
+    "editable_charts_and_text": true,
+    "body_overflow_action": "fail_with_actionable_message",
+    "measured_pitch_seconds_min": 270,
+    "measured_pitch_seconds_max": 300,
+    "minimum_slides_per_view": 18,
+    "ordered_topic_count": 14,
+    "minimum_slides_for_problem_alternatives_product_go_to_market": 2,
+    "investment_request_slides_allowed": false,
+    "new_production_visual_brief_required": true,
+    "record_composition_decisions": true,
+    "actual_pptx_render_review_required_for_final": true,
+    "storyboard_is_not_render_proof": true
+  },
+  "rights_note": "Style tokens and layout ideas only. Reference photos, screenshots, logos, company claims and font binaries are not redistributed. Verify font licensing from the font project before installing or bundling."
+}

@@ -1,5 +1,21 @@
 # seed-ir — 자료 폴더 하나로 Seed IR Deck 만들기
 
+## Codex 교육생용 v1.5.0
+
+현재 교육생용 배포본은 **Codex에서 여는 `정석biz-IR-프로젝트` 작업 폴더**입니다.
+
+1. [교육생 ZIP 다운로드](https://github.com/aqualife75/jsbiz-seed-ir/releases/download/codex-v1.5.0/seed-ir-codex-learner.zip)를 받아 압축을 풉니다.
+2. Codex에서 `정석biz-IR-프로젝트`를 열고 `자료넣는곳`에 한 팀의 자료를 넣습니다.
+3. **“우리 팀 IR Deck 만들어줘”**라고 요청합니다.
+
+[전체 사용법](https://accelerating.co.kr/resources/seed-ir-deck) · [변경사항](https://github.com/aqualife75/jsbiz-seed-ir/releases/tag/codex-v1.5.0) · [제작 과정과 회고](codex/docs/visual-retrospective.md) · [유지보수하는 Codex 원본](codex/)
+
+v1.5.0은 장표별 시각 자료 기획, 제품 설계 이미지 제작, 공식 근거와 사용권 확인, 대표 장표와 양 덱 전체의 실제 PPTX 화면 검수를 연결합니다. 생성 이미지는 설계·설명용으로 표시하며 고객 반응이나 제품 구현의 증거로 사용하지 않습니다. 상세본과 5분 발표본 모두 14목차·최소 18장이고, 이번 교육 범위에서는 투자 요청·조달 금액·자금 사용 계획을 제외합니다. 사업 근거가 부족하면 검수한 **초안**으로 전달합니다.
+
+Codex 소스와 허용 목록 기반 배포 도구는 `codex/`에 있습니다. [개발·검증 안내](codex/docs/architecture.md)를 참고하세요. 아래는 별도로 유지하는 **Claude Code 플러그인** 안내이며 목차·실행 환경이 다릅니다.
+
+## Claude Code 플러그인
+
 창업팀 자료 폴더(참가신청서·사업계획서·사진)를 넣고 한 문장만 말하면, 6개 AI 에이전트가 정석Biz 노하우 「IR Deck 작성」 12주제 × 투자자의 질문 기준으로 **Seed IR Deck(PPTX + PDF + 5분 피칭가이드)** 초안을 만들어 주는 Claude Code 플러그인입니다. 자료에 없는 숫자는 만들지 않고 `[확보 필요]`로 남깁니다.
 
 👉 **[교육생용 사용법 가이드 보기](https://aqualife75.github.io/jsbiz-seed-ir/)**
