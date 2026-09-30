@@ -103,7 +103,7 @@ class VisualContractTests(unittest.TestCase):
             self.h.initialize(project, '우리팀', input_dir='자료넣는곳')
             config = self.h.read_json(project / 'project.json')
             self.assertTrue(config['require_visual_briefs'])
-            self.assertEqual('1.5.0', config['harness_version'])
+            self.assertEqual('1.5.1', config['harness_version'])
             self.assertTrue(config['require_visual_plan'])
             self.assertEqual('1.2', config['schema_version'])
 
