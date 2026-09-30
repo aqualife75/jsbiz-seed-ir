@@ -196,7 +196,7 @@ def initialize(project: Path, team: str, input_dir: str='input'):
         'input_dir':input_relative,
         'created_at':now(),'pitch_target_seconds':300,'max_revision_rounds':2,
         'research_required':True,'data_policy':'one-team-per-project',
-        'harness_version':'1.5.0','require_visual_briefs':True,'require_visual_plan':True})
+        'harness_version':'1.5.1','require_visual_briefs':True,'require_visual_plan':True})
     write_json(project/'state.json',{'schema_version':'1.0','checkpoints':{},'events':[]})
     write_json(project/'evidence/evidence.json',{'schema_version':'1.0','items':[]})
     write_json(project/'evidence/section-map.json',initial_section_map())

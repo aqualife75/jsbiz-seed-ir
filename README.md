@@ -1,16 +1,18 @@
 # seed-ir — 자료 폴더 하나로 Seed IR Deck 만들기
 
-## Codex 교육생용 v1.5.0
+## Codex 교육생용 v1.5.1
 
 현재 교육생용 배포본은 **Codex에서 여는 `정석biz-IR-프로젝트` 작업 폴더**입니다.
 
-1. [교육생 ZIP 다운로드](https://github.com/aqualife75/jsbiz-seed-ir/releases/download/codex-v1.5.0/seed-ir-codex-learner.zip)를 받아 압축을 풉니다.
+1. [교육생 ZIP 다운로드](https://github.com/aqualife75/jsbiz-seed-ir/releases/download/codex-v1.5.1/seed-ir-codex-learner.zip)를 받아 압축을 풉니다.
 2. Codex에서 `정석biz-IR-프로젝트`를 열고 `자료넣는곳`에 한 팀의 자료를 넣습니다.
-3. **“우리 팀 IR Deck 만들어줘”**라고 요청합니다.
+3. **“우리 팀 IR Deck 만들어줘”**라고 요청합니다. 장표별 이미지 조사와 필요한 시각물의 직접 제작을 기본으로 수행합니다.
 
-[전체 사용법](https://accelerating.co.kr/resources/seed-ir-deck) · [변경사항](https://github.com/aqualife75/jsbiz-seed-ir/releases/tag/codex-v1.5.0) · [제작 과정과 회고](codex/docs/visual-retrospective.md) · [유지보수하는 Codex 원본](codex/)
+[전체 사용법](https://accelerating.co.kr/resources/seed-ir-deck) · [변경사항](https://github.com/aqualife75/jsbiz-seed-ir/releases/tag/codex-v1.5.1) · [제작 과정과 회고](codex/docs/visual-retrospective.md) · [유지보수하는 Codex 원본](codex/)
 
-v1.5.0은 장표별 시각 자료 기획, 제품 설계 이미지 제작, 공식 근거와 사용권 확인, 대표 장표와 양 덱 전체의 실제 PPTX 화면 검수를 연결합니다. 생성 이미지는 설계·설명용으로 표시하며 고객 반응이나 제품 구현의 증거로 사용하지 않습니다. 상세본과 5분 발표본 모두 14목차·최소 18장이고, 이번 교육 범위에서는 투자 요청·조달 금액·자금 사용 계획을 제외합니다. 사업 근거가 부족하면 검수한 **초안**으로 전달합니다.
+v1.5.1은 **각 슬라이드의 주장과 증거를 뒷받침하는 이미지를 조사해 실제로 넣는 작업**을 기본 지침에 명시합니다. 적합한 이미지나 사용권이 없으면 제품 컷·MVP 화면·설명 이미지 또는 편집 가능한 차트·도식을 전문가 수준으로 직접 기획·제작합니다. 제품 외형·화면·구도·조명과 발표 크기의 가독성까지 설계하며 양 덱의 전체 실제 PPTX 화면을 직접 검수합니다. 생성 이미지는 설계·설명용으로 표시하며 고객 반응이나 제품 구현의 증거로 사용하지 않습니다. 상세본과 5분 발표본 모두 14목차·최소 18장이고, 이번 교육 범위에서는 투자 요청·조달 금액·자금 사용 계획을 제외합니다. 사업 근거가 부족하면 검수한 **초안**으로 전달합니다.
+
+> 우리 팀 IR Deck 만들어줘. 각 슬라이드의 주장과 증거 자료를 뒷받침하는 이미지를 찾아 넣고, 적합한 이미지나 사용권이 없으면 제품 컷·MVP 화면·설명 이미지 또는 편집 가능한 차트·도식을 전문가 수준으로 직접 기획·제작해줘. 생성물은 설명용으로 표시하고 상세본과 발표본의 전체 실제 PPTX 화면을 검수해줘.
 
 Codex 소스와 허용 목록 기반 배포 도구는 `codex/`에 있습니다. [개발·검증 안내](codex/docs/architecture.md)를 참고하세요. 아래는 별도로 유지하는 **Claude Code 플러그인** 안내이며 목차·실행 환경이 다릅니다.
 

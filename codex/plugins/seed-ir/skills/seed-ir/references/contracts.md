@@ -82,7 +82,7 @@ gate는 설정된 입력 폴더의 파일 집합·해시를 inventory의 `source
 
 ## 장표별 시각 구성안 — visual_brief
 
-파일의 schema_version은 1.2를 유지한다. v1.5.0 신규 프로젝트는 `project.json`에 `harness_version: "1.5.0"`, `require_visual_briefs: true`, `require_visual_plan: true`를 기록한다. 기존 프로젝트에 이 플래그가 없으면 이전 초안과 검수 기록을 읽을 수 있다. 새 작업의 검사를 통과시키기 위해 플래그를 끄지 않는다.
+파일의 schema_version은 1.2를 유지한다. v1.5.1 신규 프로젝트는 `project.json`에 `harness_version: "1.5.1"`, `require_visual_briefs: true`, `require_visual_plan: true`를 기록한다. 기존 프로젝트에 이 플래그가 없으면 이전 초안과 검수 기록을 읽을 수 있다. 새 작업의 검사를 통과시키기 위해 플래그를 끄지 않는다.
 
 모든 새 장표의 `visual_brief`에 아래 다섯 필드를 작성한다. `key_message`는 거버닝 메시지와 같은 결론을 전달하며 새로운 미검증 주장을 추가하지 않는다.
 

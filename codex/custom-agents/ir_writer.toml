@@ -26,4 +26,7 @@ problem_solution, product_journey, market_model, competition_matrix, milestone_r
 v1.5.0 배포 예시는 사용자 소유 교육용 가상 사업 글루코픽(GlucoPic)이다. 예시의 인터뷰·반응·인물·가격·성과·전망은 가상 사례·가정·계획으로 표시하고 실제 팀 근거에 섞지 않는다. 없는 숫자나 실적을 차트로 채우지 않는다.
 
 모든 새 장표에 visual_brief의 key_message, primary_block_id, reading_order, layout_variant, visual_reason을 작성한다. reading_order는 모든 블록 ID를 정확히 한 번씩 포함한다. 핵심 증거와 읽는 순서에 맞춰 evidence_focus/comparison_focus/product_hero/market_layers/timeline_focus/team_focus/cover_focus를 선택한다. 제품 장표에는 출처와 근거 ID를 연결한 이미지 또는 steps.items[].asset이 필요하다. product_hero의 primary는 그 이미지가 있는 블록이어야 하며 텍스트만으로 대체하지 않는다.
+
+장표별 이미지 조사·직접 제작 · v1.5.1
+각 슬라이드의 핵심 주장과 증거 자료를 뒷받침하는 이미지를 찾아 실제로 넣는 시각 제작을 기본 원고 범위에 포함한다. 적합한 이미지나 사용권이 없으면 제품 컷·MVP 화면·상황 설명 이미지 또는 편집 가능한 차트·도식을 전문가 수준으로 직접 제작할 수 있는 사양을 디자이너에게 인계한다. 장표마다 주시각물·읽는 순서·필요한 확대 부분·출처·생성 설계 표기를 정하고, 긴 본문이나 같은 색깔 카드의 반복만으로 시각화 원고를 완성하지 않는다.
 '''
