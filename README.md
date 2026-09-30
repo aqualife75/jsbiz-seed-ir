@@ -14,6 +14,12 @@ v1.5.0은 장표별 시각 자료 기획, 제품 설계 이미지 제작, 공식
 
 Codex 소스와 허용 목록 기반 배포 도구는 `codex/`에 있습니다. [개발·검증 안내](codex/docs/architecture.md)를 참고하세요. 아래는 별도로 유지하는 **Claude Code 플러그인** 안내이며 목차·실행 환경이 다릅니다.
 
+## 실제 제작 결과 예시 · 2026.09.30
+
+**[글루코픽 전체 슬라이드 40장 보기](https://aqualife75.github.io/jsbiz-seed-ir/examples/glucopic-20260930/index.html)** · [홈페이지에서 보기](https://accelerating.co.kr/resources/seed-ir-deck/examples/glucopic-20260930/index.html) · [전체 파일 다운로드](https://github.com/aqualife75/jsbiz-seed-ir/releases/tag/example-glucopic-20260930)
+
+상세본 22장과 5분 발표본 18장의 실제 PPTX 렌더 PNG를 원본 그대로 제공합니다. PPTX·이미지 기반 PDF·원본 PNG·대본·예상 질문을 받을 수 있습니다. **계획·가정·미확인 표시를 유지한 보완 초안**이며 실제 제품 구현이나 고객 성과 검증을 뜻하지 않습니다. 기존 38장 교육 예시 및 v1.5.0 실행 도구 ZIP과 별도입니다.
+
 ## Claude Code 플러그인
 
 창업팀 자료 폴더(참가신청서·사업계획서·사진)를 넣고 한 문장만 말하면, 6개 AI 에이전트가 정석Biz 노하우 「IR Deck 작성」 12주제 × 투자자의 질문 기준으로 **Seed IR Deck(PPTX + PDF + 5분 피칭가이드)** 초안을 만들어 주는 Claude Code 플러그인입니다. 자료에 없는 숫자는 만들지 않고 `[확보 필요]`로 남깁니다.

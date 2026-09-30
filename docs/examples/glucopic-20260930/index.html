@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>글루코픽 IR 제작 결과 · 전체 40장과 파일 다운로드 | 정석biz</title>
+<meta name="description" content="2026.09.30 제작한 글루코픽 IR 보완초안. 실제 PPTX에서 렌더한 상세본 22장과 발표본 18장을 그대로 보고 PPTX, 이미지 기반 PDF, 대본, 예상 질문을 다운로드할 수 있습니다.">
+<link rel="stylesheet" href="viewer.css">
+<script src="viewer.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">본문으로 바로 가기</a>
+<header class="site-header wrap"><a class="brand" href="https://accelerating.co.kr/resources/seed-ir-deck">정석biz 노하우</a><a class="guide-link" href="https://accelerating.co.kr/resources/seed-ir-deck">IR Deck 사용설명서</a></header>
+<main id="main" class="wrap">
+  <section class="intro" aria-labelledby="page-title">
+    <p class="edition">2026.09.30 제작 결과 예시 · 보완초안</p>
+    <h1 id="page-title">글루코픽 IR,<br class="mobile-break"> 전체 슬라이드로 확인하세요.</h1>
+    <p class="description">실제 PPTX에서 렌더한 상세22장·발표18장, 총40장을 원본 그대로 제공합니다. 계획·가정·미확인 표시는 유지했으며 실제 고객 성과나 제품 구현 검증을 뜻하지 않습니다.</p>
+    <p class="sample-note">기존 38장 교육 예시와 별도로 공개하는 이번 제작 결과입니다.</p>
+  </section>
+  <section class="downloads" id="downloads" aria-labelledby="downloads-title">
+    <div class="downloads-heading"><h2 id="downloads-title">파일 다운로드</h2><a class="bundle-link" href="https://github.com/aqualife75/jsbiz-seed-ir/releases/download/example-glucopic-20260930/glucopic-example-20260930.zip">전체 파일 ZIP 받기 <span aria-hidden="true">↓</span></a></div>
+    <div class="download-groups">
+      <div class="download-group"><span>편집 가능한 PPTX</span><div><a href="glucopic-pitch-draft.pptx" download>발표본 · 18장</a><a href="glucopic-master-draft.pptx" download>상세본 · 22장</a></div></div>
+      <div class="download-group"><span>이미지 기반 PDF</span><div><a href="glucopic-pitch-slides.pdf" download>발표본 · 18장</a><a href="glucopic-master-slides.pdf" download>상세본 · 22장</a></div></div>
+      <div class="download-group"><span>함께 읽는 자료</span><div><a href="pitch-script.md" download>5분 발표 대본</a><a href="questions-and-answers.md" download>예상 질문과 답변</a></div></div>
+    </div>
+    <p class="download-note">PDF는 장표 이미지를 담아 화면의 글꼴과 배치를 유지합니다. 내용을 수정하려면 PPTX를 사용하세요.</p>
+  </section>
+  <section id="viewer" class="viewer" aria-labelledby="viewer-heading" hidden>
+    <div class="viewer-heading"><h2 id="viewer-heading">슬라이드 보기</h2><div class="deck-switch" role="group" aria-label="덱 선택"><button type="button" data-view="pitch" aria-pressed="true" aria-controls="stage pitch-gallery master-gallery">5분 발표본 <span>18장</span></button><button type="button" data-view="master" aria-pressed="false" aria-controls="stage pitch-gallery master-gallery">상세본 <span>22장</span></button></div></div>
+    <div class="stage" id="stage"><a id="large-original" href="pitch/slide-01.png" target="_blank" rel="noopener" aria-label="현재 슬라이드 PNG 원본 보기"><img id="large-slide" src="pitch/slide-01.png" alt="" width="1600" height="900" decoding="async"></a></div>
+    <div class="slide-caption" aria-live="polite" aria-atomic="true"><p id="current-count" class="current-count"></p><h3 id="current-title"></h3></div>
+    <div class="viewer-controls">
+      <div class="slide-nav"><button type="button" id="previous" aria-label="이전 슬라이드">← <span>이전</span></button><label class="sr-only" for="slide-select">슬라이드 선택</label><select id="slide-select"></select><button type="button" id="next" aria-label="다음 슬라이드"><span>다음</span> →</button></div>
+      <div class="current-links"><a id="current-original" href="pitch/slide-01.png" target="_blank" rel="noopener">PNG 원본 보기</a><a id="current-download" href="pitch/slide-01.png" download>PNG 다운로드</a><a id="current-link" href="#pitch-1">이 장표 링크</a></div>
+    </div>
+    <p class="keyboard-hint">좌우 화살표로 넘기고, Home·End로 처음과 마지막 장표로 이동할 수 있습니다.</p>
+    <p class="image-error" id="image-error" role="status" hidden>이미지를 불러오지 못했습니다. PNG 원본 링크를 열거나 PPTX·PDF를 다운로드해 주세요.</p>
+  </section>
+  <section class="all-slides" aria-labelledby="all-heading">
+    <h2 id="all-heading">전체 장표</h2>
+    <p class="fallback-hint">장표를 누르면 PNG 원본이 새 창에서 열립니다. 아래에서 발표본과 상세본의 모든 장표를 볼 수 있습니다.</p>
+    <section class="deck-section" id="pitch-gallery" data-gallery="pitch" aria-labelledby="pitch-heading">
+  <div class="gallery-heading"><h3 id="pitch-heading">5분 발표본 <span>18장</span></h3><p class="enhanced-hint">아래 장표를 선택하면 큰 화면에서 볼 수 있습니다.</p></div>
+  <div class="slide-grid"><figure class="slide-card" id="pitch-slide-1">
+  <a class="thumbnail-link" href="pitch/slide-01.png" target="_blank" rel="noopener" data-select="pitch-1" aria-label="5분 발표본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽 크게 보기">
+    <img src="pitch/slide-01.png" alt="5분 발표본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">01</span><span class="slide-title">계획: 식사 사진을 다음 선택으로 연결하는 글루코픽</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-01.png" target="_blank" rel="noopener" aria-label="5분 발표본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽 PNG 원본 보기">원본 보기</a><a href="pitch/slide-01.png" download="glucopic-pitch-01.png" aria-label="5분 발표본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-2">
+  <a class="thumbnail-link" href="pitch/slide-02.png" target="_blank" rel="noopener" data-select="pitch-2" aria-label="5분 발표본 2장. 연령대가 높을수록 당뇨병 유병률도 높다 크게 보기">
+    <img src="pitch/slide-02.png" alt="5분 발표본 2장. 연령대가 높을수록 당뇨병 유병률도 높다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">02</span><span class="slide-title">연령대가 높을수록 당뇨병 유병률도 높다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-02.png" target="_blank" rel="noopener" aria-label="5분 발표본 2장. 연령대가 높을수록 당뇨병 유병률도 높다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-02.png" download="glucopic-pitch-02.png" aria-label="5분 발표본 2장. 연령대가 높을수록 당뇨병 유병률도 높다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-3">
+  <a class="thumbnail-link" href="pitch/slide-03.png" target="_blank" rel="noopener" data-select="pitch-3" aria-label="5분 발표본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인 크게 보기">
+    <img src="pitch/slide-03.png" alt="5분 발표본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">03</span><span class="slide-title">계획: 첫 고객은 식사 선택이 반복되는 직장인</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-03.png" target="_blank" rel="noopener" aria-label="5분 발표본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인 PNG 원본 보기">원본 보기</a><a href="pitch/slide-03.png" download="glucopic-pitch-03.png" aria-label="5분 발표본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-4">
+  <a class="thumbnail-link" href="pitch/slide-04.png" target="_blank" rel="noopener" data-select="pitch-4" aria-label="5분 발표본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다 크게 보기">
+    <img src="pitch/slide-04.png" alt="5분 발표본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">04</span><span class="slide-title">가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-04.png" target="_blank" rel="noopener" aria-label="5분 발표본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-04.png" download="glucopic-pitch-04.png" aria-label="5분 발표본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-5">
+  <a class="thumbnail-link" href="pitch/slide-05.png" target="_blank" rel="noopener" data-select="pitch-5" aria-label="5분 발표본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다 크게 보기">
+    <img src="pitch/slide-05.png" alt="5분 발표본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">05</span><span class="slide-title">기존 앱도 사진 AI와 건강 기록을 제공한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-05.png" target="_blank" rel="noopener" aria-label="5분 발표본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-05.png" download="glucopic-pitch-05.png" aria-label="5분 발표본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-6">
+  <a class="thumbnail-link" href="pitch/slide-06.png" target="_blank" rel="noopener" data-select="pitch-6" aria-label="5분 발표본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다 크게 보기">
+    <img src="pitch/slide-06.png" alt="5분 발표본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">06</span><span class="slide-title">계획: 같은 과업에서 전환할 이유를 검증한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-06.png" target="_blank" rel="noopener" aria-label="5분 발표본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-06.png" download="glucopic-pitch-06.png" aria-label="5분 발표본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-7">
+  <a class="thumbnail-link" href="pitch/slide-07.png" target="_blank" rel="noopener" data-select="pitch-7" aria-label="5분 발표본 7장. 계획: 사진 한 장에서 식사 기록을 시작한다 크게 보기">
+    <img src="pitch/slide-07.png" alt="5분 발표본 7장. 계획: 사진 한 장에서 식사 기록을 시작한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">07</span><span class="slide-title">계획: 사진 한 장에서 식사 기록을 시작한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-07.png" target="_blank" rel="noopener" aria-label="5분 발표본 7장. 계획: 사진 한 장에서 식사 기록을 시작한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-07.png" download="glucopic-pitch-07.png" aria-label="5분 발표본 7장. 계획: 사진 한 장에서 식사 기록을 시작한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-8">
+  <a class="thumbnail-link" href="pitch/slide-08.png" target="_blank" rel="noopener" data-select="pitch-8" aria-label="5분 발표본 8장. 계획: AI가 제안하고 사용자가 확인한다 크게 보기">
+    <img src="pitch/slide-08.png" alt="5분 발표본 8장. 계획: AI가 제안하고 사용자가 확인한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">08</span><span class="slide-title">계획: AI가 제안하고 사용자가 확인한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-08.png" target="_blank" rel="noopener" aria-label="5분 발표본 8장. 계획: AI가 제안하고 사용자가 확인한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-08.png" download="glucopic-pitch-08.png" aria-label="5분 발표본 8장. 계획: AI가 제안하고 사용자가 확인한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-9">
+  <a class="thumbnail-link" href="pitch/slide-09.png" target="_blank" rel="noopener" data-select="pitch-9" aria-label="5분 발표본 9장. 계획: 사진·시각·측정값을 한 기록으로 연결한다 크게 보기">
+    <img src="pitch/slide-09.png" alt="5분 발표본 9장. 계획: 사진·시각·측정값을 한 기록으로 연결한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">09</span><span class="slide-title">계획: 사진·시각·측정값을 한 기록으로 연결한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-09.png" target="_blank" rel="noopener" aria-label="5분 발표본 9장. 계획: 사진·시각·측정값을 한 기록으로 연결한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-09.png" download="glucopic-pitch-09.png" aria-label="5분 발표본 9장. 계획: 사진·시각·측정값을 한 기록으로 연결한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-10">
+  <a class="thumbnail-link" href="pitch/slide-10.png" target="_blank" rel="noopener" data-select="pitch-10" aria-label="5분 발표본 10장. 계획: 실제 고객 반응은 첫 7일에서 확인한다 크게 보기">
+    <img src="pitch/slide-10.png" alt="5분 발표본 10장. 계획: 실제 고객 반응은 첫 7일에서 확인한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">10</span><span class="slide-title">계획: 실제 고객 반응은 첫 7일에서 확인한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-10.png" target="_blank" rel="noopener" aria-label="5분 발표본 10장. 계획: 실제 고객 반응은 첫 7일에서 확인한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-10.png" download="glucopic-pitch-10.png" aria-label="5분 발표본 10장. 계획: 실제 고객 반응은 첫 7일에서 확인한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-11">
+  <a class="thumbnail-link" href="pitch/slide-11.png" target="_blank" rel="noopener" data-select="pitch-11" aria-label="5분 발표본 11장. 가정: 월 15,000원의 지불 의사를 검증한다 크게 보기">
+    <img src="pitch/slide-11.png" alt="5분 발표본 11장. 가정: 월 15,000원의 지불 의사를 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">11</span><span class="slide-title">가정: 월 15,000원의 지불 의사를 검증한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-11.png" target="_blank" rel="noopener" aria-label="5분 발표본 11장. 가정: 월 15,000원의 지불 의사를 검증한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-11.png" download="glucopic-pitch-11.png" aria-label="5분 발표본 11장. 가정: 월 15,000원의 지불 의사를 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-12">
+  <a class="thumbnail-link" href="pitch/slide-12.png" target="_blank" rel="noopener" data-select="pitch-12" aria-label="5분 발표본 12장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다 크게 보기">
+    <img src="pitch/slide-12.png" alt="5분 발표본 12장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">12</span><span class="slide-title">계획: 전체 인구에서 실제 지불 고객까지 좁힌다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-12.png" target="_blank" rel="noopener" aria-label="5분 발표본 12장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-12.png" download="glucopic-pitch-12.png" aria-label="5분 발표본 12장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-13">
+  <a class="thumbnail-link" href="pitch/slide-13.png" target="_blank" rel="noopener" data-select="pitch-13" aria-label="5분 발표본 13장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다 크게 보기">
+    <img src="pitch/slide-13.png" alt="5분 발표본 13장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">13</span><span class="slide-title">계획: 첫 코호트는 커뮤니티에서 직접 모집한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-13.png" target="_blank" rel="noopener" aria-label="5분 발표본 13장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-13.png" download="glucopic-pitch-13.png" aria-label="5분 발표본 13장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-14">
+  <a class="thumbnail-link" href="pitch/slide-14.png" target="_blank" rel="noopener" data-select="pitch-14" aria-label="5분 발표본 14장. 계획: 체험 시작부터 결제까지 분모를 고정한다 크게 보기">
+    <img src="pitch/slide-14.png" alt="5분 발표본 14장. 계획: 체험 시작부터 결제까지 분모를 고정한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">14</span><span class="slide-title">계획: 체험 시작부터 결제까지 분모를 고정한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-14.png" target="_blank" rel="noopener" aria-label="5분 발표본 14장. 계획: 체험 시작부터 결제까지 분모를 고정한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-14.png" download="glucopic-pitch-14.png" aria-label="5분 발표본 14장. 계획: 체험 시작부터 결제까지 분모를 고정한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-15">
+  <a class="thumbnail-link" href="pitch/slide-15.png" target="_blank" rel="noopener" data-select="pitch-15" aria-label="5분 발표본 15장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다 크게 보기">
+    <img src="pitch/slide-15.png" alt="5분 발표본 15장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">15</span><span class="slide-title">계획: 유지와 결제 확인 후 채널·고객군을 확장한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-15.png" target="_blank" rel="noopener" aria-label="5분 발표본 15장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-15.png" download="glucopic-pitch-15.png" aria-label="5분 발표본 15장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-16">
+  <a class="thumbnail-link" href="pitch/slide-16.png" target="_blank" rel="noopener" data-select="pitch-16" aria-label="5분 발표본 16장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다 크게 보기">
+    <img src="pitch/slide-16.png" alt="5분 발표본 16장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">16</span><span class="slide-title">계획: 첫 3개월은 사용성과 유료 수요를 검증한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-16.png" target="_blank" rel="noopener" aria-label="5분 발표본 16장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-16.png" download="glucopic-pitch-16.png" aria-label="5분 발표본 16장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-17">
+  <a class="thumbnail-link" href="pitch/slide-17.png" target="_blank" rel="noopener" data-select="pitch-17" aria-label="5분 발표본 17장. 계획: 제품·개발·안전성 책임자를 확정한다 크게 보기">
+    <img src="pitch/slide-17.png" alt="5분 발표본 17장. 계획: 제품·개발·안전성 책임자를 확정한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">17</span><span class="slide-title">계획: 제품·개발·안전성 책임자를 확정한다</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-17.png" target="_blank" rel="noopener" aria-label="5분 발표본 17장. 계획: 제품·개발·안전성 책임자를 확정한다 PNG 원본 보기">원본 보기</a><a href="pitch/slide-17.png" download="glucopic-pitch-17.png" aria-label="5분 발표본 17장. 계획: 제품·개발·안전성 책임자를 확정한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="pitch-slide-18">
+  <a class="thumbnail-link" href="pitch/slide-18.png" target="_blank" rel="noopener" data-select="pitch-18" aria-label="5분 발표본 18장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록 크게 보기">
+    <img src="pitch/slide-18.png" alt="5분 발표본 18장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">18</span><span class="slide-title">계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록</span></figcaption>
+  <div class="card-links"><a href="pitch/slide-18.png" target="_blank" rel="noopener" aria-label="5분 발표본 18장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록 PNG 원본 보기">원본 보기</a><a href="pitch/slide-18.png" download="glucopic-pitch-18.png" aria-label="5분 발표본 18장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록 PNG 다운로드">PNG 다운로드</a></div>
+</figure></div>
+</section>
+<section class="deck-section" id="master-gallery" data-gallery="master" aria-labelledby="master-heading">
+  <div class="gallery-heading"><h3 id="master-heading">상세본 <span>22장</span></h3><p class="enhanced-hint">아래 장표를 선택하면 큰 화면에서 볼 수 있습니다.</p></div>
+  <div class="slide-grid"><figure class="slide-card" id="master-slide-1">
+  <a class="thumbnail-link" href="master/slide-01.png" target="_blank" rel="noopener" data-select="master-1" aria-label="상세본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽 크게 보기">
+    <img src="master/slide-01.png" alt="상세본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">01</span><span class="slide-title">계획: 식사 사진을 다음 선택으로 연결하는 글루코픽</span></figcaption>
+  <div class="card-links"><a href="master/slide-01.png" target="_blank" rel="noopener" aria-label="상세본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽 PNG 원본 보기">원본 보기</a><a href="master/slide-01.png" download="glucopic-master-01.png" aria-label="상세본 1장. 계획: 식사 사진을 다음 선택으로 연결하는 글루코픽 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-2">
+  <a class="thumbnail-link" href="master/slide-02.png" target="_blank" rel="noopener" data-select="master-2" aria-label="상세본 2장. 연령대가 높을수록 당뇨병 유병률도 높다 크게 보기">
+    <img src="master/slide-02.png" alt="상세본 2장. 연령대가 높을수록 당뇨병 유병률도 높다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">02</span><span class="slide-title">연령대가 높을수록 당뇨병 유병률도 높다</span></figcaption>
+  <div class="card-links"><a href="master/slide-02.png" target="_blank" rel="noopener" aria-label="상세본 2장. 연령대가 높을수록 당뇨병 유병률도 높다 PNG 원본 보기">원본 보기</a><a href="master/slide-02.png" download="glucopic-master-02.png" aria-label="상세본 2장. 연령대가 높을수록 당뇨병 유병률도 높다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-3">
+  <a class="thumbnail-link" href="master/slide-03.png" target="_blank" rel="noopener" data-select="master-3" aria-label="상세본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인 크게 보기">
+    <img src="master/slide-03.png" alt="상세본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">03</span><span class="slide-title">계획: 첫 고객은 식사 선택이 반복되는 직장인</span></figcaption>
+  <div class="card-links"><a href="master/slide-03.png" target="_blank" rel="noopener" aria-label="상세본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인 PNG 원본 보기">원본 보기</a><a href="master/slide-03.png" download="glucopic-master-03.png" aria-label="상세본 3장. 계획: 첫 고객은 식사 선택이 반복되는 직장인 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-4">
+  <a class="thumbnail-link" href="master/slide-04.png" target="_blank" rel="noopener" data-select="master-4" aria-label="상세본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다 크게 보기">
+    <img src="master/slide-04.png" alt="상세본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">04</span><span class="slide-title">가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다</span></figcaption>
+  <div class="card-links"><a href="master/slide-04.png" target="_blank" rel="noopener" aria-label="상세본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다 PNG 원본 보기">원본 보기</a><a href="master/slide-04.png" download="glucopic-master-04.png" aria-label="상세본 4장. 가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-5">
+  <a class="thumbnail-link" href="master/slide-05.png" target="_blank" rel="noopener" data-select="master-5" aria-label="상세본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다 크게 보기">
+    <img src="master/slide-05.png" alt="상세본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">05</span><span class="slide-title">기존 앱도 사진 AI와 건강 기록을 제공한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-05.png" target="_blank" rel="noopener" aria-label="상세본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다 PNG 원본 보기">원본 보기</a><a href="master/slide-05.png" download="glucopic-master-05.png" aria-label="상세본 5장. 기존 앱도 사진 AI와 건강 기록을 제공한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-6">
+  <a class="thumbnail-link" href="master/slide-06.png" target="_blank" rel="noopener" data-select="master-6" aria-label="상세본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다 크게 보기">
+    <img src="master/slide-06.png" alt="상세본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">06</span><span class="slide-title">계획: 같은 과업에서 전환할 이유를 검증한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-06.png" target="_blank" rel="noopener" aria-label="상세본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다 PNG 원본 보기">원본 보기</a><a href="master/slide-06.png" download="glucopic-master-06.png" aria-label="상세본 6장. 계획: 같은 과업에서 전환할 이유를 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-7">
+  <a class="thumbnail-link" href="master/slide-07.png" target="_blank" rel="noopener" data-select="master-7" aria-label="상세본 7장. 계획: 식전 사용과 수작업 운영을 따로 검증한다 크게 보기">
+    <img src="master/slide-07.png" alt="상세본 7장. 계획: 식전 사용과 수작업 운영을 따로 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">07</span><span class="slide-title">계획: 식전 사용과 수작업 운영을 따로 검증한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-07.png" target="_blank" rel="noopener" aria-label="상세본 7장. 계획: 식전 사용과 수작업 운영을 따로 검증한다 PNG 원본 보기">원본 보기</a><a href="master/slide-07.png" download="glucopic-master-07.png" aria-label="상세본 7장. 계획: 식전 사용과 수작업 운영을 따로 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-8">
+  <a class="thumbnail-link" href="master/slide-08.png" target="_blank" rel="noopener" data-select="master-8" aria-label="상세본 8장. 계획: 사진 한 장에서 식사 기록을 시작한다 크게 보기">
+    <img src="master/slide-08.png" alt="상세본 8장. 계획: 사진 한 장에서 식사 기록을 시작한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">08</span><span class="slide-title">계획: 사진 한 장에서 식사 기록을 시작한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-08.png" target="_blank" rel="noopener" aria-label="상세본 8장. 계획: 사진 한 장에서 식사 기록을 시작한다 PNG 원본 보기">원본 보기</a><a href="master/slide-08.png" download="glucopic-master-08.png" aria-label="상세본 8장. 계획: 사진 한 장에서 식사 기록을 시작한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-9">
+  <a class="thumbnail-link" href="master/slide-09.png" target="_blank" rel="noopener" data-select="master-9" aria-label="상세본 9장. 계획: AI가 제안하고 사용자가 확인한다 크게 보기">
+    <img src="master/slide-09.png" alt="상세본 9장. 계획: AI가 제안하고 사용자가 확인한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">09</span><span class="slide-title">계획: AI가 제안하고 사용자가 확인한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-09.png" target="_blank" rel="noopener" aria-label="상세본 9장. 계획: AI가 제안하고 사용자가 확인한다 PNG 원본 보기">원본 보기</a><a href="master/slide-09.png" download="glucopic-master-09.png" aria-label="상세본 9장. 계획: AI가 제안하고 사용자가 확인한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-10">
+  <a class="thumbnail-link" href="master/slide-10.png" target="_blank" rel="noopener" data-select="master-10" aria-label="상세본 10장. 계획: 사진·시각·측정값을 한 기록으로 연결한다 크게 보기">
+    <img src="master/slide-10.png" alt="상세본 10장. 계획: 사진·시각·측정값을 한 기록으로 연결한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">10</span><span class="slide-title">계획: 사진·시각·측정값을 한 기록으로 연결한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-10.png" target="_blank" rel="noopener" aria-label="상세본 10장. 계획: 사진·시각·측정값을 한 기록으로 연결한다 PNG 원본 보기">원본 보기</a><a href="master/slide-10.png" download="glucopic-master-10.png" aria-label="상세본 10장. 계획: 사진·시각·측정값을 한 기록으로 연결한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-11">
+  <a class="thumbnail-link" href="master/slide-11.png" target="_blank" rel="noopener" data-select="master-11" aria-label="상세본 11장. 계획: 사용성·데이터·안전성을 나눠 검증한다 크게 보기">
+    <img src="master/slide-11.png" alt="상세본 11장. 계획: 사용성·데이터·안전성을 나눠 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">11</span><span class="slide-title">계획: 사용성·데이터·안전성을 나눠 검증한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-11.png" target="_blank" rel="noopener" aria-label="상세본 11장. 계획: 사용성·데이터·안전성을 나눠 검증한다 PNG 원본 보기">원본 보기</a><a href="master/slide-11.png" download="glucopic-master-11.png" aria-label="상세본 11장. 계획: 사용성·데이터·안전성을 나눠 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-12">
+  <a class="thumbnail-link" href="master/slide-12.png" target="_blank" rel="noopener" data-select="master-12" aria-label="상세본 12장. 계획: 실제 고객 반응은 첫 7일에서 확인한다 크게 보기">
+    <img src="master/slide-12.png" alt="상세본 12장. 계획: 실제 고객 반응은 첫 7일에서 확인한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">12</span><span class="slide-title">계획: 실제 고객 반응은 첫 7일에서 확인한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-12.png" target="_blank" rel="noopener" aria-label="상세본 12장. 계획: 실제 고객 반응은 첫 7일에서 확인한다 PNG 원본 보기">원본 보기</a><a href="master/slide-12.png" download="glucopic-master-12.png" aria-label="상세본 12장. 계획: 실제 고객 반응은 첫 7일에서 확인한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-13">
+  <a class="thumbnail-link" href="master/slide-13.png" target="_blank" rel="noopener" data-select="master-13" aria-label="상세본 13장. 가정: 월 15,000원의 지불 의사를 검증한다 크게 보기">
+    <img src="master/slide-13.png" alt="상세본 13장. 가정: 월 15,000원의 지불 의사를 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">13</span><span class="slide-title">가정: 월 15,000원의 지불 의사를 검증한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-13.png" target="_blank" rel="noopener" aria-label="상세본 13장. 가정: 월 15,000원의 지불 의사를 검증한다 PNG 원본 보기">원본 보기</a><a href="master/slide-13.png" download="glucopic-master-13.png" aria-label="상세본 13장. 가정: 월 15,000원의 지불 의사를 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-14">
+  <a class="thumbnail-link" href="master/slide-14.png" target="_blank" rel="noopener" data-select="master-14" aria-label="상세본 14장. 가정: 원가와 유지기간이 단위경제성을 결정한다 크게 보기">
+    <img src="master/slide-14.png" alt="상세본 14장. 가정: 원가와 유지기간이 단위경제성을 결정한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">14</span><span class="slide-title">가정: 원가와 유지기간이 단위경제성을 결정한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-14.png" target="_blank" rel="noopener" aria-label="상세본 14장. 가정: 원가와 유지기간이 단위경제성을 결정한다 PNG 원본 보기">원본 보기</a><a href="master/slide-14.png" download="glucopic-master-14.png" aria-label="상세본 14장. 가정: 원가와 유지기간이 단위경제성을 결정한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-15">
+  <a class="thumbnail-link" href="master/slide-15.png" target="_blank" rel="noopener" data-select="master-15" aria-label="상세본 15장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다 크게 보기">
+    <img src="master/slide-15.png" alt="상세본 15장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">15</span><span class="slide-title">계획: 전체 인구에서 실제 지불 고객까지 좁힌다</span></figcaption>
+  <div class="card-links"><a href="master/slide-15.png" target="_blank" rel="noopener" aria-label="상세본 15장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다 PNG 원본 보기">원본 보기</a><a href="master/slide-15.png" download="glucopic-master-15.png" aria-label="상세본 15장. 계획: 전체 인구에서 실제 지불 고객까지 좁힌다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-16">
+  <a class="thumbnail-link" href="master/slide-16.png" target="_blank" rel="noopener" data-select="master-16" aria-label="상세본 16장. 계획: 시장 산식과 고객 목표를 다시 맞춘다 크게 보기">
+    <img src="master/slide-16.png" alt="상세본 16장. 계획: 시장 산식과 고객 목표를 다시 맞춘다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">16</span><span class="slide-title">계획: 시장 산식과 고객 목표를 다시 맞춘다</span></figcaption>
+  <div class="card-links"><a href="master/slide-16.png" target="_blank" rel="noopener" aria-label="상세본 16장. 계획: 시장 산식과 고객 목표를 다시 맞춘다 PNG 원본 보기">원본 보기</a><a href="master/slide-16.png" download="glucopic-master-16.png" aria-label="상세본 16장. 계획: 시장 산식과 고객 목표를 다시 맞춘다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-17">
+  <a class="thumbnail-link" href="master/slide-17.png" target="_blank" rel="noopener" data-select="master-17" aria-label="상세본 17장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다 크게 보기">
+    <img src="master/slide-17.png" alt="상세본 17장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">17</span><span class="slide-title">계획: 첫 코호트는 커뮤니티에서 직접 모집한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-17.png" target="_blank" rel="noopener" aria-label="상세본 17장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다 PNG 원본 보기">원본 보기</a><a href="master/slide-17.png" download="glucopic-master-17.png" aria-label="상세본 17장. 계획: 첫 코호트는 커뮤니티에서 직접 모집한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-18">
+  <a class="thumbnail-link" href="master/slide-18.png" target="_blank" rel="noopener" data-select="master-18" aria-label="상세본 18장. 계획: 체험 시작부터 결제까지 분모를 고정한다 크게 보기">
+    <img src="master/slide-18.png" alt="상세본 18장. 계획: 체험 시작부터 결제까지 분모를 고정한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">18</span><span class="slide-title">계획: 체험 시작부터 결제까지 분모를 고정한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-18.png" target="_blank" rel="noopener" aria-label="상세본 18장. 계획: 체험 시작부터 결제까지 분모를 고정한다 PNG 원본 보기">원본 보기</a><a href="master/slide-18.png" download="glucopic-master-18.png" aria-label="상세본 18장. 계획: 체험 시작부터 결제까지 분모를 고정한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-19">
+  <a class="thumbnail-link" href="master/slide-19.png" target="_blank" rel="noopener" data-select="master-19" aria-label="상세본 19장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다 크게 보기">
+    <img src="master/slide-19.png" alt="상세본 19장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">19</span><span class="slide-title">계획: 유지와 결제 확인 후 채널·고객군을 확장한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-19.png" target="_blank" rel="noopener" aria-label="상세본 19장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다 PNG 원본 보기">원본 보기</a><a href="master/slide-19.png" download="glucopic-master-19.png" aria-label="상세본 19장. 계획: 유지와 결제 확인 후 채널·고객군을 확장한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-20">
+  <a class="thumbnail-link" href="master/slide-20.png" target="_blank" rel="noopener" data-select="master-20" aria-label="상세본 20장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다 크게 보기">
+    <img src="master/slide-20.png" alt="상세본 20장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">20</span><span class="slide-title">계획: 첫 3개월은 사용성과 유료 수요를 검증한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-20.png" target="_blank" rel="noopener" aria-label="상세본 20장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다 PNG 원본 보기">원본 보기</a><a href="master/slide-20.png" download="glucopic-master-20.png" aria-label="상세본 20장. 계획: 첫 3개월은 사용성과 유료 수요를 검증한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-21">
+  <a class="thumbnail-link" href="master/slide-21.png" target="_blank" rel="noopener" data-select="master-21" aria-label="상세본 21장. 계획: 제품·개발·안전성 책임자를 확정한다 크게 보기">
+    <img src="master/slide-21.png" alt="상세본 21장. 계획: 제품·개발·안전성 책임자를 확정한다" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">21</span><span class="slide-title">계획: 제품·개발·안전성 책임자를 확정한다</span></figcaption>
+  <div class="card-links"><a href="master/slide-21.png" target="_blank" rel="noopener" aria-label="상세본 21장. 계획: 제품·개발·안전성 책임자를 확정한다 PNG 원본 보기">원본 보기</a><a href="master/slide-21.png" download="glucopic-master-21.png" aria-label="상세본 21장. 계획: 제품·개발·안전성 책임자를 확정한다 PNG 다운로드">PNG 다운로드</a></div>
+</figure><figure class="slide-card" id="master-slide-22">
+  <a class="thumbnail-link" href="master/slide-22.png" target="_blank" rel="noopener" data-select="master-22" aria-label="상세본 22장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록 크게 보기">
+    <img src="master/slide-22.png" alt="상세본 22장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록" loading="lazy" decoding="async" width="1600" height="900">
+    <span class="selected-mark" aria-hidden="true">선택한 장표</span>
+  </a>
+  <figcaption><span class="slide-number">22</span><span class="slide-title">계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록</span></figcaption>
+  <div class="card-links"><a href="master/slide-22.png" target="_blank" rel="noopener" aria-label="상세본 22장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록 PNG 원본 보기">원본 보기</a><a href="master/slide-22.png" download="glucopic-master-22.png" aria-label="상세본 22장. 계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록 PNG 다운로드">PNG 다운로드</a></div>
+</figure></div>
+</section>
+  </section>
+  <footer class="page-footer"><p>제품 콘셉트 사진과 화면 설계 이미지의 생성·가상 표기는 각 장표에 유지했습니다. 공개 예시의 표현을 다른 팀의 실적이나 검증 근거로 사용하지 마세요.</p><a href="https://accelerating.co.kr/resources/seed-ir-deck">자료를 넣고 우리 팀 IR 만들기</a></footer>
+</main>
+<script id="gallery-data" type="application/json">{"pitch":{"label":"5분 발표본","pptx":"glucopic-pitch-draft.pptx","pdf":"glucopic-pitch-slides.pdf","slides":[{"id":"S01","title":"계획: 식사 사진을 다음 선택으로 연결하는 글루코픽","image":"pitch/slide-01.png","number":1},{"id":"S02","title":"연령대가 높을수록 당뇨병 유병률도 높다","image":"pitch/slide-02.png","number":2},{"id":"S03","title":"계획: 첫 고객은 식사 선택이 반복되는 직장인","image":"pitch/slide-03.png","number":3},{"id":"S04","title":"가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다","image":"pitch/slide-04.png","number":4},{"id":"S05","title":"기존 앱도 사진 AI와 건강 기록을 제공한다","image":"pitch/slide-05.png","number":5},{"id":"S06","title":"계획: 같은 과업에서 전환할 이유를 검증한다","image":"pitch/slide-06.png","number":6},{"id":"S07","title":"계획: 사진 한 장에서 식사 기록을 시작한다","image":"pitch/slide-07.png","number":7},{"id":"S08","title":"계획: AI가 제안하고 사용자가 확인한다","image":"pitch/slide-08.png","number":8},{"id":"S09","title":"계획: 사진·시각·측정값을 한 기록으로 연결한다","image":"pitch/slide-09.png","number":9},{"id":"S10","title":"계획: 실제 고객 반응은 첫 7일에서 확인한다","image":"pitch/slide-10.png","number":10},{"id":"S11","title":"가정: 월 15,000원의 지불 의사를 검증한다","image":"pitch/slide-11.png","number":11},{"id":"S12","title":"계획: 전체 인구에서 실제 지불 고객까지 좁힌다","image":"pitch/slide-12.png","number":12},{"id":"S13","title":"계획: 첫 코호트는 커뮤니티에서 직접 모집한다","image":"pitch/slide-13.png","number":13},{"id":"S14","title":"계획: 체험 시작부터 결제까지 분모를 고정한다","image":"pitch/slide-14.png","number":14},{"id":"S15","title":"계획: 유지와 결제 확인 후 채널·고객군을 확장한다","image":"pitch/slide-15.png","number":15},{"id":"S16","title":"계획: 첫 3개월은 사용성과 유료 수요를 검증한다","image":"pitch/slide-16.png","number":16},{"id":"S17","title":"계획: 제품·개발·안전성 책임자를 확정한다","image":"pitch/slide-17.png","number":17},{"id":"S18","title":"계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록","image":"pitch/slide-18.png","number":18}]},"master":{"label":"상세본","pptx":"glucopic-master-draft.pptx","pdf":"glucopic-master-slides.pdf","slides":[{"id":"S01","title":"계획: 식사 사진을 다음 선택으로 연결하는 글루코픽","image":"master/slide-01.png","number":1},{"id":"S02","title":"연령대가 높을수록 당뇨병 유병률도 높다","image":"master/slide-02.png","number":2},{"id":"S03","title":"계획: 첫 고객은 식사 선택이 반복되는 직장인","image":"master/slide-03.png","number":3},{"id":"S04","title":"가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다","image":"master/slide-04.png","number":4},{"id":"S05","title":"기존 앱도 사진 AI와 건강 기록을 제공한다","image":"master/slide-05.png","number":5},{"id":"S06","title":"계획: 같은 과업에서 전환할 이유를 검증한다","image":"master/slide-06.png","number":6},{"id":"M06A","title":"계획: 식전 사용과 수작업 운영을 따로 검증한다","image":"master/slide-07.png","number":7},{"id":"S07","title":"계획: 사진 한 장에서 식사 기록을 시작한다","image":"master/slide-08.png","number":8},{"id":"S08","title":"계획: AI가 제안하고 사용자가 확인한다","image":"master/slide-09.png","number":9},{"id":"S09","title":"계획: 사진·시각·측정값을 한 기록으로 연결한다","image":"master/slide-10.png","number":10},{"id":"M09A","title":"계획: 사용성·데이터·안전성을 나눠 검증한다","image":"master/slide-11.png","number":11},{"id":"S10","title":"계획: 실제 고객 반응은 첫 7일에서 확인한다","image":"master/slide-12.png","number":12},{"id":"S11","title":"가정: 월 15,000원의 지불 의사를 검증한다","image":"master/slide-13.png","number":13},{"id":"M11A","title":"가정: 원가와 유지기간이 단위경제성을 결정한다","image":"master/slide-14.png","number":14},{"id":"S12","title":"계획: 전체 인구에서 실제 지불 고객까지 좁힌다","image":"master/slide-15.png","number":15},{"id":"M12A","title":"계획: 시장 산식과 고객 목표를 다시 맞춘다","image":"master/slide-16.png","number":16},{"id":"S13","title":"계획: 첫 코호트는 커뮤니티에서 직접 모집한다","image":"master/slide-17.png","number":17},{"id":"S14","title":"계획: 체험 시작부터 결제까지 분모를 고정한다","image":"master/slide-18.png","number":18},{"id":"S15","title":"계획: 유지와 결제 확인 후 채널·고객군을 확장한다","image":"master/slide-19.png","number":19},{"id":"S16","title":"계획: 첫 3개월은 사용성과 유료 수요를 검증한다","image":"master/slide-20.png","number":20},{"id":"S17","title":"계획: 제품·개발·안전성 책임자를 확정한다","image":"master/slide-21.png","number":21},{"id":"S18","title":"계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록","image":"master/slide-22.png","number":22}]}}</script>
+</body>
+</html>
