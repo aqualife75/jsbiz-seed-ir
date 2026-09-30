@@ -5,3 +5,7 @@ codex/**/*.pptx binary
 codex/**/*.png binary
 codex/**/*.jpg binary
 codex/**/*.jpeg binary
+
+# Public example manifest and original download files preserve exact bytes.
+docs/examples/glucopic-20260930/** -text
+docs/examples/glucopic-20260930/** whitespace=cr-at-eol

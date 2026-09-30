@@ -1,0 +1,682 @@
+{
+  "schema_version": "1.0",
+  "example_name": "글루코픽 시각화 개선 예시",
+  "public_status": "보완 초안",
+  "description": "사용자가 공개를 요청한 결과물의 상세본 22장·발표본 18장입니다. AI 생성 제품 설계안과 가정·계획·미확인 표기를 유지합니다.",
+  "visual_status": "기존 검수 pass; 현재 PPTX·40개 PNG 지문 일치 확인",
+  "business_evidence_status": "사업근거 보완 필요; investor revise",
+  "pitch_duration": {
+    "seconds": 296.8,
+    "method": "estimated",
+    "measured_rehearsal": false
+  },
+  "publication_authorization": "2026-09-30 사용자가 지정한 결과물의 GitHub·홈페이지 공개 요청",
+  "variants": {
+    "master": {
+      "source_pptx_filename": "상세본_보완초안.pptx",
+      "source_pptx_sha256": "95d3f93fa5cf8263582aa6fd9464bc9938dba8f72aadf00dc4c6028e64125e01",
+      "slide_count": 22,
+      "slides": [
+        {
+          "number": 1,
+          "slide_id": "S01",
+          "section": "cover",
+          "title": "계획: 식사 사진을 다음 선택으로 연결하는 글루코픽",
+          "sha256": "aecfa1fadb312fe9516cb7a85f83a9bbcb5e9547596d15a818e179d32f6bde4c",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-01.png"
+        },
+        {
+          "number": 2,
+          "slide_id": "S02",
+          "section": "background",
+          "title": "연령대가 높을수록 당뇨병 유병률도 높다",
+          "sha256": "ea0e4ab6227cf5eb9377f53f387059c6e8e29c59983cfec8aa7021e1ed9eb591",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-02.png"
+        },
+        {
+          "number": 3,
+          "slide_id": "S03",
+          "section": "problem",
+          "title": "계획: 첫 고객은 식사 선택이 반복되는 직장인",
+          "sha256": "1b9ed4a5ecc60d9b716702ac01f52fac25d015c0f353493220d97b6f71f31820",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-03.png"
+        },
+        {
+          "number": 4,
+          "slide_id": "S04",
+          "section": "problem",
+          "title": "가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다",
+          "sha256": "f9578500df37c2c3f8af55c9ebe0aafaaee82a76ceb8c144b82fea7ed97c57d0",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-04.png"
+        },
+        {
+          "number": 5,
+          "slide_id": "S05",
+          "section": "alternatives",
+          "title": "기존 앱도 사진 AI와 건강 기록을 제공한다",
+          "sha256": "f6e1d409cae1a297c540159d61efda7fc13f660d5fdc4c28024900fff498ae91",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-05.png"
+        },
+        {
+          "number": 6,
+          "slide_id": "S06",
+          "section": "alternatives",
+          "title": "계획: 같은 과업에서 전환할 이유를 검증한다",
+          "sha256": "aaed611332b25447eccc3376994b5793d193dfabf697cfba1234e37b082e7fbe",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-06.png"
+        },
+        {
+          "number": 7,
+          "slide_id": "M06A",
+          "section": "alternatives",
+          "title": "계획: 식전 사용과 수작업 운영을 따로 검증한다",
+          "sha256": "3ac197655383dd8482adfeb3de06497a0471925602bcf85946f008300a36c262",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-07.png"
+        },
+        {
+          "number": 8,
+          "slide_id": "S07",
+          "section": "solution",
+          "title": "계획: 사진 한 장에서 식사 기록을 시작한다",
+          "sha256": "5025e8876f7ec753fba62cafe18535bf9ba7729851a1f181f4423d2c1587c945",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-08.png"
+        },
+        {
+          "number": 9,
+          "slide_id": "S08",
+          "section": "product",
+          "title": "계획: AI가 제안하고 사용자가 확인한다",
+          "sha256": "0433551670d66af94b6a70f650fa21cbc5e28aa5251a986b30d45ac283d3108c",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-09.png"
+        },
+        {
+          "number": 10,
+          "slide_id": "S09",
+          "section": "product",
+          "title": "계획: 사진·시각·측정값을 한 기록으로 연결한다",
+          "sha256": "ee0acadbe382f563e605b26e1de2a8ebd06ea703c4d628fb7006b02b4371118b",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-10.png"
+        },
+        {
+          "number": 11,
+          "slide_id": "M09A",
+          "section": "product",
+          "title": "계획: 사용성·데이터·안전성을 나눠 검증한다",
+          "sha256": "4f6fd6fa8e675207226b065e9b5b06d5f9fa673279ada21efb67b066120b25ac",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-11.png"
+        },
+        {
+          "number": 12,
+          "slide_id": "S10",
+          "section": "traction",
+          "title": "계획: 실제 고객 반응은 첫 7일에서 확인한다",
+          "sha256": "51f3f90fee74a9784b735a00fb7f5485815811018eecfcf01b9093ec112e1704",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-12.png"
+        },
+        {
+          "number": 13,
+          "slide_id": "S11",
+          "section": "business_model",
+          "title": "가정: 월 15,000원의 지불 의사를 검증한다",
+          "sha256": "d73bec634150807f3722d4ef18defaaf6120bc90b9575efdb42c45c182dc0de5",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-13.png"
+        },
+        {
+          "number": 14,
+          "slide_id": "M11A",
+          "section": "business_model",
+          "title": "가정: 원가와 유지기간이 단위경제성을 결정한다",
+          "sha256": "f13a7b119ad907a51d64eb9dbe4016ef40180064057114c8164417ccabf1b22a",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-14.png"
+        },
+        {
+          "number": 15,
+          "slide_id": "S12",
+          "section": "market",
+          "title": "계획: 전체 인구에서 실제 지불 고객까지 좁힌다",
+          "sha256": "7350f006692fad1801e2faa7662a9bd03eff7323a3d4c75d92490da41e3de24a",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-15.png"
+        },
+        {
+          "number": 16,
+          "slide_id": "M12A",
+          "section": "market",
+          "title": "계획: 시장 산식과 고객 목표를 다시 맞춘다",
+          "sha256": "f9cd37e086027d143711595b0c2f1e9525603878e3428a3a7c612727121f4d4b",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-16.png"
+        },
+        {
+          "number": 17,
+          "slide_id": "S13",
+          "section": "go_to_market",
+          "title": "계획: 첫 코호트는 커뮤니티에서 직접 모집한다",
+          "sha256": "affc928cbe2aaa70bd2077321f064a255ca74d6c14033c47c9448c7877243664",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-17.png"
+        },
+        {
+          "number": 18,
+          "slide_id": "S14",
+          "section": "go_to_market",
+          "title": "계획: 체험 시작부터 결제까지 분모를 고정한다",
+          "sha256": "0b7f29ab24688df370f445c96114e399270c433dc9dc239e5281250476fb83df",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-18.png"
+        },
+        {
+          "number": 19,
+          "slide_id": "S15",
+          "section": "growth",
+          "title": "계획: 유지와 결제 확인 후 채널·고객군을 확장한다",
+          "sha256": "448c1274c6c713e0d45a1831b096b265e39fdcaecad3815cdb018ffb1b6f0677",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-19.png"
+        },
+        {
+          "number": 20,
+          "slide_id": "S16",
+          "section": "milestones",
+          "title": "계획: 첫 3개월은 사용성과 유료 수요를 검증한다",
+          "sha256": "86ef50355ab230fe92c614d0357babff1c46e1c097c377a192fa87355312a845",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-20.png"
+        },
+        {
+          "number": 21,
+          "slide_id": "S17",
+          "section": "team",
+          "title": "계획: 제품·개발·안전성 책임자를 확정한다",
+          "sha256": "bfe1b6a5c531d562d76a8fcb46a8cb851e2e41e63c772cd1bfd2f4aa0acef816",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-21.png"
+        },
+        {
+          "number": 22,
+          "slide_id": "S18",
+          "section": "vision",
+          "title": "계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록",
+          "sha256": "04eac3c024d9dca24e00757a5f328a8502ac321cfd7b863c0a7583fcd620d5a4",
+          "width": 1600,
+          "height": 900,
+          "path": "master/slide-22.png"
+        }
+      ]
+    },
+    "pitch": {
+      "source_pptx_filename": "5분_발표본_보완초안.pptx",
+      "source_pptx_sha256": "14ca0b7d4dd48b4aa28e6b2209122213660dda2b6075190f62e7c59e51e95b92",
+      "slide_count": 18,
+      "slides": [
+        {
+          "number": 1,
+          "slide_id": "S01",
+          "section": "cover",
+          "title": "계획: 식사 사진을 다음 선택으로 연결하는 글루코픽",
+          "sha256": "ab86dcd4d3d670749d87084cfdd0ac856d318e30230a22477370ad16eeaa4e70",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-01.png"
+        },
+        {
+          "number": 2,
+          "slide_id": "S02",
+          "section": "background",
+          "title": "연령대가 높을수록 당뇨병 유병률도 높다",
+          "sha256": "b89068022ede64896c0356db60b22dbe7b820f263d2a96cfadff508cf0bd35a4",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-02.png"
+        },
+        {
+          "number": 3,
+          "slide_id": "S03",
+          "section": "problem",
+          "title": "계획: 첫 고객은 식사 선택이 반복되는 직장인",
+          "sha256": "7bacfe841e5c141fa5e5ad2510f59a8e86b92c0625c81feb91db4426e559f47f",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-03.png"
+        },
+        {
+          "number": 4,
+          "slide_id": "S04",
+          "section": "problem",
+          "title": "가정: 식사 전 선택과 식사 후 기록에 다른 불편이 있다",
+          "sha256": "4c6f5bdfd3ac281b7abb729e9a1222d3daee22ee7161fdfd442a7fa9c596efa9",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-04.png"
+        },
+        {
+          "number": 5,
+          "slide_id": "S05",
+          "section": "alternatives",
+          "title": "기존 앱도 사진 AI와 건강 기록을 제공한다",
+          "sha256": "f6b2d8fd019b4528b1f6b34e441c6f7a29ada75ec88719679c76d37e2be7eeb4",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-05.png"
+        },
+        {
+          "number": 6,
+          "slide_id": "S06",
+          "section": "alternatives",
+          "title": "계획: 같은 과업에서 전환할 이유를 검증한다",
+          "sha256": "0073fc8359bcdfbdcfb0b31b1febc8c531558251e316b8491797d6e0fbf442ac",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-06.png"
+        },
+        {
+          "number": 7,
+          "slide_id": "S07",
+          "section": "solution",
+          "title": "계획: 사진 한 장에서 식사 기록을 시작한다",
+          "sha256": "cc3bf027766fb13a58fa5fa068e88b543abf12c75cb907968d7c391717b59c99",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-07.png"
+        },
+        {
+          "number": 8,
+          "slide_id": "S08",
+          "section": "product",
+          "title": "계획: AI가 제안하고 사용자가 확인한다",
+          "sha256": "85c36cf80eb14c0b22fd039599e1c96b37fdfea927482f0e4e658235a9f13d4f",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-08.png"
+        },
+        {
+          "number": 9,
+          "slide_id": "S09",
+          "section": "product",
+          "title": "계획: 사진·시각·측정값을 한 기록으로 연결한다",
+          "sha256": "10bb829d0cef88ed9e40292377a271f6ca41acb5859614699c5077abfb7bec5b",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-09.png"
+        },
+        {
+          "number": 10,
+          "slide_id": "S10",
+          "section": "traction",
+          "title": "계획: 실제 고객 반응은 첫 7일에서 확인한다",
+          "sha256": "db982dad53918f6a7e65eeb0fc4330cb11e2d19aff2a432855aca916088af493",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-10.png"
+        },
+        {
+          "number": 11,
+          "slide_id": "S11",
+          "section": "business_model",
+          "title": "가정: 월 15,000원의 지불 의사를 검증한다",
+          "sha256": "0cb32edc662661a895950a086644c3af064a6851d881a586d800e03e26c5259e",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-11.png"
+        },
+        {
+          "number": 12,
+          "slide_id": "S12",
+          "section": "market",
+          "title": "계획: 전체 인구에서 실제 지불 고객까지 좁힌다",
+          "sha256": "2151256432ea2496eb49ee6bb6716ac17c82594f098830b1649037340ad0de27",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-12.png"
+        },
+        {
+          "number": 13,
+          "slide_id": "S13",
+          "section": "go_to_market",
+          "title": "계획: 첫 코호트는 커뮤니티에서 직접 모집한다",
+          "sha256": "48f0e690627c31981413967be66ae1c74e3f592ed5f9a5df9d836aaa07145f85",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-13.png"
+        },
+        {
+          "number": 14,
+          "slide_id": "S14",
+          "section": "go_to_market",
+          "title": "계획: 체험 시작부터 결제까지 분모를 고정한다",
+          "sha256": "3f4c7e716f89e0e6128c0383f5eb57b2232925f81ab7f78cd2506b5a3cab4243",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-14.png"
+        },
+        {
+          "number": 15,
+          "slide_id": "S15",
+          "section": "growth",
+          "title": "계획: 유지와 결제 확인 후 채널·고객군을 확장한다",
+          "sha256": "38785e128bc72c8f16232d2bdaaf1dbffc43696266a0bca658aad9b4fa2820b7",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-15.png"
+        },
+        {
+          "number": 16,
+          "slide_id": "S16",
+          "section": "milestones",
+          "title": "계획: 첫 3개월은 사용성과 유료 수요를 검증한다",
+          "sha256": "24941d8739b9bd98b2ff7dcf0c20d2bd933952cd57cd0238e0cc1a6f96353ab2",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-16.png"
+        },
+        {
+          "number": 17,
+          "slide_id": "S17",
+          "section": "team",
+          "title": "계획: 제품·개발·안전성 책임자를 확정한다",
+          "sha256": "af818713635991578fd430ff9bfd8bf4607c33662851365f997f4bff17a7ab7f",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-17.png"
+        },
+        {
+          "number": 18,
+          "slide_id": "S18",
+          "section": "vision",
+          "title": "계획: 오늘의 기록이 다음 식사 선택에 도움이 되도록",
+          "sha256": "339d6833ef54b7048f41a26a639213a543e321ed319bc5bbc34ae47da7b4d78f",
+          "width": 1600,
+          "height": 900,
+          "path": "pitch/slide-18.png"
+        }
+      ]
+    }
+  },
+  "files": [
+    {
+      "path": "glucopic-master-draft.pptx",
+      "bytes": 9481195,
+      "sha256": "95d3f93fa5cf8263582aa6fd9464bc9938dba8f72aadf00dc4c6028e64125e01"
+    },
+    {
+      "path": "glucopic-master-slides.pdf",
+      "bytes": 5593986,
+      "sha256": "c62be828f47c03904111cabae1eff7d127a1938e412f66e3cf2d5181e8cb93f6"
+    },
+    {
+      "path": "glucopic-pitch-draft.pptx",
+      "bytes": 8000029,
+      "sha256": "14ca0b7d4dd48b4aa28e6b2209122213660dda2b6075190f62e7c59e51e95b92"
+    },
+    {
+      "path": "glucopic-pitch-slides.pdf",
+      "bytes": 5010596,
+      "sha256": "fc5e616f894c6e01b85e39a38fe5cec354746b515b9f820df0eae8d37194d95e"
+    },
+    {
+      "path": "index.html",
+      "bytes": 56515,
+      "sha256": "7e3a0f3d01af124e7013dbe1399db9b5df1819b4b36064bfdc48b45510a29a28"
+    },
+    {
+      "path": "master/slide-01.png",
+      "bytes": 1029316,
+      "sha256": "aecfa1fadb312fe9516cb7a85f83a9bbcb5e9547596d15a818e179d32f6bde4c"
+    },
+    {
+      "path": "master/slide-02.png",
+      "bytes": 75916,
+      "sha256": "ea0e4ab6227cf5eb9377f53f387059c6e8e29c59983cfec8aa7021e1ed9eb591"
+    },
+    {
+      "path": "master/slide-03.png",
+      "bytes": 672567,
+      "sha256": "1b9ed4a5ecc60d9b716702ac01f52fac25d015c0f353493220d97b6f71f31820"
+    },
+    {
+      "path": "master/slide-04.png",
+      "bytes": 116132,
+      "sha256": "f9578500df37c2c3f8af55c9ebe0aafaaee82a76ceb8c144b82fea7ed97c57d0"
+    },
+    {
+      "path": "master/slide-05.png",
+      "bytes": 99511,
+      "sha256": "f6e1d409cae1a297c540159d61efda7fc13f660d5fdc4c28024900fff498ae91"
+    },
+    {
+      "path": "master/slide-06.png",
+      "bytes": 82451,
+      "sha256": "aaed611332b25447eccc3376994b5793d193dfabf697cfba1234e37b082e7fbe"
+    },
+    {
+      "path": "master/slide-07.png",
+      "bytes": 104914,
+      "sha256": "3ac197655383dd8482adfeb3de06497a0471925602bcf85946f008300a36c262"
+    },
+    {
+      "path": "master/slide-08.png",
+      "bytes": 197116,
+      "sha256": "5025e8876f7ec753fba62cafe18535bf9ba7729851a1f181f4423d2c1587c945"
+    },
+    {
+      "path": "master/slide-09.png",
+      "bytes": 353554,
+      "sha256": "0433551670d66af94b6a70f650fa21cbc5e28aa5251a986b30d45ac283d3108c"
+    },
+    {
+      "path": "master/slide-10.png",
+      "bytes": 317825,
+      "sha256": "ee0acadbe382f563e605b26e1de2a8ebd06ea703c4d628fb7006b02b4371118b"
+    },
+    {
+      "path": "master/slide-11.png",
+      "bytes": 371219,
+      "sha256": "4f6fd6fa8e675207226b065e9b5b06d5f9fa673279ada21efb67b066120b25ac"
+    },
+    {
+      "path": "master/slide-12.png",
+      "bytes": 124371,
+      "sha256": "51f3f90fee74a9784b735a00fb7f5485815811018eecfcf01b9093ec112e1704"
+    },
+    {
+      "path": "master/slide-13.png",
+      "bytes": 148825,
+      "sha256": "d73bec634150807f3722d4ef18defaaf6120bc90b9575efdb42c45c182dc0de5"
+    },
+    {
+      "path": "master/slide-14.png",
+      "bytes": 104556,
+      "sha256": "f13a7b119ad907a51d64eb9dbe4016ef40180064057114c8164417ccabf1b22a"
+    },
+    {
+      "path": "master/slide-15.png",
+      "bytes": 95426,
+      "sha256": "7350f006692fad1801e2faa7662a9bd03eff7323a3d4c75d92490da41e3de24a"
+    },
+    {
+      "path": "master/slide-16.png",
+      "bytes": 76953,
+      "sha256": "f9cd37e086027d143711595b0c2f1e9525603878e3428a3a7c612727121f4d4b"
+    },
+    {
+      "path": "master/slide-17.png",
+      "bytes": 146390,
+      "sha256": "affc928cbe2aaa70bd2077321f064a255ca74d6c14033c47c9448c7877243664"
+    },
+    {
+      "path": "master/slide-18.png",
+      "bytes": 96060,
+      "sha256": "0b7f29ab24688df370f445c96114e399270c433dc9dc239e5281250476fb83df"
+    },
+    {
+      "path": "master/slide-19.png",
+      "bytes": 85867,
+      "sha256": "448c1274c6c713e0d45a1831b096b265e39fdcaecad3815cdb018ffb1b6f0677"
+    },
+    {
+      "path": "master/slide-20.png",
+      "bytes": 90179,
+      "sha256": "86ef50355ab230fe92c614d0357babff1c46e1c097c377a192fa87355312a845"
+    },
+    {
+      "path": "master/slide-21.png",
+      "bytes": 91487,
+      "sha256": "bfe1b6a5c531d562d76a8fcb46a8cb851e2e41e63c772cd1bfd2f4aa0acef816"
+    },
+    {
+      "path": "master/slide-22.png",
+      "bytes": 860402,
+      "sha256": "04eac3c024d9dca24e00757a5f328a8502ac321cfd7b863c0a7583fcd620d5a4"
+    },
+    {
+      "path": "pitch/slide-01.png",
+      "bytes": 1029340,
+      "sha256": "ab86dcd4d3d670749d87084cfdd0ac856d318e30230a22477370ad16eeaa4e70"
+    },
+    {
+      "path": "pitch/slide-02.png",
+      "bytes": 75924,
+      "sha256": "b89068022ede64896c0356db60b22dbe7b820f263d2a96cfadff508cf0bd35a4"
+    },
+    {
+      "path": "pitch/slide-03.png",
+      "bytes": 672587,
+      "sha256": "7bacfe841e5c141fa5e5ad2510f59a8e86b92c0625c81feb91db4426e559f47f"
+    },
+    {
+      "path": "pitch/slide-04.png",
+      "bytes": 116120,
+      "sha256": "4c6f5bdfd3ac281b7abb729e9a1222d3daee22ee7161fdfd442a7fa9c596efa9"
+    },
+    {
+      "path": "pitch/slide-05.png",
+      "bytes": 99517,
+      "sha256": "f6b2d8fd019b4528b1f6b34e441c6f7a29ada75ec88719679c76d37e2be7eeb4"
+    },
+    {
+      "path": "pitch/slide-06.png",
+      "bytes": 82462,
+      "sha256": "0073fc8359bcdfbdcfb0b31b1febc8c531558251e316b8491797d6e0fbf442ac"
+    },
+    {
+      "path": "pitch/slide-07.png",
+      "bytes": 196907,
+      "sha256": "cc3bf027766fb13a58fa5fa068e88b543abf12c75cb907968d7c391717b59c99"
+    },
+    {
+      "path": "pitch/slide-08.png",
+      "bytes": 353529,
+      "sha256": "85c36cf80eb14c0b22fd039599e1c96b37fdfea927482f0e4e658235a9f13d4f"
+    },
+    {
+      "path": "pitch/slide-09.png",
+      "bytes": 317766,
+      "sha256": "10bb829d0cef88ed9e40292377a271f6ca41acb5859614699c5077abfb7bec5b"
+    },
+    {
+      "path": "pitch/slide-10.png",
+      "bytes": 124447,
+      "sha256": "db982dad53918f6a7e65eeb0fc4330cb11e2d19aff2a432855aca916088af493"
+    },
+    {
+      "path": "pitch/slide-11.png",
+      "bytes": 148616,
+      "sha256": "0cb32edc662661a895950a086644c3af064a6851d881a586d800e03e26c5259e"
+    },
+    {
+      "path": "pitch/slide-12.png",
+      "bytes": 95426,
+      "sha256": "2151256432ea2496eb49ee6bb6716ac17c82594f098830b1649037340ad0de27"
+    },
+    {
+      "path": "pitch/slide-13.png",
+      "bytes": 146519,
+      "sha256": "48f0e690627c31981413967be66ae1c74e3f592ed5f9a5df9d836aaa07145f85"
+    },
+    {
+      "path": "pitch/slide-14.png",
+      "bytes": 95901,
+      "sha256": "3f4c7e716f89e0e6128c0383f5eb57b2232925f81ab7f78cd2506b5a3cab4243"
+    },
+    {
+      "path": "pitch/slide-15.png",
+      "bytes": 85849,
+      "sha256": "38785e128bc72c8f16232d2bdaaf1dbffc43696266a0bca658aad9b4fa2820b7"
+    },
+    {
+      "path": "pitch/slide-16.png",
+      "bytes": 90287,
+      "sha256": "24941d8739b9bd98b2ff7dcf0c20d2bd933952cd57cd0238e0cc1a6f96353ab2"
+    },
+    {
+      "path": "pitch/slide-17.png",
+      "bytes": 91577,
+      "sha256": "af818713635991578fd430ff9bfd8bf4607c33662851365f997f4bff17a7ab7f"
+    },
+    {
+      "path": "pitch/slide-18.png",
+      "bytes": 860755,
+      "sha256": "339d6833ef54b7048f41a26a639213a543e321ed319bc5bbc34ae47da7b4d78f"
+    },
+    {
+      "path": "pitch-script.md",
+      "bytes": 5606,
+      "sha256": "752880a4c779ec2962a1a8a198798e5f52feb4eca1326981719d6a9197772d4b"
+    },
+    {
+      "path": "questions-and-answers.md",
+      "bytes": 10109,
+      "sha256": "20700d14ad9ed8d2b56370973bdd797e8cf0166799447cb0d5893f3b26924189"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2070,
+      "sha256": "17c155b6bfd44211e16e9130b26f5e0e0b58fa53a5fa715c974c8e7d77b3edf1"
+    },
+    {
+      "path": "viewer.css",
+      "bytes": 10015,
+      "sha256": "c0a62a3841e36830775d6c45b0a7b6724b16bb1df6436a3ad6c4851f014123d9"
+    },
+    {
+      "path": "viewer.js",
+      "bytes": 6427,
+      "sha256": "18fa3dfdb166e5557f703289cd6dce214735957fb9159acdd555a90f7ba27d7d"
+    }
+  ]
+}
