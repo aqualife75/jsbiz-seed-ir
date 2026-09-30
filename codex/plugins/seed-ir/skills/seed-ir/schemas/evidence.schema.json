@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence ledger",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "kind", "status"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "claim": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["internal", "external", "assumption"]},
+          "status": {"enum": ["confirmed", "unverified", "contradicted"]},
+          "source_id": {"type": "string"},
+          "locator": {"type": "string"},
+          "url": {"type": "string"},
+          "publisher": {"type": "string"},
+          "published_at": {"type": ["string", "null"]},
+          "accessed_at": {"type": "string"},
+          "period": {"type": "string"},
+          "unit": {"type": "string"},
+          "limitations": {"type": "string"},
+          "verification_note": {"type": "string"}
+        },
+        "allOf": [
+          {"if": {"properties": {"kind": {"const": "internal"}}}, "then": {"required": ["source_id", "locator"]}},
+          {"if": {"properties": {"kind": {"const": "external"}}}, "then": {"required": ["url", "publisher", "accessed_at", "locator", "verification_note"]}}
+        ]
+      }
+    }
+  }
+}

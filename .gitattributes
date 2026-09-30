@@ -1,0 +1,7 @@
+# Release manifests bind exact bytes, including approved fixture line endings.
+codex/** -text
+codex/**/*.pdf binary
+codex/**/*.pptx binary
+codex/**/*.png binary
+codex/**/*.jpg binary
+codex/**/*.jpeg binary

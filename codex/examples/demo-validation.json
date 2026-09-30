@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.2",
+  "release_version": "1.4.0",
+  "sample_id": "glucopic-fictional",
+  "source_fictional": true,
+  "disclosure": "교육용 가상 사례. 고객·인터뷰·성과·가격·팀·전망은 가정 또는 계획이며 실제 검증 결과가 아닙니다.",
+  "status": "public-fictional-draft",
+  "counts": {
+    "pitch": 18,
+    "master": 20
+  },
+  "section_count": 14,
+  "question_count": 18,
+  "pitch_planned_seconds": 300,
+  "actual_pptx_rendered": true,
+  "pptx_sha256": {
+    "master": "94931e1eac9fcf702c2d9cf427b2b710a3b2606f556ce88096f82f5936618d40",
+    "pitch": "df20ce79398a397db19051ea1465a202316e80d712a76f63caf7876080e2c39d"
+  },
+  "editable_chart_count": {
+    "master": 2,
+    "pitch": 1
+  },
+  "editable_table_count": {
+    "master": 6,
+    "pitch": 6
+  },
+  "source_sha256": {
+    "demo-deck.json": "943c5c234c181ae57280ac06a0a5e9b422316db484d592829954882c7351aca1",
+    "demo-section-briefs.json": "216b258c42c464a9a89019b56d32af9e8c79ca82e9c8d685f3f5ee8a55110bb5",
+    "demo-evidence.json": "25f4058166301b59cb58a8c40267b4603c6669a5e02c8ed82f40997a90a9186b",
+    "demo-input.md": "731b6c5aa97f18bc6a6602b1e5beb8c50884e279b59c1326c2ab1188d84f5496"
+  },
+  "semantic_complete": false,
+  "research_review": "not_performed",
+  "investor_final_review": "revise · actual business evidence missing",
+  "visual_review": "pass · actual PPTX renders reviewed",
+  "timing_review": "공백 제외 1003자 ÷ 가정한 초당 4자 + 장표별 전환 2초 × 18장. 배정표는300초이며 남는 시간은 호흡과 강조에 사용. 속도는 계산 가정이며 발표자 측정값이 아님.",
+  "note": "교육용 가상 초안. 실제 화면 검토를 완료했으며 실제 사업 근거 검증·투자 적격성 판정을 뜻하지 않습니다.",
+  "visual_checks": {
+    "text_overflow": "pass",
+    "font_substitution": "pass",
+    "contrast": "pass",
+    "chart_labels": "pass",
+    "image_crops": "pass",
+    "hierarchy": "pass",
+    "evidence_legibility": "pass",
+    "composition_variation": "pass"
+  },
+  "visual_observations": [
+    {
+      "slide_id": "D01",
+      "hierarchy": "왼쪽의 가치 제안과 오른쪽의 큰 식사 사진이 분리되어 표지의 읽는 순서가 분명하다.",
+      "evidence_legibility": "사진 원안과 가상 MVP 표시가 이미지 아래에 남아 있으며 결과 화면으로 오해시키지 않는다."
+    },
+    {
+      "slide_id": "D02",
+      "hierarchy": "배경을 정리한 표와 통계 재검증 안내를 나란히 배치해 근거와 한계를 함께 읽을 수 있다.",
+      "evidence_legibility": "인구 수치는 원안 인용임을 표시하고 외부 통계 재검증 전이라는 설명이 보인다."
+    },
+    {
+      "slide_id": "D03",
+      "hierarchy": "고객 조건을 큰 2열 표로 정리하고 보조 사진과 측정 공백을 오른쪽에 분리했다.",
+      "evidence_legibility": "교두보 고객이 가정임을 표시한다. 사진은 외식 상황의 예시이며 고객 관찰 증거로 제시하지 않는다."
+    },
+    {
+      "slide_id": "D04",
+      "hierarchy": "작업과 고객의 판단을 대응시킨 표가 주된 시각 요소이고 인터뷰 질문은 보조 영역에 있다.",
+      "evidence_legibility": "음식 검색·중량·혈당 연결의 가설과 아직 확인할 질문을 구분해 읽을 수 있다."
+    },
+    {
+      "slide_id": "D05",
+      "hierarchy": "비교표의 열 머리글과 대안 유형이 강조되어 세 대안을 같은 기준으로 비교할 수 있다.",
+      "evidence_legibility": "현재 경쟁 기능의 우열은 미확인이라는 문장이 표 아래에 있으며 확정적 체크 표시를 사용하지 않는다."
+    },
+    {
+      "slide_id": "D06",
+      "hierarchy": "문제·제품 대응·검증 근거가 가로로 이어지고 전환 비용은 별도 대비 패널에 있다.",
+      "evidence_legibility": "동일 과제 비교 예정과 전환 비용 가설이 본문에 표시되어 우월성이 검증된 것으로 보이지 않는다."
+    },
+    {
+      "slide_id": "D07",
+      "hierarchy": "입력 부담과 해결 동작을 연결하는 세 행의 구조가 해결방안의 원리를 설명한다.",
+      "evidence_legibility": "기록 30초는 설계 목표이고 사용성 실험 미측정이라는 설명이 함께 보인다."
+    },
+    {
+      "slide_id": "D08",
+      "hierarchy": "인식·보정 두 화면을 큰 이미지 패널에 두고 고객 동작과 구현 상태를 오른쪽에 나눴다.",
+      "evidence_legibility": "원안 8쪽의 가상 화면이며 수치는 설명용 예시라는 캡션이 남아 있다. 핵심 범위와 버튼은 읽힌다."
+    },
+    {
+      "slide_id": "D09",
+      "hierarchy": "세로 화면에 맞춘 좁은 이미지 패널로 과한 좌우 여백을 줄이고 사용 흐름을 넓게 배치했다.",
+      "evidence_legibility": "촬영 3초는 설계 예시로 표시한다. 현재 MVP 범위와 후속 자동 연동·공유 계획이 분리된다."
+    },
+    {
+      "slide_id": "D10",
+      "hierarchy": "세로 인식 화면과 오른쪽 개발 가설·데이터 확보 공백의 두 영역이 정렬되어 있다.",
+      "evidence_legibility": "화면의 추정 범위는 측정 성과가 아님을 캡션에 표시하고 자료원의 사용조건 확인 필요가 보인다."
+    },
+    {
+      "slide_id": "D11",
+      "hierarchy": "4주 고객 검증 계획을 기간·계획·확인할 기록으로 정리한 표의 흐름이 선명하다.",
+      "evidence_legibility": "현재 확보한 성과가 없다는 설명과 참여자 중복 가능성이 표 오른쪽에 표시된다."
+    },
+    {
+      "slide_id": "D12",
+      "hierarchy": "요금 표와 월 실수취액 가정의 큰 숫자가 수익 구조와 시장 계산 조건을 연결한다.",
+      "evidence_legibility": "가격·수수료·원가의 미확인 상태와 결제로 검증할 가설을 표시한다."
+    },
+    {
+      "slide_id": "D13",
+      "hierarchy": "TAM·SAM·SOM을 세 단계의 계산 띠로 배치하고 마지막 범위를 어두운 면으로 강조했다.",
+      "evidence_legibility": "각 인구·월 요금·12개월 식과 결과가 동시에 보인다. 가입·지불 의향을 검증한 시장 규모는 아니라고 명시한다."
+    },
+    {
+      "slide_id": "D14",
+      "hierarchy": "세 가지 월 요금에 따른 연환산 매출을 네이티브 차트로 비교하며 소수점 눈금이 축약 접미사 없이 읽힌다.",
+      "evidence_legibility": "막대의 정확한 수치는 원고의 가격 민감도 계산값을 보존한다. 같은 천 명 가정이며 실제 매출이 아니라고 표시한다."
+    },
+    {
+      "slide_id": "D15",
+      "hierarchy": "퍼널은 위에서 도달·신청·첫 기록·7일 기록·유료 순서이며 5천 단위 눈금이 겹치지 않는다.",
+      "evidence_legibility": "모든 막대에 정확한 수치가 표시되고 모집 목표 가정과 채널 제휴 미확인이 본문에 남아 있다."
+    },
+    {
+      "slide_id": "D16",
+      "hierarchy": "세 단계 일정에서 마지막 단계를 산호색으로 강조해 다음 검증으로 이어지는 흐름이 보인다.",
+      "evidence_legibility": "채널은 확정 제휴가 아닌 후보이며 각 단계의 검토 기록·동의·계약 확인 내용이 읽힌다."
+    },
+    {
+      "slide_id": "D17",
+      "hierarchy": "개인 구독·기관 실험·효과 검증의 순서와 진입 기준을 단계별로 구분했다.",
+      "evidence_legibility": "유료·B2B2C·이탈률 숫자는 계획이고 목표 달성 실적이 아님을 아래에 표시한다."
+    },
+    {
+      "slide_id": "D18",
+      "hierarchy": "24개월 일정을 네 개 단계로 구분하고 마지막 연구 설계 단계를 강조했다.",
+      "evidence_legibility": "각 단계의 산출물과 검증 기준이 보이며 기준 미달 시 범위를 조정하는 설명이 남아 있다."
+    },
+    {
+      "slide_id": "D19",
+      "hierarchy": "제품·AI·앱 개발 역할을 세 열로 나누고 필요한 자문을 옆 패널로 분리했다.",
+      "evidence_legibility": "실제 경력·재직 증빙이 없거나 담당자가 미확정임을 표시하여 가상 팀을 실재 인물로 보이게 하지 않는다."
+    },
+    {
+      "slide_id": "D20",
+      "hierarchy": "짧은 비전과 다음 확인 과제를 어두운 마무리 화면에 분리해 결론을 읽기 쉽게 했다.",
+      "evidence_legibility": "교육용 가상 사례와 실제 실험 필요가 보이며 투자 요청이나 자금 사용 내용이 없다."
+    }
+  ],
+  "composition_review": "표지·문제 표·대안 비교·문제와 해결 매핑·원안 제품 화면·시장 계산·차트·일정·팀 구성을 서로 다른 읽기 구조로 배치했다. 밝은 분석 장표와 어두운 시작·실행·마무리 장표로 전환점을 구분했다.",
+  "pitch_estimated_seconds": 293,
+  "pitch_script_nonspace_characters": 1003
+}

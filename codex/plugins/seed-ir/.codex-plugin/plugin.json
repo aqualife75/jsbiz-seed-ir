@@ -1,0 +1,26 @@
+{
+  "name": "seed-ir",
+  "version": "1.5.0",
+  "description": "정석biz 노하우 강의 원칙과 근거 데이터에 기반한 Codex Seed IR Deck 작성 하네스",
+  "author": {
+    "name": "Seed IR 교육 패키지"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "정석biz 노하우 · Seed IR",
+    "shortDescription": "자료에서 근거를 뽑고 5분 Seed IR Deck을 작성합니다.",
+    "longDescription": "자료·이미지 추출, 목차별 주장과 근거 연결, 투자자 검수, 추가 조사, 편집 가능한 PPTX 제작과 발표 검수를 연결하는 Codex 교육 패키지입니다.",
+    "developerName": "Seed IR 교육 패키지",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "우리 팀 IR Deck 만들어줘. 프로젝트의 자료 폴더를 확인해서 시작해 줘.",
+      "현재 덱의 근거와 투자자 관점의 문제점을 검수해 줘.",
+      "상태를 확인하고 미완료 단계부터 이어서 작업해 줘."
+    ],
+    "brandColor": "#D4AF37"
+  }
+}

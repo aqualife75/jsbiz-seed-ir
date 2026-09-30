@@ -1,0 +1,2480 @@
+{
+  "schema_version": "1.2",
+  "title": "사용자 지정 14목차 · 정석biz 노하우 기반 Seed IR 작성 기준",
+  "language": "ko-KR",
+  "analyzed_at": "2026-09-11",
+  "source": {
+    "filename": "[KDB_강의교안] IR Deck작성_Ver4.0.pptx",
+    "sha256": "45102305e11371afce4dfd8bd224aa2ecce1b62b0c6d41037ab209d253b08954",
+    "slide_count": 64,
+    "slide_numbering": "one-based physical slide order",
+    "inspection": "Open XML text and related notes; no render/OCR performed",
+    "nonempty_speaker_notes": 0,
+    "redistribution": "derived criteria only; exclude original deck, raw text extraction, applicant data and reference media"
+  },
+  "normalization": {
+    "topic_count": 14,
+    "basis_slides": [
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63
+    ],
+    "note": "사용자 지정 14목차의 순서를 고정한다. 문제 정의·기존 대체재의 문제점·제품 및 서비스 소개·초기 시장 진입 전략은 각각 독립 장표 2개 이상이며 나머지는 1개 이상이다. master와 pitch에 각각 최소 18장을 적용한다.",
+    "governing_message_policy": "교안 4장은 전달상 필요 없으면 메시지 생략을 허용한다. 본 하네스는 사용자 요청에 따라 내용 장표마다 메시지를 작성하며 화면 표시는 디자인 단계에서 조정한다.",
+    "date_policy": "61장의 고정 예시 2023~2026을 복제하지 않고 실제 실행 기준일에 맞춰 일정을 산정한다.",
+    "previous_kdb_normalization": "12장은 12주제라고 적지만 해결방안과 제품소개를 묶은 목록에는 11항목이 보인다. 52~63장 실습 템플릿을 따라 데이터 목차를 12개로 분리했다."
+  },
+  "principles": [
+    {
+      "id": "answer_first",
+      "origin": "kdb_derived",
+      "source_slides": [
+        2,
+        11,
+        15
+      ],
+      "rule": "표지에서 목표 고객, 문제, 가치제안을 먼저 설명한다"
+    },
+    {
+      "id": "slide_structure",
+      "origin": "kdb_derived",
+      "source_slides": [
+        3,
+        4,
+        5
+      ],
+      "rule": "주제 표시, 한 문장 핵심 메시지, 증거 포함 본문과 이미지, 페이지 번호를 구성한다"
+    },
+    {
+      "id": "evidence_visuals",
+      "origin": "kdb_derived",
+      "source_slides": [
+        4,
+        6,
+        7,
+        8,
+        9
+      ],
+      "rule": "본문과 이미지는 장표의 주장에 직접 연결된다"
+    },
+    {
+      "id": "text_color_limit",
+      "origin": "kdb_derived",
+      "source_slides": [
+        10
+      ],
+      "rule": "가독성을 위해 글자색은 2가지 이내를 권장한다"
+    },
+    {
+      "id": "problem_solution_fit",
+      "origin": "kdb_derived",
+      "source_slides": [
+        17,
+        18,
+        19
+      ],
+      "rule": "문제, 해결책, 제품 핵심 기능을 논리적으로 연결한다"
+    },
+    {
+      "id": "traction_priority",
+      "origin": "kdb_derived",
+      "source_slides": [
+        20,
+        56
+      ],
+      "rule": "실제 제품 성과, MVP 반응, 고객 인터뷰 순으로 강한 증거를 우선한다"
+    },
+    {
+      "id": "realistic_revenue",
+      "origin": "kdb_derived",
+      "source_slides": [
+        21,
+        57
+      ],
+      "rule": "지불 주체와 정량 가격을 포함해 초기 수익모델을 현실적으로 제시한다"
+    },
+    {
+      "id": "revenue_linked_market",
+      "origin": "kdb_derived",
+      "source_slides": [
+        22,
+        23,
+        38,
+        58
+      ],
+      "rule": "시장 규모에 수익모델, 범위와 산정 근거를 연결한다"
+    },
+    {
+      "id": "bounded_comparison",
+      "origin": "kdb_derived",
+      "source_slides": [
+        24,
+        59
+      ],
+      "rule": "경쟁 비교는 핵심 기능 3~4개 이내로 제시하고 정량 근거를 선호한다"
+    },
+    {
+      "id": "specific_acquisition",
+      "origin": "kdb_derived",
+      "source_slides": [
+        25,
+        60
+      ],
+      "rule": "초기 고객과 이해관계자의 특성을 고려한 구체적 확보 계획을 제시한다"
+    },
+    {
+      "id": "business_milestones",
+      "origin": "user_override",
+      "source_slides": [
+        12,
+        26,
+        61
+      ],
+      "rule": "사업 목표·일정·검증 지표와 다음 단계 진행 기준을 연결한다"
+    },
+    {
+      "id": "execution_team",
+      "origin": "kdb_derived",
+      "source_slides": [
+        27,
+        62
+      ],
+      "rule": "관련 경험과 핵심 파트너로 실행 역량을 설명한다"
+    },
+    {
+      "id": "clear_vision",
+      "origin": "kdb_derived",
+      "source_slides": [
+        28,
+        63
+      ],
+      "rule": "추구하는 사업 목표를 간결하고 명확하게 제시한다"
+    },
+    {
+      "id": "content_qa",
+      "origin": "kdb_derived",
+      "source_slides": [
+        29,
+        30
+      ],
+      "rule": "중복, 단위, 숫자, 쉬운 용어, 흐름, 밀도, 이미지 캡션, 효과를 검수한다"
+    },
+    {
+      "id": "adaptive_order",
+      "origin": "user_override",
+      "source_slides": [
+        29,
+        32
+      ],
+      "rule": "현재 버전은 사용자가 지정한 14목차 순서를 우선한다"
+    }
+  ],
+  "topics": [
+    {
+      "id": "cover",
+      "label_ko": "표지",
+      "source_slides": [
+        2,
+        11,
+        15,
+        52
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "목표 고객",
+        "핵심 고객 문제",
+        "가치제안",
+        "팀명",
+        "제품 핵심 기능 이미지"
+      ],
+      "investor_questions": [
+        "누구의 어떤 문제를 어떻게 해결하는가"
+      ],
+      "acceptance_criteria": [
+        "한 줄 서비스 소개가 사업을 구체적으로 설명한다",
+        "이미지가 가치제안과 직접 연결된다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "cover.q1",
+          "question": "누구의 어떤 문제를 어떻게 해결하는가",
+          "required_data": [
+            "목표 고객",
+            "핵심 고객 문제",
+            "가치제안",
+            "팀명",
+            "제품 핵심 기능 이미지"
+          ],
+          "source_slides": [
+            2,
+            11,
+            15,
+            52
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        10
+      ]
+    },
+    {
+      "id": "background",
+      "label_ko": "문제 배경 및 최근 트렌드",
+      "source_slides": [
+        13,
+        16,
+        17,
+        53
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        15
+      ],
+      "required_data": [
+        "시장 변화",
+        "최근 기술·산업·고객 행동 트렌드",
+        "트렌드의 기준 연도·지역·대상",
+        "문제와 연결되는 외부 근거"
+      ],
+      "investor_questions": [
+        "지금 어떤 시장 변화와 기회가 있는가"
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "acceptance_criteria": [
+        "목표 고객과 주장을 원문 근거에 연결한다",
+        "다음 목차와 구분되는 독립 장표로 설명한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "background.q1",
+          "question": "지금 어떤 시장 변화와 기회가 있는가",
+          "required_data": [
+            "시장 변화",
+            "최근 기술·산업·고객 행동 트렌드",
+            "트렌드의 기준 연도·지역·대상",
+            "문제와 연결되는 외부 근거"
+          ],
+          "source_slides": [
+            13,
+            16,
+            17,
+            53
+          ]
+        }
+      ]
+    },
+    {
+      "id": "problem",
+      "label_ko": "문제 정의",
+      "source_slides": [
+        13,
+        16,
+        17,
+        53
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "목표 고객 프로파일",
+        "핵심 문제 1~2개",
+        "문제 크기와 빈도",
+        "고객의 시간·비용·횟수",
+        "고객 조사 또는 외부 근거"
+      ],
+      "investor_questions": [
+        "해결할 필요가 큰 문제인가"
+      ],
+      "acceptance_criteria": [
+        "우선 문제를 1~2개로 정의한다",
+        "고객 문제와 기존 대안의 한계를 근거로 설명한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "problem.q1",
+          "question": "해결할 필요가 큰 문제인가",
+          "required_data": [
+            "목표 고객 프로파일",
+            "핵심 문제 1~2개",
+            "문제 크기와 빈도",
+            "고객의 시간·비용·횟수",
+            "고객 조사 또는 외부 근거"
+          ],
+          "source_slides": [
+            13,
+            16,
+            17,
+            53
+          ]
+        }
+      ],
+      "min_slides": 2,
+      "default_slide_seconds": [
+        20,
+        20
+      ]
+    },
+    {
+      "id": "alternatives",
+      "label_ko": "기존 대체재의 문제점",
+      "min_slides": 2,
+      "default_slide_seconds": [
+        20,
+        20
+      ],
+      "source_slides": [
+        13,
+        14,
+        17,
+        24,
+        53,
+        59
+      ],
+      "required_data": [
+        "직접 경쟁사",
+        "잠재 경쟁사",
+        "현재 대안과 고객의 사용 방식",
+        "대안별 한계",
+        "핵심 비교축 3~4개",
+        "동일 조건의 정량·정성 비교 근거",
+        "대체재 전환 비용"
+      ],
+      "investor_questions": [
+        "고객의 기존 해결 방식은 무엇인가",
+        "대체재가 해결하지 못하는 부분은 무엇인가",
+        "대안 사이의 차이와 고객이 중요하게 보는 비교 기준은 무엇인가"
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "acceptance_criteria": [
+        "목표 고객과 주장을 원문 근거에 연결한다",
+        "다음 목차와 구분되는 독립 장표로 설명한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "alternatives.q1",
+          "question": "고객의 기존 해결 방식은 무엇인가",
+          "required_data": [
+            "직접 경쟁사",
+            "잠재 경쟁사",
+            "현재 대안과 고객의 사용 방식",
+            "대안별 한계",
+            "핵심 비교축 3~4개",
+            "동일 조건의 정량·정성 비교 근거",
+            "대체재 전환 비용"
+          ],
+          "source_slides": [
+            13,
+            14,
+            17,
+            24,
+            53,
+            59
+          ]
+        },
+        {
+          "id": "alternatives.q2",
+          "question": "대체재가 해결하지 못하는 부분은 무엇인가",
+          "required_data": [],
+          "source_slides": [
+            13,
+            14,
+            17,
+            24,
+            53,
+            59
+          ]
+        },
+        {
+          "id": "alternatives.q3",
+          "question": "대안 사이의 차이와 고객이 중요하게 보는 비교 기준은 무엇인가",
+          "required_data": [],
+          "source_slides": [
+            13,
+            14,
+            17,
+            24,
+            53,
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "label_ko": "해결방안",
+      "source_slides": [
+        13,
+        18,
+        54
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "문제별 해결 방식",
+        "고객 관점 편익",
+        "기존 대비 개선 근거",
+        "측정 조건"
+      ],
+      "investor_questions": [
+        "고객 문제를 대안보다 어떻게 더 잘 해결하는가"
+      ],
+      "acceptance_criteria": [
+        "앞서 정의한 문제와 해결책이 직접 대응한다",
+        "정량 편익이 있다면 측정 근거와 함께 설명한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "solution.q1",
+          "question": "고객 문제를 대안보다 어떻게 더 잘 해결하는가",
+          "required_data": [
+            "문제별 해결 방식",
+            "고객 관점 편익",
+            "기존 대비 개선 근거",
+            "측정 조건"
+          ],
+          "source_slides": [
+            13,
+            18,
+            54
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        20
+      ]
+    },
+    {
+      "id": "product",
+      "label_ko": "제품 및 서비스 소개",
+      "source_slides": [
+        19,
+        55
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "핵심 기능",
+        "사용 흐름",
+        "실제 화면 또는 제품 사진",
+        "현재 구현 상태"
+      ],
+      "investor_questions": [
+        "가치제안이 핵심 기능으로 구현되어 있는가",
+        "고객이 쉽게 이해하고 사용할 수 있는가"
+      ],
+      "acceptance_criteria": [
+        "고객 관점에서 핵심 기능을 보여준다",
+        "본문과 직접 연결된 제품 이미지를 사용한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "product.q1",
+          "question": "가치제안이 핵심 기능으로 구현되어 있는가",
+          "required_data": [
+            "핵심 기능",
+            "사용 흐름",
+            "실제 화면 또는 제품 사진",
+            "현재 구현 상태"
+          ],
+          "source_slides": [
+            19,
+            55
+          ]
+        },
+        {
+          "id": "product.q2",
+          "question": "고객이 쉽게 이해하고 사용할 수 있는가",
+          "required_data": [],
+          "source_slides": [
+            19,
+            55
+          ]
+        }
+      ],
+      "min_slides": 2,
+      "default_slide_seconds": [
+        20,
+        20
+      ]
+    },
+    {
+      "id": "traction",
+      "label_ko": "초기 고객 반응",
+      "source_slides": [
+        14,
+        20,
+        56
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "고객·사용·매출 지표",
+        "측정 기간",
+        "변화 추이",
+        "MVP 반응",
+        "인터뷰 대상과 확인한 가설"
+      ],
+      "investor_questions": [
+        "고객이 실제로 필요로 한다는 증거가 있는가"
+      ],
+      "acceptance_criteria": [
+        "실제 성과, MVP 반응, 인터뷰를 구분한다",
+        "개발 단계에서 확보 가능한 가장 강한 증거를 제시한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "traction.q1",
+          "question": "고객이 실제로 필요로 한다는 증거가 있는가",
+          "required_data": [
+            "고객·사용·매출 지표",
+            "측정 기간",
+            "변화 추이",
+            "MVP 반응",
+            "인터뷰 대상과 확인한 가설"
+          ],
+          "source_slides": [
+            14,
+            20,
+            56
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        20
+      ]
+    },
+    {
+      "id": "business_model",
+      "label_ko": "수익 모델",
+      "source_slides": [
+        14,
+        21,
+        57
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "지불 주체",
+        "가격",
+        "과금 단위",
+        "수수료",
+        "초기 매출 흐름"
+      ],
+      "investor_questions": [
+        "누가 어떤 방식으로 얼마를 지불하는가"
+      ],
+      "acceptance_criteria": [
+        "초기에 적용할 수익모델을 현실적으로 제시한다",
+        "가격과 과금 단위가 명확하다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "business_model.q1",
+          "question": "누가 어떤 방식으로 얼마를 지불하는가",
+          "required_data": [
+            "지불 주체",
+            "가격",
+            "과금 단위",
+            "수수료",
+            "초기 매출 흐름"
+          ],
+          "source_slides": [
+            14,
+            21,
+            57
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        20
+      ]
+    },
+    {
+      "id": "market",
+      "label_ko": "시장 규모",
+      "source_slides": [
+        14,
+        22,
+        23,
+        38,
+        58
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "SOM",
+        "SAM",
+        "TAM",
+        "대상 고객 수",
+        "수익모델에 연결한 계산식",
+        "산정 근거",
+        "시장 범위와 기준 연도"
+      ],
+      "investor_questions": [
+        "당장 공략할 시장은 얼마인가",
+        "전체 확장 가능한 시장은 얼마인가"
+      ],
+      "acceptance_criteria": [
+        "SOM과 SAM이 수익모델에 연결된다",
+        "TAM의 확장 범위와 산정 근거를 제시한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "market.q1",
+          "question": "당장 공략할 시장은 얼마인가",
+          "required_data": [
+            "SOM",
+            "SAM",
+            "TAM",
+            "대상 고객 수",
+            "수익모델에 연결한 계산식",
+            "산정 근거",
+            "시장 범위와 기준 연도"
+          ],
+          "source_slides": [
+            14,
+            22,
+            23,
+            38,
+            58
+          ]
+        },
+        {
+          "id": "market.q2",
+          "question": "전체 확장 가능한 시장은 얼마인가",
+          "required_data": [],
+          "source_slides": [
+            14,
+            22,
+            23,
+            38,
+            58
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        20
+      ]
+    },
+    {
+      "id": "go_to_market",
+      "label_ko": "초기 시장 진입 전략",
+      "source_slides": [
+        14,
+        25,
+        60
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "초기 고객군",
+        "첫 고객에게 도달할 채널",
+        "마케팅과 영업 활동",
+        "구매 전환 절차",
+        "모집·영업 담당과 일정",
+        "초기 실험 지표",
+        "파트너"
+      ],
+      "investor_questions": [
+        "아직 알려지지 않은 팀이 첫 고객을 어떻게 얻는가"
+      ],
+      "acceptance_criteria": [
+        "초기 고객·채널과 실제 확보 실행을 분리된 두 장 이상으로 설명한다",
+        "모집·구매 전환의 책임·일정·지표를 제시한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "go_to_market.q1",
+          "question": "아직 알려지지 않은 팀이 첫 고객을 어떻게 얻는가",
+          "required_data": [
+            "초기 고객군",
+            "첫 고객에게 도달할 채널",
+            "마케팅과 영업 활동",
+            "구매 전환 절차",
+            "모집·영업 담당과 일정",
+            "초기 실험 지표",
+            "파트너"
+          ],
+          "source_slides": [
+            14,
+            25,
+            60
+          ]
+        }
+      ],
+      "min_slides": 2,
+      "default_slide_seconds": [
+        15,
+        15
+      ]
+    },
+    {
+      "id": "growth",
+      "label_ko": "성장 전략",
+      "min_slides": 1,
+      "default_slide_seconds": [
+        15
+      ],
+      "source_slides": [
+        14,
+        25,
+        26,
+        60,
+        61
+      ],
+      "required_data": [
+        "고객 유지·재사용 전략",
+        "확장 고객군·지역·채널",
+        "제품·서비스 확장 방향",
+        "고객·매출 성장 가정과 근거",
+        "확장 판단 지표와 조건"
+      ],
+      "investor_questions": [
+        "초기 검증 이후 어떻게 반복 가능한 성장을 만들 것인가"
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "acceptance_criteria": [
+        "목표 고객과 주장을 원문 근거에 연결한다",
+        "다음 목차와 구분되는 독립 장표로 설명한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "growth.q1",
+          "question": "초기 검증 이후 어떻게 반복 가능한 성장을 만들 것인가",
+          "required_data": [
+            "고객 유지·재사용 전략",
+            "확장 고객군·지역·채널",
+            "제품·서비스 확장 방향",
+            "고객·매출 성장 가정과 근거",
+            "확장 판단 지표와 조건"
+          ],
+          "source_slides": [
+            14,
+            25,
+            26,
+            60,
+            61
+          ]
+        }
+      ]
+    },
+    {
+      "id": "milestones",
+      "label_ko": "마일스톤",
+      "source_slides": [
+        12,
+        14,
+        26,
+        61
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "기간별 사업 목표",
+        "제품·사업 실행 일정",
+        "단계별 검증 지표",
+        "다음 단계 진행 기준",
+        "담당과 실행 산출물",
+        "계획 기간과 기준 시점"
+      ],
+      "investor_questions": [
+        "사업 목표·일정과 단계별 검증 기준은 구체적이고 현실적인가"
+      ],
+      "acceptance_criteria": [
+        "사업 목표와 일정·검증 지표·단계 진행 기준이 연결된다",
+        "사용자 요청에 따라 사업 실행의 마일스톤만 설명한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "milestones.q1",
+          "question": "사업 목표·일정과 단계별 검증 기준은 구체적이고 현실적인가",
+          "required_data": [
+            "기간별 사업 목표",
+            "제품·사업 실행 일정",
+            "단계별 검증 지표",
+            "다음 단계 진행 기준",
+            "담당과 실행 산출물",
+            "계획 기간과 기준 시점"
+          ],
+          "source_slides": [
+            12,
+            14,
+            26,
+            61
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        15
+      ]
+    },
+    {
+      "id": "team",
+      "label_ko": "팀 구성",
+      "source_slides": [
+        14,
+        27,
+        62
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "사업 관련 경험",
+        "주요 경력",
+        "보유 역량",
+        "핵심 파트너"
+      ],
+      "investor_questions": [
+        "이 팀이 제시한 사업 계획을 실현할 수 있는가"
+      ],
+      "acceptance_criteria": [
+        "경험과 역량이 사업 실행에 연결된다",
+        "확장에 도움이 되는 파트너를 제시한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "team.q1",
+          "question": "이 팀이 제시한 사업 계획을 실현할 수 있는가",
+          "required_data": [
+            "사업 관련 경험",
+            "주요 경력",
+            "보유 역량",
+            "핵심 파트너"
+          ],
+          "source_slides": [
+            14,
+            27,
+            62
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        10
+      ]
+    },
+    {
+      "id": "vision",
+      "label_ko": "비전",
+      "source_slides": [
+        28,
+        63
+      ],
+      "origin": "user_v1.2_structure_with_kdb_derived_criteria",
+      "required_data": [
+        "사업 목표",
+        "지향하는 고객 가치",
+        "장기 방향"
+      ],
+      "investor_questions": [
+        "이 사업이 궁극적으로 지향하는 목표는 무엇인가"
+      ],
+      "acceptance_criteria": [
+        "사업 목표를 간결하고 명확하게 설명한다"
+      ],
+      "normalization_note": "사용자가 지정한 14목차·순서·최소 장수를 우선하고 정석biz 노하우 작성 원칙을 재배분한 구현용 해석",
+      "question_contracts": [
+        {
+          "id": "vision.q1",
+          "question": "이 사업이 궁극적으로 지향하는 목표는 무엇인가",
+          "required_data": [
+            "사업 목표",
+            "지향하는 고객 가치",
+            "장기 방향"
+          ],
+          "source_slides": [
+            28,
+            63
+          ]
+        }
+      ],
+      "min_slides": 1,
+      "default_slide_seconds": [
+        5
+      ]
+    }
+  ],
+  "optional_topics": [
+    {
+      "id": "technology_moat",
+      "label_ko": "제품·기술 강점",
+      "source_slides": [
+        12,
+        46
+      ],
+      "map_to": [
+        "product",
+        "alternatives"
+      ]
+    },
+    {
+      "id": "market_dynamics",
+      "label_ko": "시장 분석",
+      "source_slides": [
+        12
+      ],
+      "map_to": [
+        "background",
+        "market"
+      ]
+    }
+  ],
+  "slide_record_contract": {
+    "origin": "harness_addition",
+    "basis_slides": [
+      3,
+      4,
+      5,
+      29,
+      30
+    ],
+    "fields": [
+      "slide_id",
+      "section_ids",
+      "navigator",
+      "governing_message",
+      "body",
+      "claim_ids",
+      "evidence_ids",
+      "visuals",
+      "speaker_notes",
+      "target_seconds",
+      "open_gaps",
+      "review_status"
+    ],
+    "evidence_locator_fields": [
+      "source_id",
+      "source_type",
+      "source_hash_or_url",
+      "source_location",
+      "published_at",
+      "retrieved_at",
+      "claim_support",
+      "limitations"
+    ],
+    "image_fields": [
+      "asset_id",
+      "source_id",
+      "source_location",
+      "caption",
+      "related_claim_ids",
+      "purpose",
+      "rights_status",
+      "is_generated",
+      "visual_review_status"
+    ]
+  },
+  "seed_pitch_proposal": {
+    "origin": "explicit_user_structure_with_harness_timing",
+    "not_a_kdb_rule": true,
+    "target_seconds": 300,
+    "main_slide_count": 18,
+    "slides": [
+      {
+        "section": "cover",
+        "label_ko": "표지",
+        "part": 1,
+        "seconds": 10
+      },
+      {
+        "section": "background",
+        "label_ko": "문제 배경 및 최근 트렌드",
+        "part": 1,
+        "seconds": 15
+      },
+      {
+        "section": "problem",
+        "label_ko": "문제 정의",
+        "part": 1,
+        "seconds": 20
+      },
+      {
+        "section": "problem",
+        "label_ko": "문제 정의",
+        "part": 2,
+        "seconds": 20
+      },
+      {
+        "section": "alternatives",
+        "label_ko": "기존 대체재의 문제점",
+        "part": 1,
+        "seconds": 20
+      },
+      {
+        "section": "alternatives",
+        "label_ko": "기존 대체재의 문제점",
+        "part": 2,
+        "seconds": 20
+      },
+      {
+        "section": "solution",
+        "label_ko": "해결방안",
+        "part": 1,
+        "seconds": 20
+      },
+      {
+        "section": "product",
+        "label_ko": "제품 및 서비스 소개",
+        "part": 1,
+        "seconds": 20
+      },
+      {
+        "section": "product",
+        "label_ko": "제품 및 서비스 소개",
+        "part": 2,
+        "seconds": 20
+      },
+      {
+        "section": "traction",
+        "label_ko": "초기 고객 반응",
+        "part": 1,
+        "seconds": 20
+      },
+      {
+        "section": "business_model",
+        "label_ko": "수익 모델",
+        "part": 1,
+        "seconds": 20
+      },
+      {
+        "section": "market",
+        "label_ko": "시장 규모",
+        "part": 1,
+        "seconds": 20
+      },
+      {
+        "section": "go_to_market",
+        "label_ko": "초기 시장 진입 전략",
+        "part": 1,
+        "seconds": 15
+      },
+      {
+        "section": "go_to_market",
+        "label_ko": "초기 시장 진입 전략",
+        "part": 2,
+        "seconds": 15
+      },
+      {
+        "section": "growth",
+        "label_ko": "성장 전략",
+        "part": 1,
+        "seconds": 15
+      },
+      {
+        "section": "milestones",
+        "label_ko": "마일스톤",
+        "part": 1,
+        "seconds": 15
+      },
+      {
+        "section": "team",
+        "label_ko": "팀 구성",
+        "part": 1,
+        "seconds": 10
+      },
+      {
+        "section": "vision",
+        "label_ko": "비전",
+        "part": 1,
+        "seconds": 5
+      }
+    ],
+    "adaptation": "목차 순서와 최소 독립 장수를 유지하며 추가 장표를 같은 목차 구간에 배치할 수 있다. 발표 합계는 300초 이내다.",
+    "timing_validation": "발화량 기반 추정과 실제 발표자 리허설을 구분한다."
+  },
+  "harness_rules": [
+    {
+      "id": "traceable_claims",
+      "origin": "harness_addition",
+      "rule": "모든 사실·수치·차트는 제출 자료, 확인한 외부 출처 또는 명시적 계산으로 추적한다."
+    },
+    {
+      "id": "evidence_status",
+      "origin": "harness_addition",
+      "rule": "사실, 외부 배경 통계, 계산, 가설, 미래 계획을 구분한다."
+    },
+    {
+      "id": "no_fabrication",
+      "origin": "harness_addition",
+      "rule": "근거 없는 수치와 인용을 만들지 않으며 제3자 성과를 자사 성과로 바꾸지 않는다."
+    },
+    {
+      "id": "research_scope",
+      "origin": "harness_addition",
+      "rule": "검색 범위·쿼리·일자·채택 및 제외 이유·중단 기준을 기록하고 인터넷 전체의 전수 완료를 주장하지 않는다."
+    },
+    {
+      "id": "research_primary",
+      "origin": "harness_addition",
+      "rule": "공식 통계·공식 회사 자료·논문 등 일차 자료로 주장을 확인하고 정확한 URL/DOI와 위치를 보존한다."
+    },
+    {
+      "id": "internal_only_gaps",
+      "origin": "harness_addition",
+      "rule": "내부 매출·계약·고객·팀 경력의 빈칸은 외부 검색으로 만들어 채우지 않고 팀 확인 과제로 남긴다."
+    },
+    {
+      "id": "conflicts",
+      "origin": "harness_addition",
+      "rule": "상충하는 자료의 정의·연도·대상 차이를 확인하고 해결되지 않은 차이를 명시한다."
+    },
+    {
+      "id": "generated_visuals",
+      "origin": "harness_addition",
+      "rule": "생성 이미지는 설명용으로 표시하며 실제 제품·실험·고객·매출의 증거로 사용하지 않는다."
+    },
+    {
+      "id": "reference_style",
+      "origin": "harness_addition",
+      "rule": "샘플의 스타일 토큰을 추출하되 제3자 기업 성과·로고·사진을 새 팀의 증거로 전용하지 않는다."
+    },
+    {
+      "id": "font_and_image_rights",
+      "origin": "harness_addition",
+      "rule": "폰트 설치와 라이선스, 이미지 출처와 재사용 권한 상태를 기록한다."
+    },
+    {
+      "id": "render_and_rehearse",
+      "origin": "harness_addition",
+      "rule": "슬라이드를 렌더링해 검수하고 실제 300초 발표 리허설로 흐름과 분량을 보완한다."
+    },
+    {
+      "id": "growth_is_plan",
+      "origin": "harness_addition",
+      "rule": "교안의 성장 배수 예시를 확정 성과나 보장으로 사용하지 않는다."
+    }
+  ],
+  "intake_inventory": {
+    "file_count": 18,
+    "extensions": {
+      ".hwp": 18
+    },
+    "container_formats": {
+      "OLE Compound File": 18
+    },
+    "total_bytes": 141988864,
+    "directory_count": 0,
+    "scope": "format and container signatures only; no applicant text or identities extracted"
+  },
+  "intake_requirements": {
+    "origin": "observed_format_and_harness_addition",
+    "required_adapter": "HWP5/OLE text and BinData extraction with per-document diagnostics",
+    "fallback": [
+      "HWPX export",
+      "PDF export",
+      "OCR after explicit scan detection"
+    ],
+    "limitations": "OLE 시그니처만으로 버전·암호화·DRM·파싱 가능성을 확정하지 않는다. 추출 불가 내용을 성공으로 표시하지 않는다.",
+    "separate_states": [
+      "asset_extracted",
+      "asset_understood",
+      "evidence_verified"
+    ]
+  },
+  "section_brief_contract": {
+    "origin": "harness_addition",
+    "path": "deck/section-briefs.json",
+    "schema_version": "1.2",
+    "question_fields": [
+      "question_id",
+      "status",
+      "answer",
+      "argument",
+      "coverage",
+      "evidence_ids",
+      "visual_refs",
+      "missing"
+    ],
+    "coverage_policy": "첫 투자자 질문에 해당 목차 required_data를 항목별 주장으로 연결하며 evidence ID 존재만으로 충족 판정하지 않는다. 나머지 질문도 답변과 논거를 기록한다.",
+    "draft_policy": "명시한 미확인 자료는 초안 경고이며 최종본을 차단한다. 잘못된 사실 근거는 초안도 차단한다.",
+    "validation_limit": "결정적 검사는 구조·참조·누락만 검증한다. 원문이 주장을 지지하는지와 논증의 품질은 독립 투자자 검토자가 확인해야 한다."
+  },
+  "deck_views_contract": {
+    "origin": "harness_addition",
+    "path": "deck/deck.json",
+    "schema_version": "1.2",
+    "master": "14목차 고정 순서와 목차별 최소 독립 장수를 따르는 상세본. 최소 18장.",
+    "pitch": "14목차 고정 순서와 최소 18장을 유지한 300초 발표본. 별도 장표는 source_slide_ids로 동일 목차 master에 연결.",
+    "not_a_kdb_rule": true
+  },
+  "legacy_contracts": {
+    "1.0": {
+      "schema_version": "1.0",
+      "topics": [
+        {
+          "id": "cover",
+          "label_ko": "표지",
+          "source_slides": [
+            2,
+            11,
+            15,
+            52
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "목표 고객",
+            "핵심 고객 문제",
+            "가치제안",
+            "팀명",
+            "제품 핵심 기능 이미지"
+          ],
+          "investor_questions": [
+            "누구의 어떤 문제를 어떻게 해결하는가"
+          ],
+          "acceptance_criteria": [
+            "한 줄 서비스 소개가 사업을 구체적으로 설명한다",
+            "이미지가 가치제안과 직접 연결된다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "cover.q1",
+              "question": "누구의 어떤 문제를 어떻게 해결하는가",
+              "required_data": [
+                "목표 고객",
+                "핵심 고객 문제",
+                "가치제안",
+                "팀명",
+                "제품 핵심 기능 이미지"
+              ],
+              "source_slides": [
+                2,
+                11,
+                15,
+                52
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem",
+          "label_ko": "문제 배경·정의",
+          "source_slides": [
+            13,
+            16,
+            17,
+            53
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "목표 고객 프로파일",
+            "시장 변화",
+            "문제 크기와 빈도",
+            "고객의 시간·비용·횟수",
+            "현재 대안",
+            "대안의 한계",
+            "고객 조사 또는 외부 근거"
+          ],
+          "investor_questions": [
+            "해결할 필요가 큰 문제인가",
+            "고객의 기존 해결 방식은 무엇인가",
+            "지금 어떤 시장 기회가 있는가"
+          ],
+          "acceptance_criteria": [
+            "우선 문제를 1~2개로 정의한다",
+            "고객 문제와 기존 대안의 한계를 근거로 설명한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "problem.q1",
+              "question": "해결할 필요가 큰 문제인가",
+              "required_data": [
+                "목표 고객 프로파일",
+                "시장 변화",
+                "문제 크기와 빈도",
+                "고객의 시간·비용·횟수",
+                "현재 대안",
+                "대안의 한계",
+                "고객 조사 또는 외부 근거"
+              ],
+              "source_slides": [
+                13,
+                16,
+                17,
+                53
+              ]
+            },
+            {
+              "id": "problem.q2",
+              "question": "고객의 기존 해결 방식은 무엇인가",
+              "required_data": [],
+              "source_slides": [
+                13,
+                16,
+                17,
+                53
+              ]
+            },
+            {
+              "id": "problem.q3",
+              "question": "지금 어떤 시장 기회가 있는가",
+              "required_data": [],
+              "source_slides": [
+                13,
+                16,
+                17,
+                53
+              ]
+            }
+          ]
+        },
+        {
+          "id": "solution",
+          "label_ko": "해결방안",
+          "source_slides": [
+            13,
+            18,
+            54
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "문제별 해결 방식",
+            "고객 관점 편익",
+            "기존 대비 개선 근거",
+            "측정 조건"
+          ],
+          "investor_questions": [
+            "고객 문제를 대안보다 어떻게 더 잘 해결하는가"
+          ],
+          "acceptance_criteria": [
+            "앞서 정의한 문제와 해결책이 직접 대응한다",
+            "정량 편익이 있다면 측정 근거와 함께 설명한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "solution.q1",
+              "question": "고객 문제를 대안보다 어떻게 더 잘 해결하는가",
+              "required_data": [
+                "문제별 해결 방식",
+                "고객 관점 편익",
+                "기존 대비 개선 근거",
+                "측정 조건"
+              ],
+              "source_slides": [
+                13,
+                18,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "product",
+          "label_ko": "제품·서비스",
+          "source_slides": [
+            19,
+            55
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "핵심 기능",
+            "사용 흐름",
+            "실제 화면 또는 제품 사진",
+            "현재 구현 상태"
+          ],
+          "investor_questions": [
+            "가치제안이 핵심 기능으로 구현되어 있는가",
+            "고객이 쉽게 이해하고 사용할 수 있는가"
+          ],
+          "acceptance_criteria": [
+            "고객 관점에서 핵심 기능을 보여준다",
+            "본문과 직접 연결된 제품 이미지를 사용한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "product.q1",
+              "question": "가치제안이 핵심 기능으로 구현되어 있는가",
+              "required_data": [
+                "핵심 기능",
+                "사용 흐름",
+                "실제 화면 또는 제품 사진",
+                "현재 구현 상태"
+              ],
+              "source_slides": [
+                19,
+                55
+              ]
+            },
+            {
+              "id": "product.q2",
+              "question": "고객이 쉽게 이해하고 사용할 수 있는가",
+              "required_data": [],
+              "source_slides": [
+                19,
+                55
+              ]
+            }
+          ]
+        },
+        {
+          "id": "traction",
+          "label_ko": "성과 지표",
+          "source_slides": [
+            14,
+            20,
+            56
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "고객·사용·매출 지표",
+            "측정 기간",
+            "변화 추이",
+            "MVP 반응",
+            "인터뷰 대상과 확인한 가설"
+          ],
+          "investor_questions": [
+            "고객이 실제로 필요로 한다는 증거가 있는가"
+          ],
+          "acceptance_criteria": [
+            "실제 성과, MVP 반응, 인터뷰를 구분한다",
+            "개발 단계에서 확보 가능한 가장 강한 증거를 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "traction.q1",
+              "question": "고객이 실제로 필요로 한다는 증거가 있는가",
+              "required_data": [
+                "고객·사용·매출 지표",
+                "측정 기간",
+                "변화 추이",
+                "MVP 반응",
+                "인터뷰 대상과 확인한 가설"
+              ],
+              "source_slides": [
+                14,
+                20,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "id": "business_model",
+          "label_ko": "수익모델",
+          "source_slides": [
+            14,
+            21,
+            57
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "지불 주체",
+            "가격",
+            "과금 단위",
+            "수수료",
+            "초기 매출 흐름"
+          ],
+          "investor_questions": [
+            "누가 어떤 방식으로 얼마를 지불하는가"
+          ],
+          "acceptance_criteria": [
+            "초기에 적용할 수익모델을 현실적으로 제시한다",
+            "가격과 과금 단위가 명확하다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "business_model.q1",
+              "question": "누가 어떤 방식으로 얼마를 지불하는가",
+              "required_data": [
+                "지불 주체",
+                "가격",
+                "과금 단위",
+                "수수료",
+                "초기 매출 흐름"
+              ],
+              "source_slides": [
+                14,
+                21,
+                57
+              ]
+            }
+          ]
+        },
+        {
+          "id": "market",
+          "label_ko": "시장 규모",
+          "source_slides": [
+            14,
+            22,
+            23,
+            38,
+            58
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "SOM",
+            "SAM",
+            "TAM",
+            "대상 고객 수",
+            "수익모델에 연결한 계산식",
+            "산정 근거",
+            "시장 범위와 기준 연도"
+          ],
+          "investor_questions": [
+            "당장 공략할 시장은 얼마인가",
+            "전체 확장 가능한 시장은 얼마인가"
+          ],
+          "acceptance_criteria": [
+            "SOM과 SAM이 수익모델에 연결된다",
+            "TAM의 확장 범위와 산정 근거를 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "market.q1",
+              "question": "당장 공략할 시장은 얼마인가",
+              "required_data": [
+                "SOM",
+                "SAM",
+                "TAM",
+                "대상 고객 수",
+                "수익모델에 연결한 계산식",
+                "산정 근거",
+                "시장 범위와 기준 연도"
+              ],
+              "source_slides": [
+                14,
+                22,
+                23,
+                38,
+                58
+              ]
+            },
+            {
+              "id": "market.q2",
+              "question": "전체 확장 가능한 시장은 얼마인가",
+              "required_data": [],
+              "source_slides": [
+                14,
+                22,
+                23,
+                38,
+                58
+              ]
+            }
+          ]
+        },
+        {
+          "id": "competition",
+          "label_ko": "경쟁사 차별점",
+          "source_slides": [
+            13,
+            14,
+            24,
+            59
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "직접 경쟁사",
+            "잠재 경쟁사",
+            "현재 대안",
+            "핵심 비교축 3~4개",
+            "정량 비교 근거"
+          ],
+          "investor_questions": [
+            "고객에게 중요한 차별점은 무엇인가",
+            "대체재가 해결하지 못하는 부분은 무엇인가"
+          ],
+          "acceptance_criteria": [
+            "핵심 기능과 가치제안을 기준으로 비교한다",
+            "가능하면 표와 정량 근거로 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "competition.q1",
+              "question": "고객에게 중요한 차별점은 무엇인가",
+              "required_data": [
+                "직접 경쟁사",
+                "잠재 경쟁사",
+                "현재 대안",
+                "핵심 비교축 3~4개",
+                "정량 비교 근거"
+              ],
+              "source_slides": [
+                13,
+                14,
+                24,
+                59
+              ]
+            },
+            {
+              "id": "competition.q2",
+              "question": "대체재가 해결하지 못하는 부분은 무엇인가",
+              "required_data": [],
+              "source_slides": [
+                13,
+                14,
+                24,
+                59
+              ]
+            }
+          ]
+        },
+        {
+          "id": "go_to_market",
+          "label_ko": "시장 진입·성장 전략",
+          "source_slides": [
+            14,
+            25,
+            60
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "초기 고객군",
+            "채널",
+            "마케팅과 영업 활동",
+            "구매 전환 절차",
+            "파트너",
+            "성장 논리"
+          ],
+          "investor_questions": [
+            "아직 알려지지 않은 팀이 첫 고객을 어떻게 얻는가",
+            "어떻게 성장할 것인가"
+          ],
+          "acceptance_criteria": [
+            "고객 확보 전략을 구체적으로 제시한다",
+            "목표 고객과 이해관계자의 특성에 근거한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "go_to_market.q1",
+              "question": "아직 알려지지 않은 팀이 첫 고객을 어떻게 얻는가",
+              "required_data": [
+                "초기 고객군",
+                "채널",
+                "마케팅과 영업 활동",
+                "구매 전환 절차",
+                "파트너",
+                "성장 논리"
+              ],
+              "source_slides": [
+                14,
+                25,
+                60
+              ]
+            },
+            {
+              "id": "go_to_market.q2",
+              "question": "어떻게 성장할 것인가",
+              "required_data": [],
+              "source_slides": [
+                14,
+                25,
+                60
+              ]
+            }
+          ]
+        },
+        {
+          "id": "milestones",
+          "label_ko": "마일스톤·자금 계획",
+          "source_slides": [
+            12,
+            14,
+            26,
+            61
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "기간별 사업 목표",
+            "매출 성장 계획",
+            "필요 자금",
+            "조달 계획",
+            "자금 사용처",
+            "사업 계획 기간(1~2년 또는 5년 이내)"
+          ],
+          "investor_questions": [
+            "제시한 사업 계획은 구체적이고 현실적인가",
+            "성장 단계에 필요한 자금은 얼마인가"
+          ],
+          "acceptance_criteria": [
+            "사업 일정과 매출 및 자금 계획이 연결된다",
+            "과거 템플릿의 연도를 그대로 재사용하지 않는다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "planning_horizon_note": "원본 14장은 최소 5년 성장에 관한 투자자 질문을 제시하고, 26장은 향후 1~2년 또는 5년 이내 사업·매출·자금 계획을 안내한다. 고정 5년 예측을 모든 팀에 강요하지 않는다.",
+          "question_contracts": [
+            {
+              "id": "milestones.q1",
+              "question": "제시한 사업 계획은 구체적이고 현실적인가",
+              "required_data": [
+                "기간별 사업 목표",
+                "매출 성장 계획",
+                "필요 자금",
+                "조달 계획",
+                "자금 사용처",
+                "사업 계획 기간(1~2년 또는 5년 이내)"
+              ],
+              "source_slides": [
+                12,
+                14,
+                26,
+                61
+              ]
+            },
+            {
+              "id": "milestones.q2",
+              "question": "성장 단계에 필요한 자금은 얼마인가",
+              "required_data": [],
+              "source_slides": [
+                12,
+                14,
+                26,
+                61
+              ]
+            }
+          ]
+        },
+        {
+          "id": "team",
+          "label_ko": "팀 역량",
+          "source_slides": [
+            14,
+            27,
+            62
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "사업 관련 경험",
+            "주요 경력",
+            "보유 역량",
+            "핵심 파트너"
+          ],
+          "investor_questions": [
+            "이 팀이 제시한 사업 계획을 실현할 수 있는가"
+          ],
+          "acceptance_criteria": [
+            "경험과 역량이 사업 실행에 연결된다",
+            "확장에 도움이 되는 파트너를 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "team.q1",
+              "question": "이 팀이 제시한 사업 계획을 실현할 수 있는가",
+              "required_data": [
+                "사업 관련 경험",
+                "주요 경력",
+                "보유 역량",
+                "핵심 파트너"
+              ],
+              "source_slides": [
+                14,
+                27,
+                62
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vision",
+          "label_ko": "비전",
+          "source_slides": [
+            28,
+            63
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "사업 목표",
+            "지향하는 고객 가치",
+            "장기 방향"
+          ],
+          "investor_questions": [
+            "이 사업이 궁극적으로 지향하는 목표는 무엇인가"
+          ],
+          "acceptance_criteria": [
+            "사업 목표를 간결하고 명확하게 설명한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "vision.q1",
+              "question": "이 사업이 궁극적으로 지향하는 목표는 무엇인가",
+              "required_data": [
+                "사업 목표",
+                "지향하는 고객 가치",
+                "장기 방향"
+              ],
+              "source_slides": [
+                28,
+                63
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "1.1": {
+      "schema_version": "1.1",
+      "topics": [
+        {
+          "id": "cover",
+          "label_ko": "표지",
+          "source_slides": [
+            2,
+            11,
+            15,
+            52
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "목표 고객",
+            "핵심 고객 문제",
+            "가치제안",
+            "팀명",
+            "제품 핵심 기능 이미지"
+          ],
+          "investor_questions": [
+            "누구의 어떤 문제를 어떻게 해결하는가"
+          ],
+          "acceptance_criteria": [
+            "한 줄 서비스 소개가 사업을 구체적으로 설명한다",
+            "이미지가 가치제안과 직접 연결된다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "cover.q1",
+              "question": "누구의 어떤 문제를 어떻게 해결하는가",
+              "required_data": [
+                "목표 고객",
+                "핵심 고객 문제",
+                "가치제안",
+                "팀명",
+                "제품 핵심 기능 이미지"
+              ],
+              "source_slides": [
+                2,
+                11,
+                15,
+                52
+              ]
+            }
+          ]
+        },
+        {
+          "id": "problem",
+          "label_ko": "문제 배경·정의",
+          "source_slides": [
+            13,
+            16,
+            17,
+            53
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "목표 고객 프로파일",
+            "시장 변화",
+            "문제 크기와 빈도",
+            "고객의 시간·비용·횟수",
+            "현재 대안",
+            "대안의 한계",
+            "고객 조사 또는 외부 근거"
+          ],
+          "investor_questions": [
+            "해결할 필요가 큰 문제인가",
+            "고객의 기존 해결 방식은 무엇인가",
+            "지금 어떤 시장 기회가 있는가"
+          ],
+          "acceptance_criteria": [
+            "우선 문제를 1~2개로 정의한다",
+            "고객 문제와 기존 대안의 한계를 근거로 설명한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "problem.q1",
+              "question": "해결할 필요가 큰 문제인가",
+              "required_data": [
+                "목표 고객 프로파일",
+                "시장 변화",
+                "문제 크기와 빈도",
+                "고객의 시간·비용·횟수",
+                "현재 대안",
+                "대안의 한계",
+                "고객 조사 또는 외부 근거"
+              ],
+              "source_slides": [
+                13,
+                16,
+                17,
+                53
+              ]
+            },
+            {
+              "id": "problem.q2",
+              "question": "고객의 기존 해결 방식은 무엇인가",
+              "required_data": [],
+              "source_slides": [
+                13,
+                16,
+                17,
+                53
+              ]
+            },
+            {
+              "id": "problem.q3",
+              "question": "지금 어떤 시장 기회가 있는가",
+              "required_data": [],
+              "source_slides": [
+                13,
+                16,
+                17,
+                53
+              ]
+            }
+          ]
+        },
+        {
+          "id": "solution",
+          "label_ko": "해결방안",
+          "source_slides": [
+            13,
+            18,
+            54
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "문제별 해결 방식",
+            "고객 관점 편익",
+            "기존 대비 개선 근거",
+            "측정 조건"
+          ],
+          "investor_questions": [
+            "고객 문제를 대안보다 어떻게 더 잘 해결하는가"
+          ],
+          "acceptance_criteria": [
+            "앞서 정의한 문제와 해결책이 직접 대응한다",
+            "정량 편익이 있다면 측정 근거와 함께 설명한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "solution.q1",
+              "question": "고객 문제를 대안보다 어떻게 더 잘 해결하는가",
+              "required_data": [
+                "문제별 해결 방식",
+                "고객 관점 편익",
+                "기존 대비 개선 근거",
+                "측정 조건"
+              ],
+              "source_slides": [
+                13,
+                18,
+                54
+              ]
+            }
+          ]
+        },
+        {
+          "id": "product",
+          "label_ko": "제품·서비스",
+          "source_slides": [
+            19,
+            55
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "핵심 기능",
+            "사용 흐름",
+            "실제 화면 또는 제품 사진",
+            "현재 구현 상태"
+          ],
+          "investor_questions": [
+            "가치제안이 핵심 기능으로 구현되어 있는가",
+            "고객이 쉽게 이해하고 사용할 수 있는가"
+          ],
+          "acceptance_criteria": [
+            "고객 관점에서 핵심 기능을 보여준다",
+            "본문과 직접 연결된 제품 이미지를 사용한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "product.q1",
+              "question": "가치제안이 핵심 기능으로 구현되어 있는가",
+              "required_data": [
+                "핵심 기능",
+                "사용 흐름",
+                "실제 화면 또는 제품 사진",
+                "현재 구현 상태"
+              ],
+              "source_slides": [
+                19,
+                55
+              ]
+            },
+            {
+              "id": "product.q2",
+              "question": "고객이 쉽게 이해하고 사용할 수 있는가",
+              "required_data": [],
+              "source_slides": [
+                19,
+                55
+              ]
+            }
+          ]
+        },
+        {
+          "id": "traction",
+          "label_ko": "성과 지표",
+          "source_slides": [
+            14,
+            20,
+            56
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "고객·사용·매출 지표",
+            "측정 기간",
+            "변화 추이",
+            "MVP 반응",
+            "인터뷰 대상과 확인한 가설"
+          ],
+          "investor_questions": [
+            "고객이 실제로 필요로 한다는 증거가 있는가"
+          ],
+          "acceptance_criteria": [
+            "실제 성과, MVP 반응, 인터뷰를 구분한다",
+            "개발 단계에서 확보 가능한 가장 강한 증거를 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "traction.q1",
+              "question": "고객이 실제로 필요로 한다는 증거가 있는가",
+              "required_data": [
+                "고객·사용·매출 지표",
+                "측정 기간",
+                "변화 추이",
+                "MVP 반응",
+                "인터뷰 대상과 확인한 가설"
+              ],
+              "source_slides": [
+                14,
+                20,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "id": "business_model",
+          "label_ko": "수익모델",
+          "source_slides": [
+            14,
+            21,
+            57
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "지불 주체",
+            "가격",
+            "과금 단위",
+            "수수료",
+            "초기 매출 흐름"
+          ],
+          "investor_questions": [
+            "누가 어떤 방식으로 얼마를 지불하는가"
+          ],
+          "acceptance_criteria": [
+            "초기에 적용할 수익모델을 현실적으로 제시한다",
+            "가격과 과금 단위가 명확하다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "business_model.q1",
+              "question": "누가 어떤 방식으로 얼마를 지불하는가",
+              "required_data": [
+                "지불 주체",
+                "가격",
+                "과금 단위",
+                "수수료",
+                "초기 매출 흐름"
+              ],
+              "source_slides": [
+                14,
+                21,
+                57
+              ]
+            }
+          ]
+        },
+        {
+          "id": "market",
+          "label_ko": "시장 규모",
+          "source_slides": [
+            14,
+            22,
+            23,
+            38,
+            58
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "SOM",
+            "SAM",
+            "TAM",
+            "대상 고객 수",
+            "수익모델에 연결한 계산식",
+            "산정 근거",
+            "시장 범위와 기준 연도"
+          ],
+          "investor_questions": [
+            "당장 공략할 시장은 얼마인가",
+            "전체 확장 가능한 시장은 얼마인가"
+          ],
+          "acceptance_criteria": [
+            "SOM과 SAM이 수익모델에 연결된다",
+            "TAM의 확장 범위와 산정 근거를 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "market.q1",
+              "question": "당장 공략할 시장은 얼마인가",
+              "required_data": [
+                "SOM",
+                "SAM",
+                "TAM",
+                "대상 고객 수",
+                "수익모델에 연결한 계산식",
+                "산정 근거",
+                "시장 범위와 기준 연도"
+              ],
+              "source_slides": [
+                14,
+                22,
+                23,
+                38,
+                58
+              ]
+            },
+            {
+              "id": "market.q2",
+              "question": "전체 확장 가능한 시장은 얼마인가",
+              "required_data": [],
+              "source_slides": [
+                14,
+                22,
+                23,
+                38,
+                58
+              ]
+            }
+          ]
+        },
+        {
+          "id": "competition",
+          "label_ko": "경쟁사 차별점",
+          "source_slides": [
+            13,
+            14,
+            24,
+            59
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "직접 경쟁사",
+            "잠재 경쟁사",
+            "현재 대안",
+            "핵심 비교축 3~4개",
+            "정량 비교 근거"
+          ],
+          "investor_questions": [
+            "고객에게 중요한 차별점은 무엇인가",
+            "대체재가 해결하지 못하는 부분은 무엇인가"
+          ],
+          "acceptance_criteria": [
+            "핵심 기능과 가치제안을 기준으로 비교한다",
+            "가능하면 표와 정량 근거로 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "competition.q1",
+              "question": "고객에게 중요한 차별점은 무엇인가",
+              "required_data": [
+                "직접 경쟁사",
+                "잠재 경쟁사",
+                "현재 대안",
+                "핵심 비교축 3~4개",
+                "정량 비교 근거"
+              ],
+              "source_slides": [
+                13,
+                14,
+                24,
+                59
+              ]
+            },
+            {
+              "id": "competition.q2",
+              "question": "대체재가 해결하지 못하는 부분은 무엇인가",
+              "required_data": [],
+              "source_slides": [
+                13,
+                14,
+                24,
+                59
+              ]
+            }
+          ]
+        },
+        {
+          "id": "go_to_market",
+          "label_ko": "시장 진입·성장 전략",
+          "source_slides": [
+            14,
+            25,
+            60
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "초기 고객군",
+            "채널",
+            "마케팅과 영업 활동",
+            "구매 전환 절차",
+            "파트너",
+            "성장 논리"
+          ],
+          "investor_questions": [
+            "아직 알려지지 않은 팀이 첫 고객을 어떻게 얻는가",
+            "어떻게 성장할 것인가"
+          ],
+          "acceptance_criteria": [
+            "고객 확보 전략을 구체적으로 제시한다",
+            "목표 고객과 이해관계자의 특성에 근거한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "go_to_market.q1",
+              "question": "아직 알려지지 않은 팀이 첫 고객을 어떻게 얻는가",
+              "required_data": [
+                "초기 고객군",
+                "채널",
+                "마케팅과 영업 활동",
+                "구매 전환 절차",
+                "파트너",
+                "성장 논리"
+              ],
+              "source_slides": [
+                14,
+                25,
+                60
+              ]
+            },
+            {
+              "id": "go_to_market.q2",
+              "question": "어떻게 성장할 것인가",
+              "required_data": [],
+              "source_slides": [
+                14,
+                25,
+                60
+              ]
+            }
+          ]
+        },
+        {
+          "id": "milestones",
+          "label_ko": "마일스톤·자금 계획",
+          "source_slides": [
+            12,
+            14,
+            26,
+            61
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "기간별 사업 목표",
+            "매출 성장 계획",
+            "필요 자금",
+            "조달 계획",
+            "자금 사용처",
+            "사업 계획 기간(1~2년 또는 5년 이내)"
+          ],
+          "investor_questions": [
+            "제시한 사업 계획은 구체적이고 현실적인가",
+            "성장 단계에 필요한 자금은 얼마인가"
+          ],
+          "acceptance_criteria": [
+            "사업 일정과 매출 및 자금 계획이 연결된다",
+            "과거 템플릿의 연도를 그대로 재사용하지 않는다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "planning_horizon_note": "원본 14장은 최소 5년 성장에 관한 투자자 질문을 제시하고, 26장은 향후 1~2년 또는 5년 이내 사업·매출·자금 계획을 안내한다. 고정 5년 예측을 모든 팀에 강요하지 않는다.",
+          "question_contracts": [
+            {
+              "id": "milestones.q1",
+              "question": "제시한 사업 계획은 구체적이고 현실적인가",
+              "required_data": [
+                "기간별 사업 목표",
+                "매출 성장 계획",
+                "필요 자금",
+                "조달 계획",
+                "자금 사용처",
+                "사업 계획 기간(1~2년 또는 5년 이내)"
+              ],
+              "source_slides": [
+                12,
+                14,
+                26,
+                61
+              ]
+            },
+            {
+              "id": "milestones.q2",
+              "question": "성장 단계에 필요한 자금은 얼마인가",
+              "required_data": [],
+              "source_slides": [
+                12,
+                14,
+                26,
+                61
+              ]
+            }
+          ]
+        },
+        {
+          "id": "team",
+          "label_ko": "팀 역량",
+          "source_slides": [
+            14,
+            27,
+            62
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "사업 관련 경험",
+            "주요 경력",
+            "보유 역량",
+            "핵심 파트너"
+          ],
+          "investor_questions": [
+            "이 팀이 제시한 사업 계획을 실현할 수 있는가"
+          ],
+          "acceptance_criteria": [
+            "경험과 역량이 사업 실행에 연결된다",
+            "확장에 도움이 되는 파트너를 제시한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "team.q1",
+              "question": "이 팀이 제시한 사업 계획을 실현할 수 있는가",
+              "required_data": [
+                "사업 관련 경험",
+                "주요 경력",
+                "보유 역량",
+                "핵심 파트너"
+              ],
+              "source_slides": [
+                14,
+                27,
+                62
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vision",
+          "label_ko": "비전",
+          "source_slides": [
+            28,
+            63
+          ],
+          "origin": "kdb_derived",
+          "required_data": [
+            "사업 목표",
+            "지향하는 고객 가치",
+            "장기 방향"
+          ],
+          "investor_questions": [
+            "이 사업이 궁극적으로 지향하는 목표는 무엇인가"
+          ],
+          "acceptance_criteria": [
+            "사업 목표를 간결하고 명확하게 설명한다"
+          ],
+          "normalization_note": "구현용 표현과 데이터 필드로 정규화한 교안 해석이며 원문 인용이 아님",
+          "question_contracts": [
+            {
+              "id": "vision.q1",
+              "question": "이 사업이 궁극적으로 지향하는 목표는 무엇인가",
+              "required_data": [
+                "사업 목표",
+                "지향하는 고객 가치",
+                "장기 방향"
+              ],
+              "source_slides": [
+                28,
+                63
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "layout_contract": {
+    "schema_version": "1.2",
+    "origin": "explicit_user_request",
+    "section_order": [
+      "cover",
+      "background",
+      "problem",
+      "alternatives",
+      "solution",
+      "product",
+      "traction",
+      "business_model",
+      "market",
+      "go_to_market",
+      "growth",
+      "milestones",
+      "team",
+      "vision"
+    ],
+    "minimum_slides": 18,
+    "views": [
+      "master",
+      "pitch"
+    ],
+    "counting_policy": "Each selected slide belongs to exactly one canonical section; composite section_ids cannot count toward multiple sections.",
+    "pitch_target_seconds": 300,
+    "excluded_topics": [
+      "투자 요청",
+      "요청 금액",
+      "자금 조달",
+      "투자금 사용 계획"
+    ],
+    "milestones_scope": "사업 목표·일정·검증 지표·단계 진행 기준"
+  }
+}
